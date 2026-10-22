@@ -1,0 +1,79 @@
+{
+  "title": "Gallery",
+  "intro_md": "Real output, nothing mocked up: PSP scenes drawn by Phobos at four times the PSP's resolution, screenshots and screen recordings from a Retroid Pocket 6, and the desktop program on Linux.",
+  "groups": [
+    {
+      "id": "clips",
+      "title": "In motion",
+      "layout": "clips",
+      "intro_md": "PSP games drawn at 4x (1920x1088) by Vulkan (fast), each from a saved scene in Phobos's headless runner. No sound; press play.",
+      "items": [
+        {"type": "video", "media": "clip-colin-mcrae", "title": "Colin McRae Rally 2005 Plus", "caption_md": "A rally stage, 8 seconds."},
+        {"type": "video", "media": "clip-armored-core", "title": "Armored Core: Formula Front International", "caption_md": "A match in the sky, 7 seconds, at the 60 frames a second the game draws."},
+        {"type": "video", "media": "clip-nfs-most-wanted", "title": "Need for Speed: Most Wanted 5-1-0", "caption_md": "Out of the tunnel and into the city, 8 seconds."},
+        {"type": "video", "media": "clip-army-of-two", "title": "Army of Two: The 40th Day", "caption_md": "Gameplay in a wrecked street, 8 seconds."}
+      ]
+    },
+    {
+      "id": "rp6",
+      "title": "On a Retroid Pocket 6",
+      "layout": "clips",
+      "intro_md": "The Android app on the handheld, recorded from its screen with nightly 216022: a PSP game, an N64 game on the Turnip driver, and the app's own screens. No sound; press play.",
+      "items": [
+        {"type": "video", "media": "clip-rp6-colin-mcrae", "title": "Colin McRae Rally 2005 Plus", "caption_md": "A rally stage with the PSP renderer set to Software (exact), which draws at the native 480x272, 8 seconds."},
+        {"type": "video", "media": "clip-rp6-mario-tennis", "title": "Mario Tennis", "caption_md": "Points of a match on the Turnip driver, with one of the game's own replays between them, 12 seconds."},
+        {"type": "video", "media": "clip-rp6-themes", "title": "The app's themes", "caption_md": "The Appearance settings, the focus moved with the controller: each theme chosen repaints the whole app, from Dracula to Tokyo Night and Gruvbox Dark, 10 seconds."}
+      ]
+    },
+    {
+      "id": "psp",
+      "title": "PlayStation Portable at 4x",
+      "layout": "grid",
+      "intro_md": "Stills from the same runs. Select one to see it at full size.",
+      "items": [
+        {"type": "image", "media": "psp-wipeout", "title": "WipEout", "alt": "A WipEout craft racing past city towers and billboards, drawn by Phobos at 4x"},
+        {"type": "image", "media": "psp-ghost-of-sparta", "title": "God of War: Ghost of Sparta", "alt": "Kratos beside God of War: Ghost of Sparta's main menu"},
+        {"type": "image", "media": "psp-armored-core", "title": "Armored Core: Formula Front International", "alt": "A red armored core mech locked on in a blue sky, with the game's HUD"},
+        {"type": "image", "media": "psp-colin-mcrae", "title": "Colin McRae Rally 2005 Plus", "alt": "A blue rally car sliding through a forest corner"},
+        {"type": "image", "media": "psp-kurohyou-2", "title": "Kurohyou 2 (fan translation)", "alt": "A neon-lit Japanese shopping street at night, people walking"},
+        {"type": "image", "media": "psp-nfs-most-wanted", "title": "Need for Speed: Most Wanted 5-1-0", "alt": "A green sports car racing on a city freeway between towers"},
+        {"type": "image", "media": "psp-army-of-two", "title": "Army of Two: The 40th Day", "alt": "Two masked soldiers advancing through a ruined, smoky street"},
+        {"type": "image", "media": "psp-death-jr-2", "title": "Death Jr. II: Root of Evil", "alt": "A small reaper swinging a glowing scythe in a moonlit village"},
+        {"type": "image", "media": "psp-il2", "title": "IL-2 Sturmovik: Birds of Prey", "alt": "A fighter plane over a red-roofed town and green fields"},
+        {"type": "image", "media": "psp-sonic-rivals", "title": "Sonic Rivals", "alt": "Sonic running across bright green hills"}
+      ]
+    },
+    {
+      "id": "n64",
+      "title": "Nintendo 64 on a Retroid Pocket 6",
+      "layout": "grid",
+      "intro_md": "The device's own screenshots on Qualcomm's stock driver with #292's build, the performance overlay and touch controls on screen.",
+      "items": [
+        {"type": "image", "media": "rp6-n64-mario-tennis", "title": "Mario Tennis", "alt": "Mario Tennis's stadium on a Retroid Pocket 6, the overlay reading 59.9 fps"},
+        {"type": "image", "media": "rp6-n64-f-zero-x", "title": "F-Zero X", "alt": "F-Zero X's race demo on a Retroid Pocket 6, 790 km/h on the speedometer"},
+        {"type": "image", "media": "rp6-n64-ocarina", "title": "The Legend of Zelda: Ocarina of Time", "alt": "Ocarina of Time's title screen with Link on horseback, on a Retroid Pocket 6"},
+        {"type": "image", "media": "rp6-n64-paper-mario", "title": "Paper Mario", "alt": "Paper Mario's opening stage, on a Retroid Pocket 6"}
+      ]
+    },
+    {
+      "id": "app",
+      "title": "The app and the desktop program",
+      "layout": "grid",
+      "intro_md": "The Android app's Library on the Retroid Pocket 6, and the desktop program (v2.4.0, Linux) as it is today.",
+      "items": [
+        {"type": "image", "media": "rp6-library", "title": "The Library on a Retroid Pocket 6", "alt": "The Phobos Library: 34 systems as neon console tiles over a retrowave sun and grid, a glass dock below"},
+        {"type": "image", "media": "desktop-locoroco", "title": "LocoRoco in the desktop program", "alt": "LocoRoco's colourful title screen in the desktop program"},
+        {"type": "image", "media": "desktop-pause-menu", "title": "The desktop program's pause menu", "alt": "The desktop pause menu: save and load state, screenshot, fast forward, the PSP renderer and resolution, quit to library"},
+        {"type": "image", "media": "desktop-library", "title": "The desktop program's library", "alt": "The desktop library listing PSP games by their disc titles and Nintendo 64 games"}
+      ]
+    },
+    {
+      "id": "wall",
+      "title": "266 games",
+      "layout": "wall",
+      "media": "psp-wall",
+      "alt": "A wall of 266 small screenshots, one from each game of the PSP test library: title screens, menus and gameplay",
+      "intro_md": "Every game of the PSP test library, from boot in the headless runner: one frame each from its first minute. The [compatibility report](https://github.com/pwnedbygary/phobos/blob/master/docs/psp-compatibility.md) names them all and says how far each gets."
+    }
+  ]
+}

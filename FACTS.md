@@ -1,0 +1,258 @@
+# Fact sheet
+
+Every claim the site makes, and where it comes from. Sources are the repository at master `062dd53e2` (22 Oct 2026),
+cited as `file:line`; its pull requests (`#n`) and releases as GitHub lists them (`gh pr view`, `gh release view`); git
+itself; and, marked **(notes)**, the project's coordination notes (the owner's decisions and other private notes),
+which aren't public. Dates are US Eastern, as the repository's own docs give them. "Derived" means computed from the
+named sources. The development log and the releases come from `gh` when `tools/fetch.py` runs, and are committed;
+every build, the Pages workflow's included, uses them as committed, so they're correct as of `data/devlog.json`'s
+`fetched` time.
+
+Data refetched at 00:26:24 EDT on 22 Oct 2026 (2026-10-22T04:26:24Z): 185 merged pull requests (#1 on 24 Sep to #296
+on 22 Oct), 10 releases, 7 of them tagged, v2.4.0 the latest; #294 and #297 open drafts. The owner's choices of
+21 Oct ~17:21-17:52 and ~18:27 **(notes)**: the host is a new repository, pwnedbygary/phobos-site, on GitHub Pages at
+https://pwnedbygary.github.io/phobos-site/; his two quotes may appear lightly tidied (capitals and spelling only),
+still signed by him; LICENSE gains the missing notices in a pull request of its own (#296, merged on 22 Oct at 00:10
+EDT) before the site deploys. And of ~23:05 **(notes)**: the site's source is published with its pages, which a
+workflow builds.
+
+## Hero
+
+| Claim | Source |
+|---|---|
+| A multi-system emulator built on ares | README.md:5 ("forked from ares") |
+| A controller-first app for Android handhelds | #51 "Hardware buttons drive the menus: D-pad and stick move a visible focus, L1/R1 switch tabs"; docs/implementation-plan.md:404 |
+| And a desktop program for Linux, Windows and macOS (the same in the meta description, which keeps "controller-first" to the app) | README.md:116-121; #97's body: "The desktop UI is a working placeholder; matching the Android UI is the follow-up." |
+| 34 systems | The app's Library header counts the systems the core lists (android/.../ui/LibraryScreen.kt:108); the core lists 35 (android/app/src/main/cpp/PhobosJNI.cpp:19-56, `enumerateSystems` at :59) and the Library merges ZX Spectrum 128 into ZX Spectrum (android/.../ui/MainViewModel.kt:1467-1474): 34. The RP6's own screenshot shows "34 systems" (media rp6-library) |
+| A PlayStation Portable core written from scratch | README.md:5, 66-69 |
+| Download v2.4.0, latest release, 16 Oct 2026 | `gh release list`: v2.4.0 isLatest, published 2026-10-16T13:22:00Z (09:22 EDT); filled in from data/releases.json |
+| Nightly builds, one for every push to master | README.md:11-12, 190 |
+| 266 PSP games in the test library | README.md:44; docs/psp-compatibility.md ("Games tested: 266") |
+| 4 platforms | README.md:14 (APKs, AppImage, macOS app, Phobos.exe); release v2.4.0's assets |
+| 185 pull requests merged since 24 Sep 2026 | Derived: the count of data/devlog.json (`gh pr list --state merged`, fetched 00:26 EDT on 22 Oct), first merged 2026-09-24 (#1) |
+| New in 2.0: a PSP core of its own | README.md:5 ("new in 2.0"), 11 (v2.0.0 "the first with the PlayStation Portable") |
+
+## What it is
+
+| Claim | Source |
+|---|---|
+| ares, accuracy-first, lineage back to 2004 through higan and bsnes | README.md:5 |
+| Keeps ares's cores and clarity; fast paths, Vulkan, custom GPU drivers | README.md:5, 7 |
+| Android ARM64; desktop program for Linux, Windows and macOS | README.md:5, 13, 116 |
+| Phobos's own code is GPL-3.0-or-later | README.md:271; LICENSE:1-22; #98 |
+| Modern (ARMv8.2-A, FP16, dot product) and Legacy (any 64-bit ARM), Android 8.0+ | README.md:13 |
+| Updates itself from GitHub | README.md:12, 190 |
+| Linux AppImage with a zsync file | README.md:192; v2.4.0's assets (`Phobos-2.4.0-x86_64.AppImage`, `.zsync`) |
+| Windows: Phobos.exe in a zip | README.md:14; v2.4.0's asset `Phobos-2.4.0-windows-x64.zip` |
+| macOS: universal app, MoltenVK bundled | README.md:116-117; scripts/package-macos-app.sh:2, 14 |
+| Each tagged release since v2.0.0 carries all of them; nightlies the Android app | `gh release view`: v1.0.0 and v1.1.0 carry only their two APKs; v2.0.0 to v2.4.0 also the AppImage (with zsync), the macOS zip and the Windows zip; `gh release view nightly-216017` (two APKs, ffmpeg tarball, update.json) |
+| 27 verified, PSP experimental, 6 not yet tried with a game | README.md:22-48 (the three groups of the systems table) |
+| Each system's group and status | README.md:22-48; names from PhobosJNI.cpp:19-56 |
+
+## Highlights
+
+| Claim | Source |
+|---|---|
+| PSP core written in ares's style from documentation, tests and real-PSP measurements; no code from other PSP emulators; PPSSPP read only as a reference | README.md:65-69 |
+| No firmware needed; HLE of threads, memory, files, timers, dialogs, saves, sound, music, movies | README.md:71-76 |
+| Allegrex recompiler on sljit for ARM64 and x86-64, interpreter behind it | README.md:77 |
+| Three renderers, up to 10x the PSP's 480x272 | README.md:80-87 |
+| ISO, CSO, ZSO, DAX, JSO, CHD read in place; versioned save states | README.md:91, 96-97 |
+| 197 of 266 reach a menu or gameplay within a minute (run of 11 Oct) | README.md:290; docs/progress.md:8 |
+| 13 days from first code (3 Oct) to v2.4.0 (16 Oct), its fifth release | docs/progress.md:7 |
+| PSP timing the default since 19 Oct; "Fast" the opt-in | #269 (merged 2026-10-19T05:35Z, 01:35 EDT); docs/psp-core.md part 106 (heading at :16937) |
+| The GE takes *about* as long as the PSP-1000 took | Derived: the fit's median miss is 5.0% (docs/psp-core.md:17065) and frames are judged within 15% (:19883) |
+| Fitted to 3,373 display lists from four rounds, median miss 5.0% | docs/psp-core.md:17065 ("3,373 lists 5.0% at the median"); rounds 6, 8, 9, 10 at :16937 |
+| Later rounds measured the CPU's effect on the GE (#279, #291) | docs/psp-core.md parts 113 (:19183) and 115 (:19767) |
+| All eight judged scenes within 15% by their whole frame since 21 Oct | docs/psp-core.md:19883 ("Frames judged: 8, all within 15%"); table :19872-19881; #291 merged 2026-10-21T17:08Z |
+| Each change to the timing is run against all 266 games before it merges | docs/handoff.md:261 (#291, "266 games each in Software and Vulkan"), :751 (#277), :1139 (#271), :936 (#269, "his library check with the PSP's timing"), :918 (#279); docs/progress.md:267 (merges wait for a fresh library check) |
+| The deviation chart's eight values, shown to two decimals: −0.87, −1.66, −12.69, −11.82, −10.38, +9.95, +9.61 and −5.80% | docs/psp-core.md:19874-19881, the "This branch / Against the PSP" column (−0.873, −1.661, −12.686, −11.825, −10.382, +9.952, +9.612, −5.801); two decimals so Activision Hits' menu shows +9.95%, under the owner's +10% limit for it (:19771-19773) rather than on it |
+| GE thread in the core since 18 and 20 Oct (#272, #277); results identical to inline | #272 (merged 2026-10-18T08:08Z), #277 (2026-10-20T08:35Z); docs/handoff.md:1164 ("exact"), :647-657 |
+| Killzone 149M to 74M host instructions a frame with it on | docs/handoff.md:663 |
+| Off by default; "PSP Graphics Overlap" built, and will be offered once On beats Off on the RP6 | docs/handoff.md:657-658 ("is built and not offered till On beats Off on the RP6") |
+| N64: blocks linked, dispatcher trips 10.1 to 0.6 million a second | #10 title; docs/progress.md:62 |
+| RSP multiply-accumulates as inline NEON | #15, #16 titles; README.md:132 |
+| 256 render contexts; Mario Tennis showcase 82 to 5 late frames | #17 title; docs/progress.md:62 |
+| Upscaling 1x-4x, 64DD, Rumble and Controller Paks, Turnip via the GPU Driver Manager | README.md:141, 150-156, 147 |
+| N64 on the RP6's stock Qualcomm driver since 21 Oct; black picture before | #292 (merged 2026-10-21T13:27Z) title; docs/handoff.md:298-396 |
+| Before/after pictures | media rp6-n64-ocarina-before (nightly-215987) and rp6-n64-ocarina (#292's APK 215990), 21 Oct 08:2x, see MEDIA.md |
+| 18 of 22 slow games at full speed at 1x (15 Oct nightly; 7 with v2.3.0) | docs/progress.md:9 |
+| 232 of 266 at 59+ fps at 5x (2400x1360), two-minute runs, mostly logos, intros, menus | docs/progress.md:10, 160 |
+| 6 Oct: the software renderer on several threads, Peace Walker 10.6 to 60 fps | docs/progress.md:98 |
+| N64 median 59.9 fps on the stock driver in all four games checked | docs/handoff.md:377-378 ("59.9 fps median in all eight runs") |
+| D-pad and stick focus, shoulder buttons switch tabs | #51; docs/implementation-plan.md:404 |
+| Touch controls with a layout per system | README.md:161 |
+| 37 themes and their names; glass, retrowave neon, XMB-style backdrop | README.md:184 |
+| Performance overlay; remapping per game, console or all | README.md:186, 160 |
+| Screenshot film-strip card and folder | #273 title (merged 2026-10-18T06:55Z) |
+| Settings → About updates from either channel | README.md:12 |
+| Nightly pre-release for every push to master, Modern and Legacy | README.md:11-12, 190; nightly assets |
+| Tagged releases carry the desktop program | README.md:14, 192 |
+| Builds numbered from git history, locally and on CI | README.md:194 |
+
+## Gallery
+
+Every picture and clip: MEDIA.md (file, game, frame, build, date, how it was made). Clip and still captions: the game
+titles are the discs' or the test library's names; "60 frames a second the game draws" (Armored Core) was measured
+by the clip's frames (61 distinct of 61 consecutive frames). "The compatibility report names them all": docs/psp-compatibility.md.
+The imagery itself (commercial games' frames and logos, a fan translation's title) is the owner's choice of 21 Oct
+~19:07 **(notes)**: every picture public, the fan translation's included.
+
+"On a Retroid Pocket 6", the device's screen recordings: MEDIA.md's rows and notes for clip-rp6-colin-mcrae,
+clip-rp6-mario-tennis and clip-rp6-themes (the device, nightly 216022, each piece and window, the GPU driver, the
+commands and the sha256s). "Turnip" in the intro and one caption: MEDIA.md's note on the driver (Turnip, StevenMXZ
+v27.0.0-R1, the app's active driver from 00:44:30). "The PSP renderer set to Software (exact), which draws at the native
+480x272" (Colin McRae's caption): MEDIA.md's row and note for clip-rp6-colin-mcrae, the app's pause menu in the same run
+of the game (piece 9 at 119.45 s, about 00:53:24) showing PSP Renderer set to Software (exact) and no "Restart to Apply"
+row, which android/.../ui/EmulationMenu.kt:454-483 adds once the settings a game takes as it starts differ from those
+it started with; the software renderer always draws at Native, 480x272: android/.../util/PspVideo.kt:62-67 and :76.
+Both files are the same at the nightly's commit, 8c2b1dde (git). "The focus moved with the controller": #51 ("Hardware
+buttons drive the menus: D-pad and stick move a visible focus") and the clip, in which the focus outline moves from row
+to row and card to card. Which clips: the owner's choices of 22 Oct ~01:10 **(notes)**, Colin McRae for the PSP and the
+second recording for the N64.
+
+## Story
+
+| Claim | Source |
+|---|---|
+| ares's line began on 14 October 2004: bsnes, then higan, then ares | README.md:5 ("began development on October 14th, 2004 as a descendant of higan and bsnes"); ares's own README:5-6 (the same); the order: Wikipedia, "Higan (emulator)" (fetched 21 Oct 2026: "Development of the emulator began with the name bsnes on October 14, 2004", and ares "a fork of higan") |
+| Trades some speed for clear code; state machines and bitmasks avoided | README.md:7 |
+| Near and the ares team | LICENSE:28 ("ares team, Near et al") |
+| "It started off as a desktop to Android port of ares" | The owner's own words, 21 Oct 2026 ~17:13 **(notes)**, tidied in capitals only, as he allowed (~18:27, **(notes)**) |
+| Forked at ares's commit of 25 July 2026 | docs/handoff.md:7911 (fork point `cdabe5c5a`); `git log -1 cdabe5c5a`: 2026-07-25 19:12 +0100 |
+| 27 July: 64-bit native Android app and native Vulkan for the N64, the same day | docs/progress.md:35, 57 (git history before 13 Sep 2026 isn't in git; the docs are the source) |
+| ares's desktop front end (desktop-ui, hiro, ruby) removed in Phobos | docs/handoff.md:7914 |
+| Kotlin and Jetpack Compose, JNI bridge | README.md:5, 259 |
+| ARM64 work on N64 recompilers and Vulkan renderer; drivers through libadrenotools | README.md:5, 147 |
+| v1.0.0 on 20 Aug 2026: Neo Geo, GPU Driver Manager, stable signing, PC Engine, SuperGrafx | `gh release view v1.0.0` (2026-08-20T19:47Z); docs/progress.md:59 |
+| 15 Sep: measurements for speed claims, independent review before merging | docs/progress.md:60; docs/development-process.md:9-48 |
+| 24 Sep: first pull request, Neo Geo CD menu text, DMA byte order (#1) | #1 (merged 2026-09-24T19:19Z); docs/progress.md:61 |
+| The N64 figures (#10, #15, #16, #17, #18: 4.76 to 4.15 W) | #10, #15-#18 titles; docs/progress.md:62 |
+| 37 themes (#9), performance overlay (#5), glass panels and dock (#20) | #9, #5, #20 titles; docs/progress.md:63 |
+| v1.1.0 on 28 Sep with #1-#25, frontends ES-DE and Daijisho (#25) | `gh release view v1.1.0` (2026-09-29T01:07Z = 28 Sep 21:07 EDT; its notes list #1-#25); #25 title |
+| That night, in-app updates (#26) | #26 (merged 2026-09-29T02:34Z = 28 Sep 22:34 EDT); docs/progress.md:65 |
+| 29 Sep: a PSP core to rival PPSSPP in compatibility and speed | docs/progress.md:66 |
+| 30 Sep: buttons drive the menus (#51) | #51 (merged 30 Sep); docs/implementation-plan.md:404 |
+| Breadth into early October (the list) | docs/progress.md:67 |
+| PPSSPP couldn't be adopted: it is under the GPL, and the console firmware ares compiles in can't be; clean room; HLE; recompiler from the start | docs/progress.md:76 ("PPSSPP can't be adopted: it is GPL-2.0-or-later, and the firmware ares compiles in can't be under the GPL.") |
+| 3 Oct: interpreter, recompiler, VFPU, first measurement on a real PSP, hello world | docs/progress.md:77-80 |
+| 5 Oct: PSP SDK samples in the app on the RP6 at 60 fps; Lumines and SF III 3rd Strike title screens | docs/progress.md:92, 94 |
+| 6 Oct: first 3D games in play, first at full speed on the device, all 266 games through the runner (#154) | docs/progress.md:96, 98, 100; #154 (merged into the PSP stack's branch 2026-10-07T04:15Z = 7 Oct 00:15 EDT; the first run was on 6 Oct, docs/progress.md:43) |
+| 7 Oct: hardware renderer on Vulkan | docs/progress.md:109 |
+| One game of 266 left black; v2.0.0 on 11 Oct, Experimental; 194 of 266 at a menu or gameplay | docs/progress.md:119; `gh release view v2.0.0` (2026-10-11T10:02Z) |
+| Four releases in five days, v2.1.0 to v2.4.0 | `gh release list` (12, 13, 14, 16 Oct); docs/progress.md:243-246 |
+| 16 Oct: PSP-1000 timed games' lists; 4 to 12 times the model; 2.7 to 14 frames a refresh against 0.5 to 1.8 | docs/progress.md:156, 163 |
+| 19 Oct: measured timing the default (#269) | #269 |
+| The "before" chart's values | docs/progress/data.json:335-336 |
+| "Has since merged back to desktop in an attempt to port it back to allow for easier controller navigation/use, as well as a sleek, modern UI." | The owner's own words, 21 Oct 2026 ~17:13 **(notes)**, the sentence's second half; "Has" capitalised to open the quote, as he allowed (~18:27, **(notes)**) |
+| 3 Oct: desktop builds, Linux AppImage, macOS app, Windows Phobos.exe, SDL 3, CI for every pull request | #97 (merged 2026-10-03T18:00Z); README.md:116-118; CMakeLists.txt:16-18 (SDL 3, release-3.2.30) |
+| PSP joined the desktop program on 6 Oct | docs/progress.md:99; git `c5418b698` (2026-10-06, "Desktop: PSP games") |
+| Desktop builds on every tagged release from v2.0.0 | `gh release view v2.0.0` ... `v2.4.0` assets |
+| Desktop is plain: library, pause menu, states, keyboards, SDL's debug font | README.md:119-121 |
+| The library and menus answer a gamepad | desktop/Input.cpp:16-24, :42 (SDL gamepad buttons mapped); desktop/main.cpp:650-651 ("the controller open[s] the menu"); the library's footer "Enter/A Play, F3/Y Games folder, F5/X Rescan" (media desktop-library) |
+| 20 Oct: N64 recompiler fixed on x86-64; built without ares's own compiler flags, two RSP helpers came out wrong; five games corrupt (#290) | docs/handoff.md:402-408 (ares compiles its code with `-fwrapv -fno-strict-aliasing`, which Phobos's CMakeLists.txt never included; without them GCC compiled VMOV's and VMULQ's reads wrong); #290 (merged 2026-10-20T21:47Z) |
+| #294, still open, brings hotkeys and a Hotkeys page to the desktop | `gh pr view 294` (open draft, opened 2026-10-21T21:07Z; its body: "a Hotkeys page in the pause menu: keyboard keys, pad buttons, triggers, stick directions and mouse buttons") |
+| Today: merged count, release count, latest release and its date | Derived from data/devlog.json and data/releases.json at build time |
+| Today: the GE keeps *close to* a real PSP's time | As for the highlights' "about as long as" above |
+
+## Timeline
+
+Each entry restates a claim above; the extra ones:
+
+| Claim | Source |
+|---|---|
+| 14 Oct 2004: the line ares descends from begins: bsnes, then higan, then ares | As for the story's first chapter above |
+| 5 Oct: the PSP SDK's samples on the RP6; on the host, the first retail title screens | docs/progress.md:92 (samples in the app on the RP6), :94 ("On the host, Lumines reached its title screen, and Street Fighter III 3rd Strike's port its own at 60 fps") |
+| 6 Oct: #154 merged into the PSP stack just after midnight | `gh pr list --state merged --json number,baseRefName,mergedAt`: #154 into `cursor/psp-test-data-2b67` at 2026-10-07T04:15:58Z |
+| 13 Oct v2.2.0, 14 Oct v2.3.0 and their summaries | `gh release list`; docs/progress.md:244-245 |
+| 14 Oct: the runner built for Android, a commit measured on the RP6 before it merges (#255) | #255 title; docs/progress.md:145 |
+| 15-16 Oct: whole library at 5x, no crashes, 232 averaged 59+ | docs/progress.md:160 |
+| 16 Oct v2.4.0 summary | docs/progress.md:243 |
+| 11 Oct: v2.0.0 merged as a stack of about 100 pull requests (#208) | docs/progress.md:118 ("About 100 pull requests, #100 to #209, as one"); the recount, from `gh pr list --state all --json number,headRefName,baseRefName,state`: 96 in the chain from #207 down to #100 (each one's base branch the next one's head), plus #154, #158, #165 and #179 merged into its branches; #208's body says 95 ("95 pull requests (#100–#207 except #103)") |
+| 12 Oct: system dialogs as the app's own (#221) | #221 title; docs/progress.md:128 |
+| 18 Oct: GE thread (#272), screenshots (#273); 19 Oct #269 (the GE takes about the time a PSP-1000 took); 20 Oct #277, #290; 21 Oct #292, #291 | the pull requests' titles and merge times; "about" as for the highlights above |
+
+## Development log
+
+| Claim | Source |
+|---|---|
+| Every merged pull request with its number, title, merge time and link | data/devlog.json (`gh pr list --state merged --limit 1000 --json number,title,mergedAt,url`), oldest first, fetched 00:26 EDT on 22 Oct |
+| Work went straight to master before 24 Sep | git: first-parent commits from 13 Sep 2026; #1 merged 24 Sep |
+| The PSP core's stack, about 100 pull requests numbered between #100 and #207, reached master together through #208; GitHub lists most as closed | docs/progress.md:118 and the recount, as for the timeline's 11 Oct entry above (96 in the chain, plus #154, #158, #165 and #179; #208's body says 95); 96 of the 100 are closed, and `gh pr list --state merged` holds only 7 of #100-#209 |
+| Five merged into other branches first and show with those dates: #154, #158, #165 and #179 into the PSP stack, #275 reaching master through #281 | `gh pr list --state merged --json number,baseRefName,mergedAt`: #154 `cursor/psp-test-data-2b67`, #158 `cursor/psp-ge-features-2b67`, #165 `cursor/psp-ge-curves-2b67`, #179 `cursor/psp-gpu-hw4-2b67`, #275 `pgd-comment-base`; #281's title ("... (#275, into master)") |
+| Releases table: the tagged releases; nightlies on the releases page | data/releases.json (`gh release list`), its tagged releases only; nightlies are replaced by each push to master (only the 3 newest were listed at 00:26 on 22 Oct: nightly-216017, nightly-216022 and nightly-216039), so the page links to the releases page for them |
+
+## Roadmap
+
+The roadmap's items and their wording are the owner's choice of 21 Oct ~19:07 **(notes)**.
+
+| Claim | Source |
+|---|---|
+| Polling-skip widening: skipping the loops in which Burnout Dominator, Need for Speed: Shift and Burnout Legends wait on the PSP, with exactly the results of running them | docs/handoff.md:267-272 (#291's RP6 run with the PSP's timing: the three games 6.9-8.6% slower than master; then "the polling skip's widening comes next"), :861-864 (#279's second review: the spin skip exact for every case the code allows; none of Burnout Dominator's turns skipped); docs/psp-core.md:19362-19373 (the polling games' host instructions with the PSP's timing), :20024 ("The polling skip's widening, the owner's order of 19 Oct: the games much slower with the PSP's timing"); **(notes)** for the three games as its targets |
+| A first step, tests of the skip as it is now, merged on 21 October (#295) | `gh pr view 295` (merged 2026-10-22T01:38:42Z, 21:38 EDT on 21 Oct; its body opens "The polling skip's widening, phase 2's first step: ... for today's code" and says "Tests only, no emulation code") |
+| The widening's status: code in progress | `gh pr view 297` (an open draft since 2026-10-22T03:46:50Z, the widening's code); not merged, so the page says only that it's in progress |
+| Dante's Inferno's loop skip: a skip for the loop in which the game waits, doing nothing, for its next frame; it goes into the PSP core once its reviews and frame-by-frame exactness checks pass | **(notes)** the owner's decisions of 21 Oct |
+| Hotkeys, #294 (open): combos of any length, three bindings, per-console and per-game, slow motion, frame advance | `gh pr view 294` |
+| GE thread's Auto with handover both ways; keeps a game synchronous where the threads would take turns; the app's switch once On beats Off | docs/handoff.md:758, 1211, 657-658 |
+| Live switching of the PSP's resolution and renderer; it waited for the GE thread and timing work, which has now merged | **(notes)** the owner's decision of 17 Oct 14:15 (wait until the GE thread, #272 and its second PR, and the GE timing, #266-#271, have merged); merged: #266 and #267 on 17 Oct, #268, #270, #271 and #272 on 18 Oct, #269 on 19 Oct, #277 on 20 Oct (`gh pr list --state merged`) |
+| Vulkan (accurate) faster | **(notes)** |
+
+## Credits and licences
+
+| Claim | Source |
+|---|---|
+| ares (ISC), sljit (BSD 2-clause), libchdr (BSD 3-clause), paraLLEl-RDP (MIT, modified), volk (MIT), Vulkan-Headers (Apache 2.0 or MIT), sse2neon (MIT), libadrenotools (BSD 2-clause), FFmpeg (LGPL 2.1), ymfm (BSD 3-clause), MAME portions (BSD 3-clause), C-BIOS (BSD-style); the "And" paragraph's first list; the app's fonts (SIL OFL 1.1) | LICENSE's notices (ares :25-41, sljit :43-70, libchdr :72-100, the rest in their own blocks); README.md:203 for MAME's scope |
+| Systematic console icons, BAXY Square, via RomM, MIT: the Library's console art, recoloured for each theme | LICENSE:3812-3827 ("Systematic console icons ... By BAXY Square ... Phobos recolors them at runtime", "MIT License", "Copyright (c) BAXY Square"); "via RomM": LICENSE:3816-3817 ("Obtained via RomM ..., which renamed and reformatted them") |
+| The ZX Spectrum ROMs, Amstrad's, redistributed with its permission | LICENSE:3858-3862 ("Amstrad have kindly given their permission for the redistribution of their copyrighted material but retain that copyright") |
+| Khronos's OpenGL and EGL headers, MIT-style | LICENSE:391-414 and :417-440 (the Khronos "Materials" permission notice, worded as MIT's); no compiled source includes them (docs/handoff.md:113-115), but LICENSE carries their notices, which is why the credits name them and leave off VMA and librashader, whose notices it doesn't carry |
+| SDL 3.2.30 (zlib), by Sam Lantinga and contributors | LICENSE:3108-3127 ("SDL 3.2.30 (linked into the desktop program: Linux, Windows and macOS)", "Copyright (C) 1997-2025 Sam Lantinga", then the zlib license's text) and :3294-3316 (its files by other authors, under the same text); CMakeLists.txt:16-18 (release-3.2.30) |
+| HIDAPI (BSD-style), by Alan Ott, Signal 11 Software, and the libusb/hidapi team: inside SDL's joystick code, on Linux, Windows and macOS | LICENSE:3131-3173: "HIDAPI (in SDL 3.2.30, src/hidapi: Linux, Windows and macOS)"; "SDL's joystick code compiles in its copy of HIDAPI: the hidraw backend on Linux ..., the Windows one ... and the macOS one" (:3134-3136); the lines its three files carry, "Alan Ott", "Signal 11 Software", "libusb/hidapi Team" (:3138-3141); "Phobos uses it under the BSD-style one" and "Copyright (c) 2010, Alan Ott, Signal 11 Software" (:3145-3148) |
+| Inside SDL 3.2.30: yuv2rgb | LICENSE:3177-3209: "yuv2rgb (in SDL 3.2.30, src/video/yuv2rgb: Linux, Windows and macOS)", "SDL's conversions between YUV and RGB pixel formats" (:3180); Adrien Descamps's (:3183), under the BSD 3-clause text that follows (:3186-3209) |
+| Inside SDL 3.2.30: stb_image's JPEG decoder | LICENSE:3213-3257: "stb_image 2.30 (in SDL 3.2.30, src/video/stb_image.h, its JPEG decoder: Linux, Windows and macOS)", "SDL decodes MJPEG frames with it" (:3216); Sean Barrett's (:3223), under the MIT License or in the public domain, whichever one prefers (:3220-3256) |
+| Inside SDL 3.2.30: SDL_rotate | LICENSE:3261-3290: "SDL_rotate (in SDL 3.2.30, src/render/software/SDL_rotate.c, from SDL_gfx: Linux, Windows and macOS)", "The software renderer rotates textures with it" (:3263); Andreas Schiffler's (:3269), under the zlib license's text (:3271-3288) |
+| Inside SDL 3.2.30, on Linux: the X11 EDID parser | LICENSE:3320-3342: "EDID parser (in SDL 3.2.30, src/video/x11/edid-parse.c and edid.h: Linux)", "SDL's X11 code reads displays' EDID with it" (:3322); Red Hat's (:3324), under an MIT-style permission notice (:3326-3342) |
+| Inside SDL 3.2.30, on Linux: the X11 XSETTINGS client | LICENSE:3346-3370: "XSETTINGS client (in SDL 3.2.30, src/video/x11/xsettings-client.c and xsettings-client.h: Linux)", "SDL's X11 code reads the desktop's settings with it" (:3348); Red Hat's and Igalia's (:3350-3351; "Author: Owen Taylor, Red Hat, Inc.", :3370), under a permission notice of its own (:3353-3368) |
+| Inside SDL 3.2.30, on Linux: imKStoUCS | LICENSE:3374-3400: "imKStoUCS (in SDL 3.2.30, src/events/imKStoUCS.c and imKStoUCS.h: Linux)", "SDL's X11 and Wayland code maps keysyms to Unicode with it" (:3376); Jamey Sharp's and Josh Triplett's, Red Hat's and Oracle's (:3378-3380), under an MIT-style permission notice (:3383-3400) |
+| Inside SDL 3.2.30, on Linux: code from xdg-user-dirs | LICENSE:3404-3430: "xdg-user-dirs (in SDL 3.2.30, src/filesystem/unix/SDL_sysfilesystem.c: Linux)", "SDL's two xdg_user_dir_lookup functions are copied from its xdg-user-dir-lookup.c and adapted" (:3407-3408); Red Hat's (:3410), under the MIT-style text that follows (:3412-3430) |
+| Inside SDL 3.2.30, on Linux: the Wayland protocols | LICENSE:3434-3549: "Wayland protocols (in SDL 3.2.30, its wayland-protocols folder: Linux)", "SDL generates its Wayland code from these 22 protocol files" (:3437); each file's copyright lines (:3443-3503), 21 of the files under one MIT-style permission notice (:3505-3522) and text-input-unstable-v3.xml under its own (:3524-3549) |
+| Inside SDL 3.2.30, on Linux: PipeWire's SPA header code | LICENSE:3553-3588: "PipeWire's SPA headers (in SDL 3.2.30's PipeWire audio and camera drivers: Linux)", whose static inline functions compile into the Linux program (:3556-3560); Wim Taymans's and Red Hat's (:3565-3569), under the MIT text that follows (:3571-3588) |
+| MoltenVK (Apache 2.0), by The Brenwill Workshop Ltd., for the Khronos Group; bundled in the macOS app | LICENSE:3592-3596 ("MoltenVK 1.4.2 (libMoltenVK.dylib, in the macOS app's Contents/Frameworks)", "Copyright (c) 2015-2026 The Brenwill Workshop Ltd.", "Licensed under the Apache License 2.0"); MoltenVK v1.4.2's README.md:10 (the same copyright line, read with `gh api`), hosted under KhronosGroup; its LICENSE at v1.4.2 (fetched 21 Oct); scripts/package-macos-app.sh:2, 14, 21 |
+| SPIRV-Cross (Apache 2.0 or MIT), by Arm Limited, The Brenwill Workshop Ltd., Bradley Austin Davis and Hans-Kristian Arntzen: its parser and its GLSL, MSL and reflection compilers, inside MoltenVK | LICENSE:3600-3614: "SPIRV-Cross (in libMoltenVK.dylib, in the macOS app's Contents/Frameworks)"; "its parser and its GLSL, MSL and reflection compilers" (:3603-3604); its copyright lines (:3606-3611); "SPDX-License-Identifier: Apache-2.0 OR MIT, used here under the Apache License 2.0" (:3612-3613) |
+| Inside MoltenVK: SPIRV-Tools | LICENSE:3618-3642: "SPIRV-Tools (in libMoltenVK.dylib, in the macOS app's Contents/Frameworks)", "its core library" (:3621-3624); the Khronos Group's, Google's and AMD's (:3626-3639), under the Apache License 2.0 (:3640) |
+| Inside MoltenVK: SPIRV-Headers | LICENSE:3646-3723: "SPIRV-Headers (in libMoltenVK.dylib, in the macOS app's Contents/Frameworks)", whose grammar files SPIRV-Tools' tables are generated from and whose spirv.hpp SPIRV-Cross compiles (:3649-3653); the Khronos Group's, under its MIT-style notice (:3655-3679), and the shipped grammar files' own statements, the Khronos Group's and Arm's, under the MIT License (:3681-3723) |
+| Inside MoltenVK: cereal | LICENSE:3727-3756: "cereal (in libMoltenVK.dylib, in the macOS app's Contents/Frameworks)", "its binary archives" (:3730-3731); Randolph Voorhies's and Shane Grant's (:3733), under the BSD 3-clause text that follows (:3736-3756) |
+| AppImage runtime (MIT), by probonopd: type2-runtime, the start of the Linux AppImage, which mounts or extracts the image after it | LICENSE:2778-3104: "AppImage runtime (type2-runtime, the start of the Linux AppImage, with the libraries linked into it)"; "The Linux AppImage begins with the AppImage runtime, the program that mounts or extracts the image after it: type2-runtime's continuous build" (:2781-2782); type2-runtime's LICENSE, "MIT License", "Copyright (c) 2004-23 probonopd" (:2812-2834) |
+| Linked into the AppImage runtime: musl, libfuse, squashfuse, zstd, zlib and mimalloc | LICENSE:2785-2810: the runtime is "statically linked with musl, libfuse 3.15.0 (patched by type2-runtime), squashfuse 0.5.2, zstd, zlib and mimalloc", then each part's licence and source: musl under the MIT license, Rich Felker et al. (:2792; its COPYRIGHT, :2851-3046); libfuse under the GNU LGPL 2.1, Miklos Szeredi (:2795-2799); squashfuse under its BSD-style licence, Dave Vasilevsky and Phillip Lougher (:2800-2801; :3048-3080); zstd under Zstandard's BSD licence (:2802-2804); zlib under zlib's, Jean-loup Gailly and Mark Adler (:2805-2808); mimalloc under the MIT license, Microsoft Corporation and Daan Leijen (:2809-2810; :3082-3104) |
+| libc++ (Apache 2.0 with LLVM Exceptions; MIT), by LLVM contributors: the Android NDK's C++ library, linked into the app's native libraries | LICENSE:1837-1891: "libc++ (the Android NDK's, linked statically into the APKs' native libraries)"; three of the APKs' native libraries carry it (:1840-1845); libcxx/LICENSE.TXT "puts LLVM's code under the Apache License 2.0, whose text appears above, with the LLVM Exceptions", and its code under LLVM's legacy license "is used here under the MIT license" (:1845-1850); "Copyright (c) 2009-2014 by the contributors listed in CREDITS.TXT" (:1873) |
+| "Every component's licence, in full, is in LICENSE" | LICENSE at master 062dd53e2: #296 ("LICENSE: the notices of the third-party code the builds ship that it lacked") merged on 22 Oct at 00:10 EDT (2026-10-22T04:10:26Z), adding 19 notices, 38 to 57 (its body; docs/handoff.md:44-48), and the credits are matched to it. #296's body also leaves a follow-up pull request to name libc++abi, libunwind and compiler-rt, "LLVM runtime libraries the APKs and, for compiler-rt, the macOS app also carry under libc++'s licence, not yet named"; that licence's text is libc++'s, which LICENSE carries (LICENSE:1837-1891, with the Apache License 2.0's text at LICENSE:181-386), so the sentence holds. The site names them once LICENSE does |
+| Phobos's licence text; components keep theirs; firmware not covered by the GPL | README.md:271-274; LICENSE:1-22 |
+| How it's made: AI coding agents under the owner's direction; independent review since September; measured on an RP6 and a PSP-1000 | docs/development-process.md:3-48 ("agent-authored"; independent review of the exact snapshot); docs/progress.md:60, 257; the commits' authors (Cursor Agent, Replit Agent) in git. The statement is kept as written, the owner's choice of 21 Oct ~19:07 **(notes)** |
+| Disclaimer: no games provided; systems that need a BIOS beyond the firmware ares ships take one from your own hardware | LICENSE:18-22 ("The console firmware that ares ships, compiled into the native library and in the APK's System folder, is not covered by the GPL ... Phobos includes it as upstream ares does"); README.md:173 (Settings → Firmware's Scan Folder identifies each BIOS by content); the wording is the owner's choice of 21 Oct ~19:07 **(notes)** |
+| Not affiliated with Sony, Nintendo, any other console maker or any game publisher; names, titles and trademarks theirs | True of the project: nothing in the repository or the releases claims otherwise; the site shows publishers' games and logos (the gallery, the 266-game wall), hence "any game publisher" and "what each picture shows" |
+| Footer: no games are provided; not affiliated with Sony, Nintendo or any other console maker or game publisher | As for the disclaimer; data/site.json `footer_fine_md` |
+| Footer: the site's own code is free software, GPL-3.0-or-later, linked to its LICENSE; game pictures, clips and trademarks excluded and their owners' | The owner's decision of 22 Oct ~01:10 **(notes)**; the site's LICENSE, the GNU GPL's text, version 3 (byte for byte gnu.org's gpl-3.0.txt and Phobos's COPYING), and README's Licence section, which names the code it covers and the "or later"; the link's address follows the host, as for the site's address below |
+| The site's address (canonical links, og:url, og:image, twitter:image, the 404 page's `<base>`) | The owner's choice of host **(notes)**: https://pwnedbygary.github.io/phobos-site/; data/site.json `base_url` |
+
+## Left off the site
+
+- The owner's other words from private chats: quoting them needs his agreement.
+- "this repository carries that history from bsnes in August 2010 onward" (docs/progress.md:57), of ares's history:
+  this machine's clone is shallow, so it couldn't be checked.
+- Argosy among the frontends: v1.1.0's notes name it, but README.md:211-213 says it will work only once its maintainers
+  accept Phobos's entry, so the site names ES-DE and Daijisho only.
+- Vulkan Memory Allocator and librashader: vendored in thirdparty/ but in no build (nothing outside thirdparty/
+  includes `vk_mem_alloc.h` or librashader's headers; #296's handoff entry, docs/handoff.md:110-113, says the same).
+- libc++abi, libunwind and compiler-rt: LLVM runtime libraries the APKs and, for compiler-rt, the macOS app carry under
+  libc++'s licence. LICENSE doesn't name them yet (#296's body leaves that to a follow-up pull request), so the credits
+  don't either.
+- The current desktop interface as "sleek" or "controller-first": not claimed; the site says it's plain today and
+  quotes the owner's aim.
+- Which round of review a roadmap design is in, and who reviewed what: not stated.
+- Any date for the roadmap's items.
+
+## Noticed while checking (for the repository, not the site)
+
+- #296 merged on 22 Oct (00:10 EDT), and LICENSE now carries the notices of SDL 3, MoltenVK and the AppImage runtime
+  and of the code inside them. VMA, librashader, jansson and GLFW need none: none of them is in any build
+  (docs/handoff.md:110-113).
+- Nightly releases carry only the Android APKs, so the newest desktop build is v2.4.0's.

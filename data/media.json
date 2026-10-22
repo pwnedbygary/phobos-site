@@ -1,0 +1,439 @@
+{
+ "hero-reel": {
+  "kind": "video",
+  "width": 1280,
+  "height": 726,
+  "duration": 12.0,
+  "poster": false,
+  "bytes": {
+   "mp4": 2243295,
+   "webm": 2727438
+  }
+ },
+ "clip-colin-mcrae": {
+  "kind": "video",
+  "width": 1280,
+  "height": 726,
+  "duration": 8.0,
+  "bytes": {
+   "mp4": 2079325,
+   "webm": 2544159
+  }
+ },
+ "clip-armored-core": {
+  "kind": "video",
+  "width": 1280,
+  "height": 726,
+  "duration": 7.0,
+  "bytes": {
+   "mp4": 1882580,
+   "webm": 1500887
+  }
+ },
+ "clip-nfs-most-wanted": {
+  "kind": "video",
+  "width": 1280,
+  "height": 726,
+  "duration": 8.0,
+  "bytes": {
+   "mp4": 2142677,
+   "webm": 2392765
+  }
+ },
+ "clip-army-of-two": {
+  "kind": "video",
+  "width": 1280,
+  "height": 726,
+  "duration": 8.0,
+  "bytes": {
+   "mp4": 1687397,
+   "webm": 1657794
+  }
+ },
+ "clip-rp6-colin-mcrae": {
+  "kind": "video",
+  "width": 1280,
+  "height": 720,
+  "duration": 8.0,
+  "poster": true,
+  "bytes": {
+   "mp4": 2302858,
+   "webm": 2354761
+  }
+ },
+ "clip-rp6-mario-tennis": {
+  "kind": "video",
+  "width": 1280,
+  "height": 720,
+  "duration": 12.0,
+  "poster": true,
+  "bytes": {
+   "mp4": 1326725,
+   "webm": 1749000
+  }
+ },
+ "clip-rp6-themes": {
+  "kind": "video",
+  "width": 1280,
+  "height": 720,
+  "duration": 10.0,
+  "poster": true,
+  "bytes": {
+   "mp4": 927310,
+   "webm": 1061564
+  }
+ },
+ "psp-wipeout": {
+  "kind": "image",
+  "widths": [
+   640,
+   1280,
+   1920
+  ],
+  "heights": [
+   362,
+   726,
+   1088
+  ],
+  "formats": [
+   "avif",
+   "webp"
+  ]
+ },
+ "psp-colin-mcrae": {
+  "kind": "image",
+  "widths": [
+   640,
+   1280,
+   1920
+  ],
+  "heights": [
+   362,
+   726,
+   1088
+  ],
+  "formats": [
+   "avif",
+   "webp"
+  ]
+ },
+ "psp-armored-core": {
+  "kind": "image",
+  "widths": [
+   640,
+   1280,
+   1920
+  ],
+  "heights": [
+   362,
+   726,
+   1088
+  ],
+  "formats": [
+   "avif",
+   "webp"
+  ]
+ },
+ "psp-army-of-two": {
+  "kind": "image",
+  "widths": [
+   640,
+   1280,
+   1920
+  ],
+  "heights": [
+   362,
+   726,
+   1088
+  ],
+  "formats": [
+   "avif",
+   "webp"
+  ]
+ },
+ "psp-nfs-most-wanted": {
+  "kind": "image",
+  "widths": [
+   640,
+   1280,
+   1920
+  ],
+  "heights": [
+   362,
+   726,
+   1088
+  ],
+  "formats": [
+   "avif",
+   "webp"
+  ]
+ },
+ "psp-kurohyou-2": {
+  "kind": "image",
+  "widths": [
+   640,
+   1280,
+   1920
+  ],
+  "heights": [
+   362,
+   726,
+   1088
+  ],
+  "formats": [
+   "avif",
+   "webp"
+  ]
+ },
+ "psp-death-jr-2": {
+  "kind": "image",
+  "widths": [
+   640,
+   1280,
+   1920
+  ],
+  "heights": [
+   362,
+   726,
+   1088
+  ],
+  "formats": [
+   "avif",
+   "webp"
+  ]
+ },
+ "psp-il2": {
+  "kind": "image",
+  "widths": [
+   640,
+   1280,
+   1920
+  ],
+  "heights": [
+   362,
+   726,
+   1088
+  ],
+  "formats": [
+   "avif",
+   "webp"
+  ]
+ },
+ "psp-ghost-of-sparta": {
+  "kind": "image",
+  "widths": [
+   640,
+   1280,
+   1920
+  ],
+  "heights": [
+   362,
+   726,
+   1088
+  ],
+  "formats": [
+   "avif",
+   "webp"
+  ]
+ },
+ "psp-sonic-rivals": {
+  "kind": "image",
+  "widths": [
+   640,
+   1280,
+   1920
+  ],
+  "heights": [
+   362,
+   726,
+   1088
+  ],
+  "formats": [
+   "avif",
+   "webp"
+  ]
+ },
+ "psp-wall": {
+  "kind": "image",
+  "widths": [
+   760,
+   1520,
+   3040
+  ],
+  "heights": [
+   318,
+   638,
+   1274
+  ],
+  "formats": [
+   "avif",
+   "webp"
+  ]
+ },
+ "rp6-n64-mario-tennis": {
+  "kind": "image",
+  "widths": [
+   640,
+   1280,
+   1920
+  ],
+  "heights": [
+   360,
+   720,
+   1080
+  ],
+  "formats": [
+   "avif",
+   "webp"
+  ]
+ },
+ "rp6-n64-f-zero-x": {
+  "kind": "image",
+  "widths": [
+   640,
+   1280,
+   1920
+  ],
+  "heights": [
+   360,
+   720,
+   1080
+  ],
+  "formats": [
+   "avif",
+   "webp"
+  ]
+ },
+ "rp6-n64-ocarina": {
+  "kind": "image",
+  "widths": [
+   640,
+   1280,
+   1920
+  ],
+  "heights": [
+   360,
+   720,
+   1080
+  ],
+  "formats": [
+   "avif",
+   "webp"
+  ]
+ },
+ "rp6-n64-ocarina-before": {
+  "kind": "image",
+  "widths": [
+   640,
+   1280
+  ],
+  "heights": [
+   360,
+   720
+  ],
+  "formats": [
+   "avif",
+   "webp"
+  ]
+ },
+ "rp6-n64-paper-mario": {
+  "kind": "image",
+  "widths": [
+   640,
+   1280,
+   1920
+  ],
+  "heights": [
+   360,
+   720,
+   1080
+  ],
+  "formats": [
+   "avif",
+   "webp"
+  ]
+ },
+ "rp6-library": {
+  "kind": "image",
+  "widths": [
+   640,
+   1280,
+   1920
+  ],
+  "heights": [
+   360,
+   720,
+   1080
+  ],
+  "formats": [
+   "avif",
+   "webp"
+  ]
+ },
+ "desktop-library": {
+  "kind": "image",
+  "widths": [
+   640,
+   1280
+  ],
+  "heights": [
+   360,
+   720
+  ],
+  "formats": [
+   "avif",
+   "webp"
+  ]
+ },
+ "desktop-locoroco": {
+  "kind": "image",
+  "widths": [
+   640,
+   1280
+  ],
+  "heights": [
+   360,
+   720
+  ],
+  "formats": [
+   "avif",
+   "webp"
+  ]
+ },
+ "desktop-pause-menu": {
+  "kind": "image",
+  "widths": [
+   640,
+   1280
+  ],
+  "heights": [
+   360,
+   720
+  ],
+  "formats": [
+   "avif",
+   "webp"
+  ]
+ },
+ "phobos-logo": {
+  "kind": "copy",
+  "file": "brand/phobos-logo.png",
+  "width": 1004,
+  "height": 280
+ },
+ "icons": {
+  "kind": "icons",
+  "files": {
+   "favicon-32": "brand/favicon-32.png",
+   "icon-64": "brand/icon-64.png",
+   "apple-touch-icon": "brand/apple-touch-icon.png",
+   "ico": "brand/favicon.ico"
+  }
+ },
+ "og-share": {
+  "kind": "copy",
+  "file": "brand/og-share.jpg",
+  "width": 1200,
+  "height": 630
+ }
+}

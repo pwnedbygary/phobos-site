@@ -1,0 +1,59 @@
+{
+  "legend": [
+    {"status": "verified", "label": "Verified with games on a device"},
+    {"status": "experimental", "label": "Experimental (new in 2.0)"},
+    {"status": "untried", "label": "In, not yet tried with a game on a device"}
+  ],
+  "groups": [
+    {"maker": "Nintendo", "systems": [
+      {"name": "Famicom", "status": "verified"},
+      {"name": "Super Famicom", "status": "verified"},
+      {"name": "Game Boy", "status": "verified"},
+      {"name": "Game Boy Color", "status": "verified"},
+      {"name": "Game Boy Advance", "status": "verified"},
+      {"name": "Super Game Boy", "status": "untried"},
+      {"name": "Nintendo 64", "status": "verified", "note": "with 64DD"}
+    ]},
+    {"maker": "Sega", "systems": [
+      {"name": "SG-1000", "status": "verified"},
+      {"name": "Master System", "status": "verified"},
+      {"name": "Game Gear", "status": "verified"},
+      {"name": "Mega Drive", "status": "verified"},
+      {"name": "Mega CD", "status": "verified"},
+      {"name": "Mega 32X", "status": "verified"},
+      {"name": "Mega CD 32X", "status": "untried"}
+    ]},
+    {"maker": "Sony", "systems": [
+      {"name": "PlayStation", "status": "verified"},
+      {"name": "PlayStation Portable", "status": "experimental", "note": "Phobos's own core"}
+    ]},
+    {"maker": "NEC", "systems": [
+      {"name": "PC Engine", "status": "verified"},
+      {"name": "PC Engine CD", "status": "verified"},
+      {"name": "SuperGrafx", "status": "verified"}
+    ]},
+    {"maker": "SNK", "systems": [
+      {"name": "Neo Geo", "status": "verified", "note": "MVS and AES"},
+      {"name": "Neo Geo CD", "status": "verified"},
+      {"name": "Neo Geo Pocket", "status": "verified"},
+      {"name": "Neo Geo Pocket Color", "status": "verified"}
+    ]},
+    {"maker": "Bandai and Benesse", "systems": [
+      {"name": "WonderSwan", "status": "verified"},
+      {"name": "WonderSwan Color", "status": "verified"},
+      {"name": "Pocket Challenge V2", "status": "untried"}
+    ]},
+    {"maker": "Pioneer LaserActive", "systems": [
+      {"name": "Mega LD", "status": "untried"},
+      {"name": "PC Engine LD", "status": "untried"}
+    ]},
+    {"maker": "Computers, consoles and arcade", "systems": [
+      {"name": "Atari 2600", "status": "verified"},
+      {"name": "ColecoVision", "status": "verified"},
+      {"name": "MSX", "status": "verified"},
+      {"name": "MSX2", "status": "verified"},
+      {"name": "ZX Spectrum", "status": "verified", "note": "48K and 128K"},
+      {"name": "Arcade", "status": "untried", "note": "Aleck64, SG-1000A"}
+    ]}
+  ]
+}

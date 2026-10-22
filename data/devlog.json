@@ -1,0 +1,1117 @@
+{
+ "source": "gh pr list --repo pwnedbygary/phobos --state merged --limit 1000 --json number,title,mergedAt,url",
+ "fetched": "2026-10-22T04:26:24Z",
+ "count": 185,
+ "pulls": [
+  {
+   "mergedAt": "2026-09-24T19:19:12Z",
+   "number": 1,
+   "title": "fix(neogeo-cd): garbled title-menu text, DMA 0xe2dd byte order",
+   "url": "https://github.com/pwnedbygary/phobos/pull/1"
+  },
+  {
+   "mergedAt": "2026-09-25T18:12:18Z",
+   "number": 2,
+   "title": "Touch controls overhaul, host performance pass, opt-in async RDP, Rogue Squadron hold fix",
+   "url": "https://github.com/pwnedbygary/phobos/pull/2"
+  },
+  {
+   "mergedAt": "2026-09-25T18:52:20Z",
+   "number": 3,
+   "title": "N64 JIT: same-section unconditional J linking",
+   "url": "https://github.com/pwnedbygary/phobos/pull/3"
+  },
+  {
+   "mergedAt": "2026-09-28T00:02:22Z",
+   "number": 4,
+   "title": "N64: wider accuracy-gated JIT linking, cheaper RSP/frame handoff, opt-in speed hacks",
+   "url": "https://github.com/pwnedbygary/phobos/pull/4"
+  },
+  {
+   "mergedAt": "2026-09-28T00:02:22Z",
+   "number": 5,
+   "title": "Android: MangoHud-style performance HUD (stacked on #4)",
+   "url": "https://github.com/pwnedbygary/phobos/pull/5"
+  },
+  {
+   "mergedAt": "2026-09-28T00:02:22Z",
+   "number": 6,
+   "title": "Android: keep the emulation thread on the fastest CPU core (stacked on #5)",
+   "url": "https://github.com/pwnedbygary/phobos/pull/6"
+  },
+  {
+   "mergedAt": "2026-09-28T00:02:22Z",
+   "number": 7,
+   "title": "N64: restore upstream RSP pipeline copy (reverts #4 hash skip; stacked on #6)",
+   "url": "https://github.com/pwnedbygary/phobos/pull/7"
+  },
+  {
+   "mergedAt": "2026-09-28T00:02:22Z",
+   "number": 8,
+   "title": "Frame handoff no longer waits for the display; RSP trims; pause menu cleanup (stacked on #7)",
+   "url": "https://github.com/pwnedbygary/phobos/pull/8"
+  },
+  {
+   "mergedAt": "2026-09-28T00:02:22Z",
+   "number": 9,
+   "title": "UI: theme system with 37 IDE colorway themes and optional Retrowave effects (stacked on #8)",
+   "url": "https://github.com/pwnedbygary/phobos/pull/9"
+  },
+  {
+   "mergedAt": "2026-09-28T00:02:22Z",
+   "number": 10,
+   "title": "N64 JIT: keep loops inside the block (dispatcher round trips 10.1 → 0.6 M/s); speed-hack re-measure docs",
+   "url": "https://github.com/pwnedbygary/phobos/pull/10"
+  },
+  {
+   "mergedAt": "2026-09-28T00:02:22Z",
+   "number": 11,
+   "title": "N64: B on the face button above-left of A (RP6 physical Y); Retrowave neon edge on library tiles",
+   "url": "https://github.com/pwnedbygary/phobos/pull/11"
+  },
+  {
+   "mergedAt": "2026-09-28T00:02:22Z",
+   "number": 12,
+   "title": "N64 JIT: exact idle-loop skip while fast-forwarding (uncapped FF 103 → ~111 FPS); fast-core findings",
+   "url": "https://github.com/pwnedbygary/phobos/pull/12"
+  },
+  {
+   "mergedAt": "2026-09-28T00:02:22Z",
+   "number": 13,
+   "title": "N64: Turnip binary fences end the Mario Tennis rally dips; optional busy-wait between frames; launch intent opens the game screen",
+   "url": "https://github.com/pwnedbygary/phobos/pull/13"
+  },
+  {
+   "mergedAt": "2026-09-28T00:02:22Z",
+   "number": 14,
+   "title": "N64: pace at the VI's real field rate (59.826 Hz progressive); dynamic audio rate control ends ring overflow and underruns",
+   "url": "https://github.com/pwnedbygary/phobos/pull/14"
+  },
+  {
+   "mergedAt": "2026-09-28T00:26:14Z",
+   "number": 15,
+   "title": "N64 RSP JIT: multiply-accumulate instructions as inline NEON (bit-exact, -3% per-frame work)",
+   "url": "https://github.com/pwnedbygary/phobos/pull/15"
+  },
+  {
+   "mergedAt": "2026-09-28T01:54:22Z",
+   "number": 16,
+   "title": "N64 RSP JIT: keep the accumulator in NEON registers between instructions (-2.3% per-frame work)",
+   "url": "https://github.com/pwnedbygary/phobos/pull/16"
+  },
+  {
+   "mergedAt": "2026-09-28T03:36:58Z",
+   "number": 17,
+   "title": "parallel-RDP: keep up to 256 render contexts in flight (Mario Tennis showcase stutter: 82 → 5 late frames)",
+   "url": "https://github.com/pwnedbygary/phobos/pull/17"
+  },
+  {
+   "mergedAt": "2026-09-28T07:25:43Z",
+   "number": 18,
+   "title": "N64 busy-wait: wait in WFE instead of spinning (same CPU 7 placement and clock, half the power: 4.76 → 4.15 W)",
+   "url": "https://github.com/pwnedbygary/phobos/pull/18"
+  },
+  {
+   "mergedAt": "2026-09-28T19:31:12Z",
+   "number": 19,
+   "title": "UI: Library tiles and system page on the Settings card surface; console art drawn in the theme's colors",
+   "url": "https://github.com/pwnedbygary/phobos/pull/19"
+  },
+  {
+   "mergedAt": "2026-09-28T19:31:12Z",
+   "number": 20,
+   "title": "UI: glass panels over soft color glows and a floating glass dock, contrast-checked in every theme (stacked on #19)",
+   "url": "https://github.com/pwnedbygary/phobos/pull/20"
+  },
+  {
+   "mergedAt": "2026-09-28T19:31:12Z",
+   "number": 21,
+   "title": "UI: Full Screen Mode also hides the status bar in the menus",
+   "url": "https://github.com/pwnedbygary/phobos/pull/21"
+  },
+  {
+   "mergedAt": "2026-09-28T19:58:27Z",
+   "number": 22,
+   "title": "UI: a frosted, refracting lens on the dock (Compose 1.7)",
+   "url": "https://github.com/pwnedbygary/phobos/pull/22"
+  },
+  {
+   "mergedAt": "2026-09-28T21:23:26Z",
+   "number": 23,
+   "title": "Cleanup: readable text on the Retrowave sun, fast-core option in N64 Experimental, sweep and plans",
+   "url": "https://github.com/pwnedbygary/phobos/pull/23"
+  },
+  {
+   "mergedAt": "2026-09-28T23:43:15Z",
+   "number": 24,
+   "title": "Sweep fixes: confirmations, full screen at launch and in dialogs, driver update lines",
+   "url": "https://github.com/pwnedbygary/phobos/pull/24"
+  },
+  {
+   "mergedAt": "2026-09-29T00:47:31Z",
+   "number": 25,
+   "title": "Frontends can start games in Phobos (ES-DE, Daijisho, Argosy)",
+   "url": "https://github.com/pwnedbygary/phobos/pull/25"
+  },
+  {
+   "mergedAt": "2026-09-29T02:34:18Z",
+   "number": 26,
+   "title": "In-app updates from GitHub releases; builds numbered from git history",
+   "url": "https://github.com/pwnedbygary/phobos/pull/26"
+  },
+  {
+   "mergedAt": "2026-09-29T14:16:07Z",
+   "number": 27,
+   "title": "Docs: new systems to add, and the Argosy entry submitted",
+   "url": "https://github.com/pwnedbygary/phobos/pull/27"
+  },
+  {
+   "mergedAt": "2026-09-29T14:16:18Z",
+   "number": 28,
+   "title": "Docs: a performance scan of every core, and ares's speed-leaning defaults",
+   "url": "https://github.com/pwnedbygary/phobos/pull/28"
+  },
+  {
+   "mergedAt": "2026-09-29T20:34:56Z",
+   "number": 29,
+   "title": "N64 save import and export in the pause menu (Task 49)",
+   "url": "https://github.com/pwnedbygary/phobos/pull/29"
+  },
+  {
+   "mergedAt": "2026-09-29T21:54:59Z",
+   "number": 30,
+   "title": "New app logo: pixel-art Phobos with a D-pad crater, in front of Mars",
+   "url": "https://github.com/pwnedbygary/phobos/pull/30"
+  },
+  {
+   "mergedAt": "2026-09-29T22:14:30Z",
+   "number": 31,
+   "title": "Pixel art style for the app UI",
+   "url": "https://github.com/pwnedbygary/phobos/pull/31"
+  },
+  {
+   "mergedAt": "2026-09-29T22:59:30Z",
+   "number": 32,
+   "title": "CRT terminal style for the app UI",
+   "url": "https://github.com/pwnedbygary/phobos/pull/32"
+  },
+  {
+   "mergedAt": "2026-09-29T23:18:08Z",
+   "number": 33,
+   "title": "16-bit RPG style for the app UI",
+   "url": "https://github.com/pwnedbygary/phobos/pull/33"
+  },
+  {
+   "mergedAt": "2026-09-29T23:57:30Z",
+   "number": 34,
+   "title": "Manga ink style for the app UI",
+   "url": "https://github.com/pwnedbygary/phobos/pull/34"
+  },
+  {
+   "mergedAt": "2026-09-29T23:57:43Z",
+   "number": 35,
+   "title": "XMB waves style for the app UI",
+   "url": "https://github.com/pwnedbygary/phobos/pull/35"
+  },
+  {
+   "mergedAt": "2026-09-30T01:11:13Z",
+   "number": 36,
+   "title": "Ship the firmware upstream ares ships",
+   "url": "https://github.com/pwnedbygary/phobos/pull/36"
+  },
+  {
+   "mergedAt": "2026-09-30T03:19:58Z",
+   "number": 37,
+   "title": "Connect Settings > Video to the cores; crop the border by default",
+   "url": "https://github.com/pwnedbygary/phobos/pull/37"
+  },
+  {
+   "mergedAt": "2026-09-30T05:36:54Z",
+   "number": 38,
+   "title": "Theme-colored Library tiles; outline text over uncontrolled backgrounds",
+   "url": "https://github.com/pwnedbygary/phobos/pull/38"
+  },
+  {
+   "mergedAt": "2026-09-30T05:36:55Z",
+   "number": 39,
+   "title": "Log Console follows every new line; the button jumps to the newest",
+   "url": "https://github.com/pwnedbygary/phobos/pull/39"
+  },
+  {
+   "mergedAt": "2026-09-30T13:03:16Z",
+   "number": 40,
+   "title": "Neo Geo CD sound: Z80 program RAM, CD audio, and the drive fixes music needs",
+   "url": "https://github.com/pwnedbygary/phobos/pull/40"
+  },
+  {
+   "mergedAt": "2026-09-30T13:21:39Z",
+   "number": 41,
+   "title": "Neo Geo CD Loading Speed: run faster while the disc loads, drive untouched",
+   "url": "https://github.com/pwnedbygary/phobos/pull/41"
+  },
+  {
+   "mergedAt": "2026-09-30T13:25:58Z",
+   "number": 42,
+   "title": "Pause menu: choose what the Performance Monitor shows without leaving the game",
+   "url": "https://github.com/pwnedbygary/phobos/pull/42"
+  },
+  {
+   "mergedAt": "2026-09-30T13:42:39Z",
+   "number": 43,
+   "title": "Neo Geo CD save states keep the CD's memories and drive state",
+   "url": "https://github.com/pwnedbygary/phobos/pull/43"
+  },
+  {
+   "mergedAt": "2026-09-30T13:47:08Z",
+   "number": 44,
+   "title": "Firmware slot picks keep working after an update or a reboot",
+   "url": "https://github.com/pwnedbygary/phobos/pull/44"
+  },
+  {
+   "mergedAt": "2026-09-30T13:57:36Z",
+   "number": 45,
+   "title": "Say when a state doesn't load; name the game without its extension",
+   "url": "https://github.com/pwnedbygary/phobos/pull/45"
+  },
+  {
+   "mergedAt": "2026-09-30T14:56:55Z",
+   "number": 46,
+   "title": "Docs: record the 32X device results",
+   "url": "https://github.com/pwnedbygary/phobos/pull/46"
+  },
+  {
+   "mergedAt": "2026-09-30T16:59:38Z",
+   "number": 47,
+   "title": "Neo Geo CD boots games by itself; the CDZ's drive reads at double speed",
+   "url": "https://github.com/pwnedbygary/phobos/pull/47"
+  },
+  {
+   "mergedAt": "2026-09-30T17:23:00Z",
+   "number": 48,
+   "title": "Neo Geo picture without its border unless Overscan is on",
+   "url": "https://github.com/pwnedbygary/phobos/pull/48"
+  },
+  {
+   "mergedAt": "2026-09-30T17:23:10Z",
+   "number": 49,
+   "title": "Performance Monitor items can be reordered; the graph follows FPS by default",
+   "url": "https://github.com/pwnedbygary/phobos/pull/49"
+  },
+  {
+   "mergedAt": "2026-09-30T17:23:14Z",
+   "number": 50,
+   "title": "Library shows the running game with Resume; tapping it no longer restarts it",
+   "url": "https://github.com/pwnedbygary/phobos/pull/50"
+  },
+  {
+   "mergedAt": "2026-09-30T18:04:09Z",
+   "number": 51,
+   "title": "Hardware buttons drive the menus: D-pad and stick move a visible focus, L1/R1 switch tabs",
+   "url": "https://github.com/pwnedbygary/phobos/pull/51"
+  },
+  {
+   "mergedAt": "2026-09-30T18:24:42Z",
+   "number": 52,
+   "title": "Docs: record the RP6 results for the border crop, HUD order, Running card and controller navigation",
+   "url": "https://github.com/pwnedbygary/phobos/pull/52"
+  },
+  {
+   "mergedAt": "2026-09-30T20:25:08Z",
+   "number": 53,
+   "title": "Merge upstream ares to 2026-09-22: Atari 2600 overhaul, NES, GBA and N64 fixes, newer sljit",
+   "url": "https://github.com/pwnedbygary/phobos/pull/53"
+  },
+  {
+   "mergedAt": "2026-09-30T21:14:24Z",
+   "number": 54,
+   "title": "Touch can't open the pause menu by accident: a tap shows a Menu button first",
+   "url": "https://github.com/pwnedbygary/phobos/pull/54"
+  },
+  {
+   "mergedAt": "2026-09-30T21:53:01Z",
+   "number": 55,
+   "title": "PS1 memory cards are saved: one card file per game, shared by its discs",
+   "url": "https://github.com/pwnedbygary/phobos/pull/55"
+  },
+  {
+   "mergedAt": "2026-09-30T21:53:11Z",
+   "number": 56,
+   "title": "Pause menu without duplicates: Controls toggles touch, Disc joins the quick actions",
+   "url": "https://github.com/pwnedbygary/phobos/pull/56"
+  },
+  {
+   "mergedAt": "2026-09-30T23:06:11Z",
+   "number": 57,
+   "title": "Multi-disc games: one Library entry and a disc chooser; discs load where they are",
+   "url": "https://github.com/pwnedbygary/phobos/pull/57"
+  },
+  {
+   "mergedAt": "2026-09-30T23:25:58Z",
+   "number": 58,
+   "title": "Neo Geo Pocket saves are kept: no temp copy of program.flash written back over them",
+   "url": "https://github.com/pwnedbygary/phobos/pull/58"
+  },
+  {
+   "mergedAt": "2026-10-01T02:10:59Z",
+   "number": 59,
+   "title": "Firmware copied only for the game's system: loads up to a second faster",
+   "url": "https://github.com/pwnedbygary/phobos/pull/59"
+  },
+  {
+   "mergedAt": "2026-10-01T02:36:42Z",
+   "number": 60,
+   "title": "ZX Spectrum control schemes: Sinclair, Cursor and QAOP, remembered per game",
+   "url": "https://github.com/pwnedbygary/phobos/pull/60"
+  },
+  {
+   "mergedAt": "2026-10-01T03:08:18Z",
+   "number": 61,
+   "title": "ZX Spectrum keyboard: the 48K's layout and legends, with the game kept in view",
+   "url": "https://github.com/pwnedbygary/phobos/pull/61"
+  },
+  {
+   "mergedAt": "2026-10-01T03:29:50Z",
+   "number": 62,
+   "title": "ZX Spectrum tape loading speed: the game runs faster while a loader reads the tape",
+   "url": "https://github.com/pwnedbygary/phobos/pull/62"
+  },
+  {
+   "mergedAt": "2026-10-01T12:08:48Z",
+   "number": 63,
+   "title": "Controller settings per game and per console, from the pause menu",
+   "url": "https://github.com/pwnedbygary/phobos/pull/63"
+  },
+  {
+   "mergedAt": "2026-10-01T14:40:33Z",
+   "number": 64,
+   "title": "Touch controls work under the Performance Monitor",
+   "url": "https://github.com/pwnedbygary/phobos/pull/64"
+  },
+  {
+   "mergedAt": "2026-10-01T14:40:35Z",
+   "number": 65,
+   "title": "Build script: the release signing comment says what signs it",
+   "url": "https://github.com/pwnedbygary/phobos/pull/65"
+  },
+  {
+   "mergedAt": "2026-10-01T21:40:14Z",
+   "number": 66,
+   "title": "Pixel art style: Galmuri for clearer text",
+   "url": "https://github.com/pwnedbygary/phobos/pull/66"
+  },
+  {
+   "mergedAt": "2026-10-02T00:35:34Z",
+   "number": 67,
+   "title": "ZX Spectrum tape controls: the tape plays for loads and stops between them",
+   "url": "https://github.com/pwnedbygary/phobos/pull/67"
+  },
+  {
+   "mergedAt": "2026-10-02T03:44:08Z",
+   "number": 68,
+   "title": "ZX Spectrum save states load, and are kilobytes rather than megabytes",
+   "url": "https://github.com/pwnedbygary/phobos/pull/68"
+  },
+  {
+   "mergedAt": "2026-10-02T04:22:21Z",
+   "number": 69,
+   "title": "MSX and MSX2 on-screen keyboard",
+   "url": "https://github.com/pwnedbygary/phobos/pull/69"
+  },
+  {
+   "mergedAt": "2026-10-02T05:25:56Z",
+   "number": 70,
+   "title": "MSX2: 212-line pictures are shown whole and placed as on the V9938",
+   "url": "https://github.com/pwnedbygary/phobos/pull/70"
+  },
+  {
+   "mergedAt": "2026-10-02T05:48:30Z",
+   "number": 71,
+   "title": "Performance monitor: places to put it, and an edit mode to move and resize it",
+   "url": "https://github.com/pwnedbygary/phobos/pull/71"
+  },
+  {
+   "mergedAt": "2026-10-02T06:26:34Z",
+   "number": 72,
+   "title": "Licensing: the notices Phobos owed, in LICENSE and in the app",
+   "url": "https://github.com/pwnedbygary/phobos/pull/72"
+  },
+  {
+   "mergedAt": "2026-10-02T07:20:49Z",
+   "number": 73,
+   "title": "Pixel art: animated backdrops, four scenes to choose from",
+   "url": "https://github.com/pwnedbygary/phobos/pull/73"
+  },
+  {
+   "mergedAt": "2026-10-02T11:09:52Z",
+   "number": 74,
+   "title": "N64: the F-Zero X Expansion Kit cart hack boots, saves and loads",
+   "url": "https://github.com/pwnedbygary/phobos/pull/74"
+  },
+  {
+   "mergedAt": "2026-10-02T14:44:08Z",
+   "number": 75,
+   "title": "Present ~60 Hz games at 60 Hz on 120 Hz panels",
+   "url": "https://github.com/pwnedbygary/phobos/pull/75"
+  },
+  {
+   "mergedAt": "2026-10-02T15:58:57Z",
+   "number": 76,
+   "title": "Super Game Boy: run Game Boy carts through the SGB adapter firmware",
+   "url": "https://github.com/pwnedbygary/phobos/pull/76"
+  },
+  {
+   "mergedAt": "2026-10-02T16:51:55Z",
+   "number": 77,
+   "title": "Arcade: Aleck64 and SG-1000A sets load again",
+   "url": "https://github.com/pwnedbygary/phobos/pull/77"
+  },
+  {
+   "mergedAt": "2026-10-03T02:13:38Z",
+   "number": 79,
+   "title": "PC Engine CD boots; games load from where they are; firmware is matched by content",
+   "url": "https://github.com/pwnedbygary/phobos/pull/79"
+  },
+  {
+   "mergedAt": "2026-10-03T02:13:55Z",
+   "number": 81,
+   "title": "LaserActive: Mega LD and PC Engine LD, with side flipping",
+   "url": "https://github.com/pwnedbygary/phobos/pull/81"
+  },
+  {
+   "mergedAt": "2026-10-03T02:14:14Z",
+   "number": 83,
+   "title": "CD backup RAM is kept between sessions",
+   "url": "https://github.com/pwnedbygary/phobos/pull/83"
+  },
+  {
+   "mergedAt": "2026-10-03T03:11:12Z",
+   "number": 78,
+   "title": "Appearance: themed library cards, icon packs, backdrops, screensaver",
+   "url": "https://github.com/pwnedbygary/phobos/pull/78"
+  },
+  {
+   "mergedAt": "2026-10-03T07:04:54Z",
+   "number": 84,
+   "title": "Pocket Challenge V2: Benesse's WonderSwan joins the Library",
+   "url": "https://github.com/pwnedbygary/phobos/pull/84"
+  },
+  {
+   "mergedAt": "2026-10-03T07:25:14Z",
+   "number": 85,
+   "title": "MSX tapes load: the cassette motor runs the deck, as on the real machine",
+   "url": "https://github.com/pwnedbygary/phobos/pull/85"
+  },
+  {
+   "mergedAt": "2026-10-03T07:35:57Z",
+   "number": 86,
+   "title": "MSX tape loading speed: up to 8x while the cassette motor runs",
+   "url": "https://github.com/pwnedbygary/phobos/pull/86"
+  },
+  {
+   "mergedAt": "2026-10-03T07:47:20Z",
+   "number": 87,
+   "title": "Headered PC Engine card dumps: the BIOS loads, and the Firmware screen knows them",
+   "url": "https://github.com/pwnedbygary/phobos/pull/87"
+  },
+  {
+   "mergedAt": "2026-10-03T08:15:37Z",
+   "number": 88,
+   "title": "MSX tapes ask for a BASIC BIOS instead of sitting at C-BIOS",
+   "url": "https://github.com/pwnedbygary/phobos/pull/88"
+  },
+  {
+   "mergedAt": "2026-10-03T08:37:11Z",
+   "number": 89,
+   "title": "Keep the touch controls out of Android's edge gestures",
+   "url": "https://github.com/pwnedbygary/phobos/pull/89"
+  },
+  {
+   "mergedAt": "2026-10-03T09:30:53Z",
+   "number": 90,
+   "title": "Neo Geo: the Z80's bank windows index an M ROM over 64 KiB from its start",
+   "url": "https://github.com/pwnedbygary/phobos/pull/90"
+  },
+  {
+   "mergedAt": "2026-10-03T10:34:35Z",
+   "number": 91,
+   "title": "Start multi-disc games from a frontend's playlist; say when a game doesn't start",
+   "url": "https://github.com/pwnedbygary/phobos/pull/91"
+  },
+  {
+   "mergedAt": "2026-10-03T10:36:05Z",
+   "number": 92,
+   "title": "Docs: the boot pass of every game on the RP6, and what it found",
+   "url": "https://github.com/pwnedbygary/phobos/pull/92"
+  },
+  {
+   "mergedAt": "2026-10-03T15:32:09Z",
+   "number": 93,
+   "title": "Cleanups: NES/SNES expansion ports, the FBNeo credit, stale notes",
+   "url": "https://github.com/pwnedbygary/phobos/pull/93"
+  },
+  {
+   "mergedAt": "2026-10-03T15:32:19Z",
+   "number": 95,
+   "title": "Docs: what N64 Debug Logging showed about the two N64 hack bugs",
+   "url": "https://github.com/pwnedbygary/phobos/pull/95"
+  },
+  {
+   "mergedAt": "2026-10-03T15:56:07Z",
+   "number": 96,
+   "title": "MSX tape saving: a data tape per game, which records what the MSX saves",
+   "url": "https://github.com/pwnedbygary/phobos/pull/96"
+  },
+  {
+   "mergedAt": "2026-10-03T18:00:17Z",
+   "number": 97,
+   "title": "Desktop Phobos, rebased from #80: Linux AppImage + zsync, Windows Phobos.exe, macOS app",
+   "url": "https://github.com/pwnedbygary/phobos/pull/97"
+  },
+  {
+   "mergedAt": "2026-10-03T18:00:39Z",
+   "number": 98,
+   "title": "License Phobos's own code under GPL-3.0-or-later (for review; replaces #94)",
+   "url": "https://github.com/pwnedbygary/phobos/pull/98"
+  },
+  {
+   "mergedAt": "2026-10-03T18:40:34Z",
+   "number": 102,
+   "title": "MSX: the game goes in the cartridge slot only (replaces #99)",
+   "url": "https://github.com/pwnedbygary/phobos/pull/102"
+  },
+  {
+   "mergedAt": "2026-10-03T18:51:39Z",
+   "number": 101,
+   "title": "TMS9918 and V9938: 40 columns of text between borders",
+   "url": "https://github.com/pwnedbygary/phobos/pull/101"
+  },
+  {
+   "mergedAt": "2026-10-07T04:15:58Z",
+   "number": 154,
+   "title": "Add headless PSP game runner and 266-game compatibility report",
+   "url": "https://github.com/pwnedbygary/phobos/pull/154"
+  },
+  {
+   "mergedAt": "2026-10-07T22:21:48Z",
+   "number": 158,
+   "title": "docs: update PSP compatibility report for PR #157 GE features",
+   "url": "https://github.com/pwnedbygary/phobos/pull/158"
+  },
+  {
+   "mergedAt": "2026-10-08T19:46:46Z",
+   "number": 165,
+   "title": "Add a shared PSP disc reader for title, disc ID, region and icon",
+   "url": "https://github.com/pwnedbygary/phobos/pull/165"
+  },
+  {
+   "mergedAt": "2026-10-08T23:40:49Z",
+   "number": 179,
+   "title": "Desktop Library: show PSP disc titles, cached",
+   "url": "https://github.com/pwnedbygary/phobos/pull/179"
+  },
+  {
+   "mergedAt": "2026-10-11T08:34:41Z",
+   "number": 208,
+   "title": "Release 2.0: merge the PlayStation Portable stack into master",
+   "url": "https://github.com/pwnedbygary/phobos/pull/208"
+  },
+  {
+   "mergedAt": "2026-10-11T08:35:40Z",
+   "number": 210,
+   "title": "docs: the final library run; the README for v2.0.0",
+   "url": "https://github.com/pwnedbygary/phobos/pull/210"
+  },
+  {
+   "mergedAt": "2026-10-11T09:07:24Z",
+   "number": 211,
+   "title": "Android: version codes 200000 + the commit count from 2.0",
+   "url": "https://github.com/pwnedbygary/phobos/pull/211"
+  },
+  {
+   "mergedAt": "2026-10-12T02:58:36Z",
+   "number": 220,
+   "title": "Merge #212 to #219: PSP fixes from the RP6 run, pause-menu PSP section and title, savedata",
+   "url": "https://github.com/pwnedbygary/phobos/pull/220"
+  },
+  {
+   "mergedAt": "2026-10-12T02:58:38Z",
+   "number": 212,
+   "title": "PSP: WipEout without waiting for the GPU, the stencil as each format keeps it, the emulation thread at 1x (part 68)",
+   "url": "https://github.com/pwnedbygary/phobos/pull/212"
+  },
+  {
+   "mergedAt": "2026-10-12T02:58:38Z",
+   "number": 213,
+   "title": "PSP controller: a read may ask for all 64 samples (MACH's title takes Start)",
+   "url": "https://github.com/pwnedbygary/phobos/pull/213"
+  },
+  {
+   "mergedAt": "2026-10-12T02:58:38Z",
+   "number": 214,
+   "title": "PSP: a pause-menu section, and the right stick as face buttons, D-pad or analog",
+   "url": "https://github.com/pwnedbygary/phobos/pull/214"
+  },
+  {
+   "mergedAt": "2026-10-12T02:58:38Z",
+   "number": 215,
+   "title": "PSP: Crash Tag Team Racing's save dialog closed from a worse thread; DBZ's RP6 loading explained",
+   "url": "https://github.com/pwnedbygary/phobos/pull/215"
+  },
+  {
+   "mergedAt": "2026-10-12T02:58:38Z",
+   "number": 216,
+   "title": "Pause menu: the running game's name beside \"Emulation Paused\"",
+   "url": "https://github.com/pwnedbygary/phobos/pull/216"
+  },
+  {
+   "mergedAt": "2026-10-12T02:58:38Z",
+   "number": 217,
+   "title": "PSP: sceKernelStopModule returns 0 on success (Kenka Bancho and Final Fantasy IV past their movies)",
+   "url": "https://github.com/pwnedbygary/phobos/pull/217"
+  },
+  {
+   "mergedAt": "2026-10-12T02:58:38Z",
+   "number": 218,
+   "title": "PSP savedata: the files mode, and PARAM.SFO beside every save",
+   "url": "https://github.com/pwnedbygary/phobos/pull/218"
+  },
+  {
+   "mergedAt": "2026-10-12T02:58:38Z",
+   "number": 219,
+   "title": "PSP: vnop leaves the VFPU's prefixes (both Metal Gear Acids show their titles and menus)",
+   "url": "https://github.com/pwnedbygary/phobos/pull/219"
+  },
+  {
+   "mergedAt": "2026-10-12T15:26:52Z",
+   "number": 221,
+   "title": "PSP: the system's dialogs shown by the app — messages, the keyboard, saving and loading",
+   "url": "https://github.com/pwnedbygary/phobos/pull/221"
+  },
+  {
+   "mergedAt": "2026-10-12T16:04:40Z",
+   "number": 222,
+   "title": "PSP GE: round 6's pictures — lighting's multiplies, the measured reciprocal, the texel range, patches along v",
+   "url": "https://github.com/pwnedbygary/phobos/pull/222"
+  },
+  {
+   "mergedAt": "2026-10-12T17:49:57Z",
+   "number": 225,
+   "title": "Android: version codes 210000 + the commit count from 2.1",
+   "url": "https://github.com/pwnedbygary/phobos/pull/225"
+  },
+  {
+   "mergedAt": "2026-10-12T21:19:57Z",
+   "number": 224,
+   "title": "PSP: the slowest games faster — render to texture decoded where taken, Killzone's blur from a copy, polled syscalls cheaper",
+   "url": "https://github.com/pwnedbygary/phobos/pull/224"
+  },
+  {
+   "mergedAt": "2026-10-12T22:28:54Z",
+   "number": 227,
+   "title": "PSP: memstick: is the memory stick — Colin McRae Rally 2005 Plus's save",
+   "url": "https://github.com/pwnedbygary/phobos/pull/227"
+  },
+  {
+   "mergedAt": "2026-10-12T23:10:17Z",
+   "number": 226,
+   "title": "PSP GE: anti-aliased lines take their coverage for alpha (Dead or Alive Paradise's wireframe)",
+   "url": "https://github.com/pwnedbygary/phobos/pull/226"
+  },
+  {
+   "mergedAt": "2026-10-13T00:53:37Z",
+   "number": 228,
+   "title": "PSP: savedata trace; After Burner's save dates, list loads answered as the dialog would (Brandish, 7th Dragon 2020)",
+   "url": "https://github.com/pwnedbygary/phobos/pull/228"
+  },
+  {
+   "mergedAt": "2026-10-13T11:53:04Z",
+   "number": 233,
+   "title": "PSP: where the slow games' emulation thread goes — render-to-texture through palettes decoded where taken, code forgotten only where there is some, calm system calls, more of the VFPU compiled",
+   "url": "https://github.com/pwnedbygary/phobos/pull/233"
+  },
+  {
+   "mergedAt": "2026-10-13T15:39:25Z",
+   "number": 234,
+   "title": "PSP Vulkan: no more waiting for its own pixels — moves across row widths, palettes on the GPU, copies kept",
+   "url": "https://github.com/pwnedbygary/phobos/pull/234"
+  },
+  {
+   "mergedAt": "2026-10-13T16:38:18Z",
+   "number": 235,
+   "title": "PSP: savedata patterns — Dissidia's Load Game, Final Fantasy Type-0's list; every list load answered as its dialog",
+   "url": "https://github.com/pwnedbygary/phobos/pull/235"
+  },
+  {
+   "mergedAt": "2026-10-13T17:09:23Z",
+   "number": 236,
+   "title": "PSP: sceFont — Jeanne d'Arc's first battle (a handle closed twice), Final Fantasy III's text (fonts in VRAM), Hammerin' Hero's spaces (the memory a glyph is read into)",
+   "url": "https://github.com/pwnedbygary/phobos/pull/236"
+  },
+  {
+   "mergedAt": "2026-10-13T18:57:37Z",
+   "number": 243,
+   "title": "PSP: modules from downloads — sceKernelLoadModuleNpDrm, packed relocations, imported variables; God Eater 2 in English (part 88)",
+   "url": "https://github.com/pwnedbygary/phobos/pull/243"
+  },
+  {
+   "mergedAt": "2026-10-13T20:01:03Z",
+   "number": 230,
+   "title": "PSP: the host's right stick for patched games (True Analogs); the keyboard in a field's own characters; 7th Dragon 2020-II past its certificate",
+   "url": "https://github.com/pwnedbygary/phobos/pull/230"
+  },
+  {
+   "mergedAt": "2026-10-13T23:33:21Z",
+   "number": 229,
+   "title": "PSP: every ATRAC ID's context kept current (Angus Hates Aliens past NEW GAME); sceVaudio (Battle vs. Chess's music); StateVersion 31",
+   "url": "https://github.com/pwnedbygary/phobos/pull/229"
+  },
+  {
+   "mergedAt": "2026-10-13T23:33:54Z",
+   "number": 237,
+   "title": "PSP: the CPU, round 2 — the VFPU's adder in NEON, delay slots compiled each way, the rare ways out of line, prefixes compiled, blocks linked",
+   "url": "https://github.com/pwnedbygary/phobos/pull/237"
+  },
+  {
+   "mergedAt": "2026-10-14T03:27:23Z",
+   "number": 238,
+   "title": "CI: the Android unit tests in every build, the releases waiting for them; the SDK cache gone",
+   "url": "https://github.com/pwnedbygary/phobos/pull/238"
+  },
+  {
+   "mergedAt": "2026-10-14T04:21:32Z",
+   "number": 239,
+   "title": "CI: the PSP renderer's shaders compiled again by the glslang that made them, and validated",
+   "url": "https://github.com/pwnedbygary/phobos/pull/239"
+  },
+  {
+   "mergedAt": "2026-10-14T04:21:54Z",
+   "number": 244,
+   "title": "Docs: the plan's opening and evidence brought up to date; the 2026-10-13 test and performance plan indexed",
+   "url": "https://github.com/pwnedbygary/phobos/pull/244"
+  },
+  {
+   "mergedAt": "2026-10-14T04:22:15Z",
+   "number": 241,
+   "title": "CI: the PSP core as an ares system, the headless runner and the Neo Geo CD's checks in CI; the triggers complete",
+   "url": "https://github.com/pwnedbygary/phobos/pull/241"
+  },
+  {
+   "mergedAt": "2026-10-14T04:22:36Z",
+   "number": 245,
+   "title": "Tests: the host suites' objects kept by what they include and how they're compiled, a checkout's apart",
+   "url": "https://github.com/pwnedbygary/phobos/pull/245"
+  },
+  {
+   "mergedAt": "2026-10-14T04:22:57Z",
+   "number": 246,
+   "title": "Tests: a skip says what's missing, and fails where the lane must have it; the Allegrex measurements unpacked by content",
+   "url": "https://github.com/pwnedbygary/phobos/pull/246"
+  },
+  {
+   "mergedAt": "2026-10-14T04:23:18Z",
+   "number": 250,
+   "title": "Runner: a JSON report of what ran, a pinned start time, captures timed apart and stale ones said",
+   "url": "https://github.com/pwnedbygary/phobos/pull/250"
+  },
+  {
+   "mergedAt": "2026-10-14T04:23:40Z",
+   "number": 247,
+   "title": "CI: the CPU's tests on an ARM64 host and built as the app is; the RSP's NEON checked on ARM64 (package 06)",
+   "url": "https://github.com/pwnedbygary/phobos/pull/247"
+  },
+  {
+   "mergedAt": "2026-10-14T04:24:15Z",
+   "number": 240,
+   "title": "PSP GE: the front end faster — vertices read a part at a time, fast mode's corners four at a time in vectors, each corner placed once (part 85)",
+   "url": "https://github.com/pwnedbygary/phobos/pull/240"
+  },
+  {
+   "mergedAt": "2026-10-14T05:43:03Z",
+   "number": 231,
+   "title": "Appearance: Sakura cycle in phases, three Pixel art scenes removed, night city and XMB Deep redrawn, Manga and CRT redone, a magazine cover and Truck-kun",
+   "url": "https://github.com/pwnedbygary/phobos/pull/231"
+  },
+  {
+   "mergedAt": "2026-10-14T05:43:26Z",
+   "number": 232,
+   "title": "Library: every style draws the Systematic consoles its own way; the glyph packs removed",
+   "url": "https://github.com/pwnedbygary/phobos/pull/232"
+  },
+  {
+   "mergedAt": "2026-10-14T07:42:22Z",
+   "number": 252,
+   "title": "PSP: polling loops skipped where proved exact — the polled calls in fewer steps, a loop that comes back as it was jumped to the go's end (the Need for Speeds, the intro movies)",
+   "url": "https://github.com/pwnedbygary/phobos/pull/252"
+  },
+  {
+   "mergedAt": "2026-10-14T10:27:21Z",
+   "number": 251,
+   "title": "PSP Vulkan: the depth buffer as the PSP's memory and a 5551 stencil bit — Hammerin' Hero's and Jeanne d'Arc's characters, Cars Race-O-Rama's race, Colin McRae's terrain shadows (part 90)",
+   "url": "https://github.com/pwnedbygary/phobos/pull/251"
+  },
+  {
+   "mergedAt": "2026-10-14T17:04:42Z",
+   "number": 255,
+   "title": "Runner: built for Android, to measure a commit on a phone from adb shell before it merges",
+   "url": "https://github.com/pwnedbygary/phobos/pull/255"
+  },
+  {
+   "mergedAt": "2026-10-14T18:27:13Z",
+   "number": 253,
+   "title": "PSP GE: fewer GPU draws and cheaper PRIMs — the texels taken in the vertices, fast mode's small PRIMs among its meshes, a PRIM's settings kept (part 92)",
+   "url": "https://github.com/pwnedbygary/phobos/pull/253"
+  },
+  {
+   "mergedAt": "2026-10-14T20:45:48Z",
+   "number": 254,
+   "title": "PSP Vulkan: the frame buffer's alpha as its stencil has it (MX vs. ATV Untamed's race; follow-up to #251)",
+   "url": "https://github.com/pwnedbygary/phobos/pull/254"
+  },
+  {
+   "mergedAt": "2026-10-15T01:55:08Z",
+   "number": 256,
+   "title": "PSP CPU: the FPU's flush to zero compiled, block endings in fewer steps, the run's count in a register, more of the VFPU compiled (part 94)",
+   "url": "https://github.com/pwnedbygary/phobos/pull/256"
+  },
+  {
+   "mergedAt": "2026-10-15T02:13:38Z",
+   "number": 257,
+   "title": "PSP I/O: memory stick files emptied as they're opened keep their bytes — LittleBigPlanet's install, and the runner's file I/O trace (part 95)",
+   "url": "https://github.com/pwnedbygary/phobos/pull/257"
+  },
+  {
+   "mergedAt": "2026-10-15T05:34:19Z",
+   "number": 259,
+   "title": "PSP NPDRM: EDATA decrypted — the PGD past the EDATA's header, on the memory stick too, its size and end the data's; a PGD file's end its data's (part 97)",
+   "url": "https://github.com/pwnedbygary/phobos/pull/259"
+  },
+  {
+   "mergedAt": "2026-10-15T12:32:26Z",
+   "number": 260,
+   "title": "PSP: ticks as RFC 2822 and RFC 3339 text (MediEvil's save details), a list save to its list's names (Lumines II), the depth-view loads' test deterministic (part 98)",
+   "url": "https://github.com/pwnedbygary/phobos/pull/260"
+  },
+  {
+   "mergedAt": "2026-10-15T17:34:47Z",
+   "number": 258,
+   "title": "PSP GE: the depth buffer in the order its frame buffer's format has it — the Kurohyou games' characters at the screen's middle (part 96)",
+   "url": "https://github.com/pwnedbygary/phobos/pull/258"
+  },
+  {
+   "mergedAt": "2026-10-15T23:36:02Z",
+   "number": 261,
+   "title": "PSP: the game data install dialog — the disc's INSDIR copied to the memory stick through a folder of its own; sceIoChstat (part 99)",
+   "url": "https://github.com/pwnedbygary/phobos/pull/261"
+  },
+  {
+   "mergedAt": "2026-10-16T00:18:29Z",
+   "number": 262,
+   "title": "PSP GE: #253's per-PRIM paths cheaper on the RP6's Cortex-X3 — a PRIM's kept settings compared in place, fast mode's screen triangles without calls (part 100)",
+   "url": "https://github.com/pwnedbygary/phobos/pull/262"
+  },
+  {
+   "mergedAt": "2026-10-16T01:39:53Z",
+   "number": 249,
+   "title": "CI: the PSP system tests built as the app is (GCC 13's five false positives fixed in code; the lane's finding, vertex floats' signaling NaNs under GCC, fixed for GCC only)",
+   "url": "https://github.com/pwnedbygary/phobos/pull/249"
+  },
+  {
+   "mergedAt": "2026-10-16T12:28:09Z",
+   "number": 263,
+   "title": "PSP NPDRM: PGD files on the memory stick (part 101)",
+   "url": "https://github.com/pwnedbygary/phobos/pull/263"
+  },
+  {
+   "mergedAt": "2026-10-17T00:29:26Z",
+   "number": 264,
+   "title": "Android input: Colin McRae's dropped held Cross — app paths replayed and cleared, an opt-in input log for the RP6 capture",
+   "url": "https://github.com/pwnedbygary/phobos/pull/264"
+  },
+  {
+   "mergedAt": "2026-10-17T01:52:52Z",
+   "number": 265,
+   "title": "PSP Vulkan at 5x: the depth-writing shader's depth declared never above the depth rasterized; another frame buffer's depth taken image to image (part 102)",
+   "url": "https://github.com/pwnedbygary/phobos/pull/265"
+  },
+  {
+   "mergedAt": "2026-10-17T20:15:35Z",
+   "number": 274,
+   "title": "README: a development progress section, generated from docs/progress/data.json",
+   "url": "https://github.com/pwnedbygary/phobos/pull/274"
+  },
+  {
+   "mergedAt": "2026-10-17T23:29:11Z",
+   "number": 266,
+   "title": "PSP GE: how the games drive the GE on a PSP and in Phobos — the profiler plugin for ARK, the runner's --ge-profile; a PSP's GE takes 4 to 12 times the model's time (part 103)",
+   "url": "https://github.com/pwnedbygary/phobos/pull/266"
+  },
+  {
+   "mergedAt": "2026-10-18T01:16:33Z",
+   "number": 267,
+   "title": "PSP power: the clocks a game asks for as uOFW's power service checks them; Activision Hits' 333/166 was read before the game ran (part 104)",
+   "url": "https://github.com/pwnedbygary/phobos/pull/267"
+  },
+  {
+   "mergedAt": "2026-10-18T04:13:06Z",
+   "number": 268,
+   "title": "PSP kernel: the GE's looks skipped through when a game polls them — sceGeDrawSync(1) and sceGeListSync(id, 1) as part 91's spins (part 105)",
+   "url": "https://github.com/pwnedbygary/phobos/pull/268"
+  },
+  {
+   "mergedAt": "2026-10-18T06:55:23Z",
+   "number": 273,
+   "title": "Screenshots: a film-strip card pops out of the picture and hops into a folder, and a pill says where it went or why it didn't; named for the game and the time",
+   "url": "https://github.com/pwnedbygary/phobos/pull/273"
+  },
+  {
+   "mergedAt": "2026-10-18T08:08:33Z",
+   "number": 272,
+   "title": "PSP GE on a thread of its own, exact: option \"GE Thread\" (Off, the default, and On) — GE round 4 part B, first PR (part 109)",
+   "url": "https://github.com/pwnedbygary/phobos/pull/272"
+  },
+  {
+   "mergedAt": "2026-10-18T08:55:17Z",
+   "number": 275,
+   "title": "Io: the PGD layer's three densest comments lead with what they do, every error code, citation and check order kept",
+   "url": "https://github.com/pwnedbygary/phobos/pull/275"
+  },
+  {
+   "mergedAt": "2026-10-18T14:42:59Z",
+   "number": 271,
+   "title": "PSP display: the frame buffer set for the next vertical sync shown from the sync, sceDisplayGetFrameBuf answering for the one asked (part 108)",
+   "url": "https://github.com/pwnedbygary/phobos/pull/271"
+  },
+  {
+   "mergedAt": "2026-10-18T15:51:29Z",
+   "number": 270,
+   "title": "psp-measure: round 8, the GE's time where part 76's model misses the captures, and the CPU's (part 107)",
+   "url": "https://github.com/pwnedbygary/phobos/pull/270"
+  },
+  {
+   "mergedAt": "2026-10-18T17:01:17Z",
+   "number": 276,
+   "title": "psp-measure: round 9, triangles reading narrow textures, texture loads, vertex formats, time-lists again (part 110)",
+   "url": "https://github.com/pwnedbygary/phobos/pull/276"
+  },
+  {
+   "mergedAt": "2026-10-19T01:25:49Z",
+   "number": 278,
+   "title": "psp-measure: round 10, lights by kind, CLUT32 triangles, wide triangles into 16-bit, perspective, mipmaps, the CPU beside the GE (part 112)",
+   "url": "https://github.com/pwnedbygary/phobos/pull/278"
+  },
+  {
+   "mergedAt": "2026-10-19T05:35:20Z",
+   "number": 269,
+   "title": "PSP GE timing, now the default (\"Fast\" the opt-in): two ends and a queue fitted to rounds 6, 8, 9 and 10, the 15% gate by the whole frame, reproducible (part 106)",
+   "url": "https://github.com/pwnedbygary/phobos/pull/269"
+  },
+  {
+   "mergedAt": "2026-10-19T22:35:39Z",
+   "number": 279,
+   "title": "PSP GE: the CPU beside the GE — the CPU's caches counted with the PSP's timing (Super Monkey Ball −29.6% → −20.6%; part 113)",
+   "url": "https://github.com/pwnedbygary/phobos/pull/279"
+  },
+  {
+   "mergedAt": "2026-10-19T23:00:35Z",
+   "number": 282,
+   "title": "docs: part 113 and the handoff after #279's second review (wording only)",
+   "url": "https://github.com/pwnedbygary/phobos/pull/282"
+  },
+  {
+   "mergedAt": "2026-10-19T23:27:18Z",
+   "number": 281,
+   "title": "Io: the PGD layer's three densest comments lead with what they do (#275, into master)",
+   "url": "https://github.com/pwnedbygary/phobos/pull/281"
+  },
+  {
+   "mergedAt": "2026-10-20T04:10:52Z",
+   "number": 280,
+   "title": "psp-measure round 10c: Super Monkey Ball's strips beside the CPU taken apart, Activision Hits' second and third lists (part 114)",
+   "url": "https://github.com/pwnedbygary/phobos/pull/280"
+  },
+  {
+   "mergedAt": "2026-10-20T04:39:15Z",
+   "number": 283,
+   "title": "ci: the GE profile decoder's tests on every change to them (the plugin's capture skipped: no pspdev on the runners)",
+   "url": "https://github.com/pwnedbygary/phobos/pull/283"
+  },
+  {
+   "mergedAt": "2026-10-20T07:20:23Z",
+   "number": 284,
+   "title": "tests/psp: the measured rounds' groups report a missing round, and a missing file no longer ends a sanitized run",
+   "url": "https://github.com/pwnedbygary/phobos/pull/284"
+  },
+  {
+   "mergedAt": "2026-10-20T08:35:07Z",
+   "number": 277,
+   "title": "PSP GE thread, the frame shown from it: option \"GE Thread\" (Off, the default, and On), the app's \"PSP Graphics Overlap\" — GE round 4 part B, second PR (part 111)",
+   "url": "https://github.com/pwnedbygary/phobos/pull/277"
+  },
+  {
+   "mergedAt": "2026-10-20T10:13:08Z",
+   "number": 285,
+   "title": "docs: #277's handoff entry after its review and library check; the GE profile decoder's files in its README",
+   "url": "https://github.com/pwnedbygary/phobos/pull/285"
+  },
+  {
+   "mergedAt": "2026-10-20T12:20:52Z",
+   "number": 286,
+   "title": "ci: every workflow's checkout step off Node 20 (actions/checkout@v7)",
+   "url": "https://github.com/pwnedbygary/phobos/pull/286"
+  },
+  {
+   "mergedAt": "2026-10-20T14:29:12Z",
+   "number": 287,
+   "title": "tests/psp: the sanitized suite keeps the Vulkan driver loaded, so LeakSanitizer sees what lavapipe holds at exit",
+   "url": "https://github.com/pwnedbygary/phobos/pull/287"
+  },
+  {
+   "mergedAt": "2026-10-20T15:20:35Z",
+   "number": 288,
+   "title": "tools/psp-measure: ge-terms.py applies to master again, its five places where #277 left them",
+   "url": "https://github.com/pwnedbygary/phobos/pull/288"
+  },
+  {
+   "mergedAt": "2026-10-20T17:05:11Z",
+   "number": 289,
+   "title": "Tests and CI: the kernel's tests with the PSP's GE timing, and a test of the spin skip's contention refusal",
+   "url": "https://github.com/pwnedbygary/phobos/pull/289"
+  },
+  {
+   "mergedAt": "2026-10-20T21:47:57Z",
+   "number": 290,
+   "title": "CMake: ares's dialect for the upstream systems' code (fixes recompiled VMOV/VMULQ on x86-64), and an RSP recompiler test",
+   "url": "https://github.com/pwnedbygary/phobos/pull/290"
+  },
+  {
+   "mergedAt": "2026-10-21T13:27:20Z",
+   "number": 292,
+   "title": "N64: the SMALL_TYPES=0 rasterizer with its stored spec-constant values computed, which Qualcomm's stock driver compiles (black pictures on the RP6)",
+   "url": "https://github.com/pwnedbygary/phobos/pull/292"
+  },
+  {
+   "mergedAt": "2026-10-21T17:08:51Z",
+   "number": 291,
+   "title": "PSP GE timing: Super Monkey Ball within 15%, the CPU beside the GE in a hybrid form (part 115)",
+   "url": "https://github.com/pwnedbygary/phobos/pull/291"
+  },
+  {
+   "mergedAt": "2026-10-21T19:10:46Z",
+   "number": 293,
+   "title": "Docs and CI: the wording points #290's, #291's and #292's reviews left",
+   "url": "https://github.com/pwnedbygary/phobos/pull/293"
+  },
+  {
+   "mergedAt": "2026-10-22T01:38:42Z",
+   "number": 295,
+   "title": "PSP tests: the spin skip's untested refusals and the GE thread's refetch charge",
+   "url": "https://github.com/pwnedbygary/phobos/pull/295"
+  },
+  {
+   "mergedAt": "2026-10-22T04:10:26Z",
+   "number": 296,
+   "title": "LICENSE: the notices of the third-party code the builds ship that it lacked",
+   "url": "https://github.com/pwnedbygary/phobos/pull/296"
+  }
+ ]
+}

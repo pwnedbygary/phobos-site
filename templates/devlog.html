@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+{{> head}}
+</head>
+<body id="top" class="page-devlog">
+<a class="skip" href="#main">Skip to content</a>
+{{> header}}
+<main id="main" class="devlog">
+  <div class="wrap">
+    <p class="eyebrow">Development log</p>
+    <h1>Every merged pull request, oldest first</h1>
+    <p class="section-intro">{{devlog.count}} pull requests merged into Phobos, from the first on {{devlog.first}} to the latest on {{devlog.last}}. Times are {{site.timezone_label}}; the list was fetched from GitHub on {{devlog.fetched}}.</p>
+    <p class="note">{{{site.devlog_note_html}}}</p>
+    <figure class="chart-fig devlog-chart">{{{devlog.chart}}}<figcaption>Pull requests merged each day ({{site.timezone_label}}).</figcaption></figure>
+    <div class="filter">
+      <label for="devlog-filter">Filter</label>
+      <input id="devlog-filter" type="search" placeholder="A word from a title, or a number" autocomplete="off" data-filter>
+      <output class="filter-count" for="devlog-filter" data-filter-count aria-live="polite"></output>
+    </div>
+    {{#devlog.groups}}<section class="month" aria-labelledby="m-{{_index}}">
+      <h2 id="m-{{_index}}">{{title}} <span class="count">{{count}} merged</span></h2>
+      <table class="prs">
+        <thead><tr><th scope="col">Pull request</th><th scope="col">Title</th><th scope="col">Merged</th></tr></thead>
+        <tbody>{{#rows}}
+          <tr><td class="num"><a href="{{url}}">#{{number}}</a></td><td class="title">{{title}}</td><td class="when"><time datetime="{{iso}}">{{when}}</time></td></tr>{{/rows}}
+        </tbody>
+      </table>
+    </section>{{/devlog.groups}}
+    <section class="releases" aria-labelledby="rel-title">
+      <h2 id="rel-title">Releases</h2>
+      <p>Tagged releases carry the Android app and, from v2.0.0, the desktop program; a nightly pre-release of the Android app follows every push to master, on <a href="{{links.releases}}">the releases page</a>.</p>
+      <table class="prs rels">
+        <thead><tr><th scope="col">Release</th><th scope="col">Published</th></tr></thead>
+        <tbody>{{#devlog.releases}}
+          <tr><td class="num"><a href="{{href}}">{{tag}}</a></td><td class="when"><time datetime="{{iso}}">{{when}}</time></td></tr>{{/devlog.releases}}
+        </tbody>
+      </table>
+    </section>
+    <p class="tl-more"><a class="btn btn-ghost" href="index.html#timeline"><span>Back to the timeline</span><small>The eras, firsts and releases</small></a></p>
+  </div>
+</main>
+{{> footer}}
+</body>
+</html>

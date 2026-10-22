@@ -1,0 +1,27 @@
+<meta charset="utf-8">
+{{#is_404}}{{#base_href}}<base href="{{base_href}}">
+{{/base_href}}{{/is_404}}<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{page_title}}</title>
+<meta name="description" content="{{description}}">
+<meta name="theme-color" content="{{site.theme_color}}">
+<meta name="color-scheme" content="dark">
+{{#canonical}}<link rel="canonical" href="{{canonical}}">
+<meta property="og:url" content="{{canonical}}">
+{{/canonical}}<meta property="og:type" content="website">
+<meta property="og:site_name" content="Phobos">
+<meta property="og:title" content="{{page_title}}">
+<meta property="og:description" content="{{description}}">
+<meta property="og:image" content="{{og_image}}">
+{{#og}}<meta property="og:image:width" content="{{width}}">
+<meta property="og:image:height" content="{{height}}">
+{{/og}}<meta property="og:image:alt" content="The Phobos logo over a wall of PSP game screenshots">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{page_title}}">
+<meta name="twitter:description" content="{{description}}">
+<meta name="twitter:image" content="{{og_image}}">
+<link rel="icon" href="media/brand/favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="icon" type="image/png" sizes="32x32" href="media/brand/favicon-32.png">
+<link rel="apple-touch-icon" href="media/brand/apple-touch-icon.png">
+<link rel="stylesheet" href="css/site.css?v={{v.css}}">
+<script>document.documentElement.className = 'js';</script>
+<script src="js/site.js?v={{v.js}}" defer></script>

@@ -1,0 +1,24 @@
+{
+  "ge-gate": {
+    "kind": "deviation",
+    "title": "Phobos's GE time for a whole frame against a PSP-1000's, since #291",
+    "unit": "%",
+    "band": 15,
+    "categories": ["Chains of Olympus, difficulty menu", "Ghost of Sparta, main menu", "Super Monkey Ball, Story Mode", "Killzone, the courtyard (capture 1)", "Killzone, the courtyard (capture 2)", "Activision Hits, 3D main menu", "Activision Hits, 3D main menu, idle", "Activision Hits, copyright screen"],
+    "values": [-0.873, -1.661, -12.686, -11.825, -10.382, 9.952, 9.612, -5.801],
+    "labels": ["faster than the PSP", "slower than the PSP"],
+    "alt": "Eight judged game scenes, each within 15 percent of the PSP-1000's frame time: from 12.69 percent faster (Super Monkey Ball) to 9.95 percent slower (Activision Hits' 3D menu), Chains of Olympus within 0.87 percent.",
+    "source_md": "Each scene's GE time for its whole frame in Phobos against the owner's capture of the same scene on his PSP-1000, from the gate table in [part 115](https://github.com/pwnedbygary/phobos/blob/master/docs/psp-core.md) of docs/psp-core.md (#291). The shaded band is the 15% the timing has to stay within."
+  },
+  "ge-list-time": {
+    "title": "One display list's GE time: a real PSP against Phobos's old model",
+    "unit": "ms",
+    "categories": ["Chains of Olympus, difficulty menu", "Ghost of Sparta, main menu", "Super Monkey Ball, Story Mode", "Killzone, gameplay", "Activision Hits, copyright screen"],
+    "series": [
+      {"name": "PSP-1000, measured", "tone": "lavender", "values": [27.6, 29.6, 23.6, 24.3, 4.46]},
+      {"name": "Phobos's model until #269", "tone": "mars", "values": [6.24, 4.05, 1.98, 3.57, 0.59]}
+    ],
+    "alt": "Horizontal bars for five game scenes: a PSP-1000's GE took 4.46 to 29.6 milliseconds for a display list where Phobos's old model charged 0.59 to 6.24, four to twelve times less.",
+    "source_md": "Measured on 16 October 2026 with a GE profiler under custom firmware on a PSP-1000, against the time Phobos's model then charged for the same scenes' lists. Data from the repository's [docs/progress/data.json](https://github.com/pwnedbygary/phobos/blob/master/docs/progress/data.json). Since #269 the GE takes close to the PSP's own time."
+  }
+}

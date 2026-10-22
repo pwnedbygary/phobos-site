@@ -1,0 +1,87 @@
+{
+ "source": "gh release list --repo pwnedbygary/phobos --limit 200 --json tagName,name,isPrerelease,isLatest,isDraft,publishedAt",
+ "fetched": "2026-10-22T04:26:24Z",
+ "count": 10,
+ "releases": [
+  {
+   "isDraft": false,
+   "isLatest": false,
+   "isPrerelease": false,
+   "name": "v1.0.0",
+   "publishedAt": "2026-08-20T19:47:10Z",
+   "tagName": "v1.0.0"
+  },
+  {
+   "isDraft": false,
+   "isLatest": false,
+   "isPrerelease": false,
+   "name": "v1.1.0",
+   "publishedAt": "2026-09-29T01:07:55Z",
+   "tagName": "v1.1.0"
+  },
+  {
+   "isDraft": false,
+   "isLatest": false,
+   "isPrerelease": false,
+   "name": "v2.0.0",
+   "publishedAt": "2026-10-11T10:02:30Z",
+   "tagName": "v2.0.0"
+  },
+  {
+   "isDraft": false,
+   "isLatest": false,
+   "isPrerelease": false,
+   "name": "v2.1.0",
+   "publishedAt": "2026-10-12T18:26:14Z",
+   "tagName": "v2.1.0"
+  },
+  {
+   "isDraft": false,
+   "isLatest": false,
+   "isPrerelease": false,
+   "name": "v2.2.0",
+   "publishedAt": "2026-10-13T17:14:55Z",
+   "tagName": "v2.2.0"
+  },
+  {
+   "isDraft": false,
+   "isLatest": false,
+   "isPrerelease": false,
+   "name": "v2.3.0",
+   "publishedAt": "2026-10-14T05:09:00Z",
+   "tagName": "v2.3.0"
+  },
+  {
+   "isDraft": false,
+   "isLatest": true,
+   "isPrerelease": false,
+   "name": "v2.4.0",
+   "publishedAt": "2026-10-16T13:22:00Z",
+   "tagName": "v2.4.0"
+  },
+  {
+   "isDraft": false,
+   "isLatest": false,
+   "isPrerelease": true,
+   "name": "Nightly 2.4.0-306-g8d85eda9",
+   "publishedAt": "2026-10-21T19:26:51Z",
+   "tagName": "nightly-216017"
+  },
+  {
+   "isDraft": false,
+   "isLatest": false,
+   "isPrerelease": true,
+   "name": "Nightly 2.4.0-311-g8c2b1dde",
+   "publishedAt": "2026-10-22T01:51:11Z",
+   "tagName": "nightly-216022"
+  },
+  {
+   "isDraft": false,
+   "isLatest": false,
+   "isPrerelease": true,
+   "name": "Nightly 2.4.0-328-g062dd53e",
+   "publishedAt": "2026-10-22T04:25:34Z",
+   "tagName": "nightly-216039"
+  }
+ ]
+}

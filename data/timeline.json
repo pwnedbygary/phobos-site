@@ -1,0 +1,42 @@
+{
+  "title": "Timeline",
+  "intro_md": "The eras, the firsts, the releases and the milestones, oldest first. Dates are US Eastern.",
+  "kinds": {
+    "era": "Era",
+    "first": "A first",
+    "release": "Release",
+    "milestone": "Milestone",
+    "decision": "Decision"
+  },
+  "items": [
+    {"date": "2004-10-14", "label": "14 Oct 2004", "kind": "era", "title": "ares's lineage begins", "detail_md": "The line ares descends from begins: bsnes, then higan, then ares."},
+    {"date": "2026-07-25", "label": "25 Jul 2026", "kind": "era", "title": "Phobos forks ares", "detail_md": "From ares's commit of that day, to take it to Android."},
+    {"date": "2026-07-27", "label": "27 Jul 2026", "kind": "first", "title": "Phobos runs on Android", "detail_md": "The 64-bit native Android app, and native Vulkan for the N64 core, the same day."},
+    {"date": "2026-08-20", "label": "20 Aug 2026", "kind": "release", "title": "v1.0.0", "detail_md": "The Neo Geo core, the GPU Driver Manager, stable release signing, the PC Engine and SuperGrafx.", "tag": "v1.0.0"},
+    {"date": "2026-09-15", "label": "15 Sep", "kind": "decision", "title": "A change process with evidence", "detail_md": "Speed claims need measurements; every change needs an independent review before it merges."},
+    {"date": "2026-09-24", "label": "24 Sep", "kind": "first", "title": "The first pull request merged", "detail_md": "Neo Geo CD's garbled menu text: a DMA's byte order (#1)."},
+    {"date": "2026-09-25", "label": "25-28 Sep", "kind": "milestone", "title": "The N64 speed push", "detail_md": "Linked JIT blocks (#10), NEON in the RSP (#15, #16), 256 parallel-RDP contexts (#17), WFE instead of spinning (#18)."},
+    {"date": "2026-09-27", "label": "27-28 Sep", "kind": "milestone", "title": "The app's look", "detail_md": "37 themes with Retrowave effects (#9), the performance overlay (#5), glass panels and a floating dock (#20)."},
+    {"date": "2026-09-28", "label": "28 Sep", "kind": "release", "title": "v1.1.0", "detail_md": "Pull requests #1 to #25: the N64 work, the overlay, the themes, frontends that start games.", "tag": "v1.1.0"},
+    {"date": "2026-09-28", "label": "28 Sep", "kind": "first", "title": "In-app updates", "detail_md": "Phobos updates itself from GitHub's releases, every build numbered from git history (#26)."},
+    {"date": "2026-09-29", "label": "29 Sep", "kind": "decision", "title": "A PSP core goes on the plan", "detail_md": "To rival PPSSPP in compatibility and speed."},
+    {"date": "2026-09-30", "label": "30 Sep", "kind": "milestone", "title": "Controllers drive the menus", "detail_md": "The D-pad and stick move a visible focus; L1 and R1 switch tabs (#51)."},
+    {"date": "2026-10-03", "label": "3 Oct", "kind": "era", "title": "Back on the desktop", "detail_md": "A Linux AppImage, a universal macOS app and a Windows Phobos.exe (#97); Phobos's own code under GPL-3.0-or-later (#98)."},
+    {"date": "2026-10-03", "label": "3 Oct", "kind": "first", "title": "The PSP core's first code", "detail_md": "The Allegrex interpreter and recompiler, and the first measurement on a real PSP."},
+    {"date": "2026-10-05", "label": "5 Oct", "kind": "first", "title": "The PSP in the app at 60 fps", "detail_md": "The PSP SDK's samples on the Retroid Pocket 6; on the host, the first retail title screens: Lumines and Street Fighter III 3rd Strike."},
+    {"date": "2026-10-06", "label": "6 Oct", "kind": "first", "title": "Full speed on the device, and all 266 games run", "detail_md": "Peace Walker, Liberty City Stories and Lumines at full speed on the RP6; the headless runner's first pass over the library (#154, merged into the PSP stack just after midnight)."},
+    {"date": "2026-10-07", "label": "7 Oct", "kind": "first", "title": "The PSP drawn on the GPU", "detail_md": "A hardware renderer on Vulkan."},
+    {"date": "2026-10-11", "label": "11 Oct", "kind": "release", "title": "v2.0.0, the first release with the PSP", "detail_md": "The PSP core, Experimental, merged as one stack of about 100 pull requests (#208).", "tag": "v2.0.0"},
+    {"date": "2026-10-12", "label": "12 Oct", "kind": "release", "title": "v2.1.0", "detail_md": "Fixes from playing v2.0.0 on the RP6; the PSP's system dialogs as the app's own (#221).", "tag": "v2.1.0"},
+    {"date": "2026-10-13", "label": "13 Oct", "kind": "release", "title": "v2.2.0", "detail_md": "The slow games' first rounds; Vulkan no longer waits for its own pixels.", "tag": "v2.2.0"},
+    {"date": "2026-10-14", "label": "14 Oct", "kind": "release", "title": "v2.3.0", "detail_md": "Savedata, sceFont, God Eater 2, CPU round 2, and the test plan's CI lanes.", "tag": "v2.3.0"},
+    {"date": "2026-10-14", "label": "14 Oct", "kind": "first", "title": "Measured on the device before merging", "detail_md": "The headless runner built for Android, so a commit is measured on the RP6 first (#255)."},
+    {"date": "2026-10-15", "label": "15-16 Oct", "kind": "first", "title": "The whole library at 5x on the RP6", "detail_md": "No crashes in 266 games; 232 averaged 59 fps or more."},
+    {"date": "2026-10-16", "label": "16 Oct", "kind": "release", "title": "v2.4.0", "detail_md": "Polling loops skipped where exact, Vulkan depth and stencil, the runner on Android, EDATA and PGD on the memory stick.", "tag": "v2.4.0"},
+    {"date": "2026-10-16", "label": "16 Oct", "kind": "first", "title": "A real PSP times games' display lists", "detail_md": "A GE profiler on a PSP-1000: 4 to 12 times the old model's time."},
+    {"date": "2026-10-18", "label": "18 Oct", "kind": "milestone", "title": "The GE on a thread of its own", "detail_md": "Exact, off by default (#272); and screenshots that hop into a folder (#273)."},
+    {"date": "2026-10-19", "label": "19 Oct", "kind": "milestone", "title": "A PSP's own timing becomes the default", "detail_md": "The GE takes about the time a PSP-1000 took; \"Fast\" is the opt-in (#269)."},
+    {"date": "2026-10-20", "label": "20 Oct", "kind": "milestone", "title": "The frame shown from the GE thread", "detail_md": "#277; and the N64 recompiler fixed on x86-64 desktops (#290)."},
+    {"date": "2026-10-21", "label": "21 Oct", "kind": "milestone", "title": "N64 on the stock Qualcomm driver", "detail_md": "No more black picture on the RP6's own driver (#292); Super Monkey Ball within 15% of the PSP (#291)."}
+  ]
+}

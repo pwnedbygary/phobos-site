@@ -1,0 +1,27 @@
+{
+  "title": "Credits and licences",
+  "intro_md": "Phobos stands on a lot of other people's work. The main pieces:",
+  "components": [
+    {"name": "ares", "role": "The multi-system emulator Phobos is built on", "by": "the ares team, Near et al.", "licence": "ISC", "url": "https://github.com/ares-emulator/ares"},
+    {"name": "higan and bsnes", "role": "Where ares came from", "by": "Near and contributors", "licence": "", "url": "https://github.com/higan-emu/higan"},
+    {"name": "paraLLEl-RDP", "role": "The N64's graphics on Vulkan, modified by Phobos", "by": "Themaister", "licence": "MIT", "url": "https://github.com/Themaister/parallel-rdp-standalone"},
+    {"name": "sljit", "role": "The JIT compiler under the N64 and PSP recompilers", "by": "Zoltan Herczeg", "licence": "BSD 2-Clause", "url": "https://github.com/zherczeg/sljit"},
+    {"name": "libchdr", "role": "CHD disc images", "by": "Romain Tisserand, portions Aaron Giles", "licence": "BSD 3-Clause", "url": "https://github.com/rtissera/libchdr"},
+    {"name": "SDL 3.2.30", "role": "Window, input and sound for the desktop program", "by": "Sam Lantinga and contributors", "licence": "zlib", "url": "https://github.com/libsdl-org/SDL"},
+    {"name": "HIDAPI", "role": "Inside SDL's joystick code, on Linux, Windows and macOS", "by": "Alan Ott, Signal 11 Software, and the libusb/hidapi team", "licence": "BSD-style", "url": "https://github.com/libusb/hidapi"},
+    {"name": "FFmpeg", "role": "The PSP's ATRAC3, ATRAC3plus and MP3 sound and H.264 movies (libavcodec, libavutil)", "by": "the FFmpeg developers", "licence": "LGPL 2.1", "url": "https://ffmpeg.org"},
+    {"name": "Vulkan-Headers and volk", "role": "Vulkan's headers and its loader", "by": "The Khronos Group; Arseny Kapoulkine", "licence": "Apache 2.0 or MIT; MIT", "url": "https://github.com/KhronosGroup/Vulkan-Headers"},
+    {"name": "MoltenVK", "role": "Vulkan on macOS, bundled in the macOS app", "by": "The Brenwill Workshop Ltd., for the Khronos Group", "licence": "Apache 2.0", "url": "https://github.com/KhronosGroup/MoltenVK"},
+    {"name": "SPIRV-Cross", "role": "Its parser and its GLSL, MSL and reflection compilers, inside MoltenVK", "by": "Arm Limited, The Brenwill Workshop Ltd., Bradley Austin Davis and Hans-Kristian Arntzen", "licence": "Apache 2.0 or MIT", "url": "https://github.com/KhronosGroup/SPIRV-Cross"},
+    {"name": "AppImage runtime", "role": "type2-runtime, the start of the Linux AppImage, which mounts or extracts the image after it", "by": "probonopd", "licence": "MIT", "url": "https://github.com/AppImage/type2-runtime"},
+    {"name": "libadrenotools", "role": "Custom Turnip drivers on Adreno GPUs", "by": "Billy Laws", "licence": "BSD 2-Clause", "url": "https://github.com/bylaws/libadrenotools"},
+    {"name": "libc++", "role": "The Android NDK's C++ library, linked into the app's native libraries", "by": "LLVM contributors", "licence": "Apache 2.0 with LLVM Exceptions; MIT", "url": "https://github.com/llvm/llvm-project/tree/main/libcxx"},
+    {"name": "sse2neon", "role": "x86 SIMD intrinsics on ARM's NEON", "by": "SSE2NEON contributors", "licence": "MIT", "url": "https://github.com/DLTcollab/sse2neon"},
+    {"name": "MAME", "role": "Neo Geo cartridge decryption and banking, the zoom table and the RTC protocol", "by": "MAME contributors", "licence": "BSD 3-Clause", "url": "https://github.com/mamedev/mame"},
+    {"name": "ymfm", "role": "Yamaha FM sound chips", "by": "Aaron Giles", "licence": "BSD 3-Clause", "url": "https://github.com/aaronsgiles/ymfm"},
+    {"name": "C-BIOS", "role": "The bundled MSX and MSX2 system ROMs", "by": "BouKiCHi and the C-BIOS team", "licence": "BSD-style", "url": "https://cbios.sourceforge.net"},
+    {"name": "Systematic console icons", "role": "The console art in the app's Library, recoloured for each theme", "by": "BAXY Square, via RomM", "licence": "MIT", "url": "https://github.com/baxysquare/baxy-retroarch-themes"}
+  ],
+  "more_md": "And the LZMA SDK, miniz, Zstandard, xxHash, TZXFile, qoi/qon, puff, font-rs, the ZX Spectrum ROMs (Amstrad's, redistributed with its permission), Khronos's OpenGL and EGL headers (MIT-style), the MinGW-w64 runtime in the Windows build, the Android and Kotlin libraries, and the app's fonts (Press Start 2P, Galmuri, VT323, DotGothic16, Bangers, Comic Neue and M PLUS 1, under the SIL Open Font License). Inside SDL 3.2.30 are yuv2rgb, stb_image's JPEG decoder and SDL_rotate, and on Linux the X11 EDID parser and XSETTINGS client, imKStoUCS, code from xdg-user-dirs, the Wayland protocols and PipeWire's SPA header code. Inside MoltenVK are SPIRV-Tools, SPIRV-Headers and cereal, and linked into the AppImage runtime are musl, libfuse, squashfuse, zstd, zlib and mimalloc. Every component's licence, in full, is in [LICENSE](https://github.com/pwnedbygary/phobos/blob/master/LICENSE).",
+  "licence_md": "Phobos's own code is licensed under the GNU General Public License, version 3 or (at your option) any later version; its text is in [COPYING](https://github.com/pwnedbygary/phobos/blob/master/COPYING). The components keep their own licences. The console firmware that ares ships is not covered by the GPL."
+}

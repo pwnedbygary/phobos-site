@@ -1,0 +1,15 @@
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="{{^is_home}}index.html{{/is_home}}#top"><img src="media/brand/icon-64.png" width="32" height="32" alt=""><span>Phobos</span></a>
+    <nav class="nav" aria-label="Sections">
+      <ul>{{#nav}}<li><a href="{{^is_home}}index.html{{/is_home}}{{href}}">{{label}}</a></li>{{/nav}}<li><a href="devlog.html"{{#is_devlog}} aria-current="page"{{/is_devlog}}>Dev log</a></li></ul>
+    </nav>
+    <a class="btn btn-primary btn-small header-cta" href="{{links.latest}}">Download</a>
+    <details class="menu">
+      <summary><span class="sr-only">Menu</span><span class="menu-bars" aria-hidden="true"></span></summary>
+      <nav aria-label="Sections, menu">
+        <ul>{{#nav}}<li><a href="{{^is_home}}index.html{{/is_home}}{{href}}">{{label}}</a></li>{{/nav}}<li><a href="devlog.html">Dev log</a></li><li><a href="{{links.latest}}">Download {{latest.tag}}</a></li></ul>
+      </nav>
+    </details>
+  </div>
+</header>

@@ -1,0 +1,58 @@
+{
+  "name": "Phobos",
+  "repo": "pwnedbygary/phobos",
+  "title": "Phobos: a multi-system emulator for Android handhelds and the desktop",
+  "description": "Phobos is a multi-system emulator built on ares, with a PlayStation Portable core of its own: a controller-first app for Android ARM64 handhelds, and a desktop program for Linux, Windows and macOS.",
+  "tagline": "A multi-system emulator built on ares.",
+  "hero_pill": "New in 2.0: a PSP core of its own",
+  "hero_pill_href": "#hl-psp",
+  "lead_md": "A controller-first app for Android handhelds, and a desktop program for Linux, Windows and macOS. Thirty-four systems, and a PlayStation Portable core written from scratch.",
+  "base_url": "https://pwnedbygary.github.io/phobos-site",
+  "theme_color": "#0b0716",
+  "locale": "en",
+  "timezone": "America/New_York",
+  "timezone_label": "US Eastern",
+  "links": {
+    "repo": "https://github.com/pwnedbygary/phobos",
+    "releases": "https://github.com/pwnedbygary/phobos/releases",
+    "latest": "https://github.com/pwnedbygary/phobos/releases/latest",
+    "issues": "https://github.com/pwnedbygary/phobos/issues",
+    "pulls": "https://github.com/pwnedbygary/phobos/pulls?q=is%3Apr+is%3Amerged",
+    "license": "https://github.com/pwnedbygary/phobos/blob/master/LICENSE",
+    "copying": "https://github.com/pwnedbygary/phobos/blob/master/COPYING",
+    "progress": "https://github.com/pwnedbygary/phobos/blob/master/docs/progress.md",
+    "psp_core": "https://github.com/pwnedbygary/phobos/blob/master/docs/psp-core.md",
+    "compat": "https://github.com/pwnedbygary/phobos/blob/master/docs/psp-compatibility.md",
+    "discord": "https://discord.gg/EkSNHnmYma"
+  },
+  "nav": [
+    {"href": "#highlights", "label": "Highlights"},
+    {"href": "#gallery", "label": "Gallery"},
+    {"href": "#story", "label": "Story"},
+    {"href": "#timeline", "label": "Timeline"},
+    {"href": "#roadmap", "label": "Roadmap"},
+    {"href": "#credits", "label": "Credits"}
+  ],
+  "what": {
+    "title": "Thirty-four systems, one app, made for your hands",
+    "paras_md": [
+      "Phobos is a multi-system emulator built on [ares](https://github.com/ares-emulator/ares), the accuracy-first emulator whose lineage runs back to 2004 through higan and bsnes. It keeps ares's cores and their clarity, and adds what a handheld needs: fast paths for ARM64, Vulkan rendering, custom GPU drivers, and an interface you drive with a controller.",
+      "It runs on Android ARM64 handhelds and phones, and the same cores run in a desktop program for Linux, Windows and macOS. Phobos's own code is free software under the GNU GPL, version 3 or later."
+    ],
+    "platforms": [
+      {"name": "Android", "detail": "Modern build for ARMv8.2-A (FP16 and dot product), Legacy build for any 64-bit ARM device. Android 8.0 or newer. Updates itself from GitHub."},
+      {"name": "Linux", "detail": "An AppImage, with a zsync file for delta updates."},
+      {"name": "Windows", "detail": "Phobos.exe, in a zip, for 64-bit Windows."},
+      {"name": "macOS", "detail": "A universal app, Vulkan through the bundled MoltenVK."}
+    ],
+    "platforms_note_md": "Each tagged release since v2.0.0 carries all of them; the nightly builds carry the Android app."
+  },
+  "systems_title": "The library",
+  "systems_intro_md": "The app's Library lists 34 systems. Twenty-seven are verified with games on a device, the PlayStation Portable is new and marked Experimental, and six are in but not yet tried with a game on a device.",
+  "made_md": "Phobos is built with AI coding agents under the owner's direction. Since September every change gets an independent review of its exact code before it merges, and claims about speed and accuracy are measured, on a Retroid Pocket 6 and on a real PSP-1000.",
+  "disclaimer_md": "Phobos provides no games: use your own, dumped from games you own. Systems that need a BIOS beyond the firmware ares itself ships (see [LICENSE](https://github.com/pwnedbygary/phobos/blob/master/LICENSE)) take one dumped from your own hardware. Phobos is not affiliated with, endorsed by or sponsored by Sony, Nintendo, any other console maker or any game publisher; all product names, game titles and trademarks belong to their owners and appear here only to say what Phobos emulates and what each picture shows.",
+  "footer_fine_md": "No games are provided. Not affiliated with Sony, Nintendo or any other console maker or game publisher. The site's own code is free software ([GPL-3.0-or-later](https://github.com/pwnedbygary/phobos-site/blob/main/LICENSE)); game pictures, clips and trademarks are excluded and belong to their owners.",
+  "devlog_note_md": "Before 24 September 2026 work went straight to master, so the log starts there. The PSP core's stack, about 100 pull requests numbered between #100 and #207, reached master together through #208 for v2.0.0, so GitHub lists most of them as closed rather than merged; they're all in [the repository's pull requests](https://github.com/pwnedbygary/phobos/pulls?q=is%3Apr+is%3Aclosed). Five merged into other branches first and show here with those dates: the PSP stack's #154, #158, #165 and #179, and #275, which reached master through #281.",
+  "unmerged_prs_named": [100, 207, 294],
+  "screens_note_md": "Every picture and clip here is Phobos's own output: PSP scenes drawn by its headless runner at 4x, device screenshots and screen recordings from a Retroid Pocket 6, and the desktop program on Linux."
+}

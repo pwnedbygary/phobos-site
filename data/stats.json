@@ -1,0 +1,21 @@
+{
+  "hero": [
+    {"value": "34", "label": "systems in the library"},
+    {"value": "266", "label": "PSP games in the test library"},
+    {"value": "4", "label": "platforms: Android, Linux, Windows, macOS"},
+    {"value": "{merged_count}", "label": "pull requests merged since 24 Sep 2026"}
+  ],
+  "psp": [
+    {"value": "197 of 266", "label": "PSP games reach a menu or gameplay within a minute (headless library run, 11 Oct)"},
+    {"value": "13 days", "label": "from the PSP core's first code (3 Oct) to v2.4.0 (16 Oct), its fifth release"}
+  ],
+  "timing": [
+    {"value": "3,373", "label": "display lists measured on a PSP-1000 behind the GE's timing"},
+    {"value": "5.0%", "label": "median miss of the fit against them (#269)"},
+    {"value": "8 of 8", "label": "judged game scenes within 15% of the PSP by their whole frame (#291)"}
+  ],
+  "speed": [
+    {"value": "18 of 22", "label": "slow PSP games at full speed at 1x (15 Oct nightly; 7 with v2.3.0)"},
+    {"value": "232 of 266", "label": "PSP games at 59+ fps at 5x, two-minute runs from launch"}
+  ]
+}

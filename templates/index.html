@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+{{> head}}
+</head>
+<body id="top">
+<a class="skip" href="#main">Skip to content</a>
+{{> header}}
+<main id="main">
+
+<section class="hero" aria-labelledby="hero-title">
+  <div class="hero-media" aria-hidden="true">
+    {{#hero.backdrop}}{{> picture}}{{/hero.backdrop}}
+    {{#hero.video}}<video class="hero-video" muted loop playsinline preload="none" width="{{width}}" height="{{height}}" tabindex="-1" data-hero-video>
+      <source src="{{webm}}" type="video/webm">
+      <source src="{{mp4}}" type="video/mp4">
+    </video>{{/hero.video}}
+    <div class="hero-shade"></div>
+  </div>
+  <div class="wrap hero-inner">
+    <a class="hero-pill" href="{{site.hero_pill_href}}"><span class="pill-dot" aria-hidden="true"></span>{{site.hero_pill}}</a>
+    <h1 id="hero-title" class="hero-logo">{{#hero.logo}}<img src="media/{{file}}" width="{{width}}" height="{{height}}" alt="Phobos" fetchpriority="high">{{/hero.logo}}</h1>
+    <p class="hero-tagline">{{site.tagline}}</p>
+    <p class="hero-lead">{{{site.lead_html}}}</p>
+    <div class="cta">
+      <a class="btn btn-primary" href="{{links.latest}}"><span>Download {{latest.tag}}</span><small>Latest release, {{latest.date}}</small></a>
+      <a class="btn btn-ghost" href="{{links.releases}}"><span>Nightly builds</span><small>One for every push to master</small></a>
+      <a class="btn btn-ghost" href="{{links.repo}}"><span>{{> icon-github}} GitHub</span><small>Source, issues and pull requests</small></a>
+    </div>
+    <ul class="hero-stats">{{#hero.stats}}<li><strong>{{value}}</strong><span>{{label}}</span></li>{{/hero.stats}}</ul>
+  </div>
+  <button class="motion-toggle" type="button" hidden data-motion-toggle aria-pressed="false">Pause video</button>
+</section>
+
+<section id="what" class="section what" aria-labelledby="what-title">
+  <div class="wrap">
+    <p class="eyebrow">What it is</p>
+    <h2 id="what-title">{{what.title}}</h2>
+    <div class="what-grid">
+      <div class="what-text">{{#what.paras_html}}<p>{{{.}}}</p>{{/what.paras_html}}</div>
+      <ul class="platforms">{{#what.platforms}}<li class="platform"><h3>{{name}}</h3><p>{{detail}}</p></li>{{/what.platforms}}</ul>
+    </div>
+    <p class="note">{{{what.platforms_note_html}}}</p>
+    <div class="systems" id="systems">
+      <h3>{{site.systems_title}}</h3>
+      <p>{{{site.systems_intro_html}}}</p>
+      <ul class="legend">{{#systems.legend}}<li class="s-{{status}}"><span class="dot" aria-hidden="true"></span>{{label}}<b>{{count}}</b></li>{{/systems.legend}}</ul>
+      <div class="system-groups">{{#systems.groups}}
+        <div class="sys-group"><h4>{{maker}}</h4><ul>{{#systems}}<li class="chip s-{{status}}"><span class="dot" aria-hidden="true"></span><span>{{name}}{{#note}} <small>{{note}}</small>{{/note}}</span><span class="sr-only">, {{status_label}}</span></li>{{/systems}}</ul></div>{{/systems.groups}}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="highlights" class="section highlights" aria-labelledby="hl-title">
+  <div class="wrap">
+    <p class="eyebrow">Highlights</p>
+    <h2 id="hl-title">{{highlights.title}}</h2>
+    <p class="section-intro">{{{highlights.intro_html}}}</p>
+    {{#highlights.feature_cards}}
+    <article class="feature{{#flip}} flip{{/flip}}{{#wide}} wide{{/wide}}" id="hl-{{id}}">
+      <div class="feature-text">
+        <p class="tag">{{tag}}</p>
+        <h3>{{title}}</h3>
+        <p class="lead">{{{lead_html}}}</p>
+        <ul class="points">{{#points_html}}<li>{{{.}}}</li>{{/points_html}}</ul>
+        {{#has_stats}}<div class="stats">{{#stat_list}}<div class="stat"><strong>{{value}}</strong><span>{{label}}</span></div>{{/stat_list}}</div>{{/has_stats}}
+        {{#link}}<p class="more"><a href="{{href}}">{{label}}</a></p>{{/link}}
+      </div>
+      <div class="feature-visual">
+        {{#picture}}<figure class="frame">{{> picture}}</figure>{{/picture}}
+        {{#chart_svg}}<figure class="chart-fig">{{{chart_svg}}}<figcaption>{{{chart_source_html}}}</figcaption></figure>{{/chart_svg}}
+        {{#compare}}<div class="compare">
+          <figure class="frame before">{{#before_pic}}{{> picture}}{{/before_pic}}<figcaption><span class="badge">Before</span> {{before_label}}</figcaption></figure>
+          <figure class="frame after">{{#after_pic}}{{> picture}}{{/after_pic}}<figcaption><span class="badge badge-hot">After</span> {{after_label}}</figcaption></figure>
+        </div>{{/compare}}
+      </div>
+    </article>
+    {{/highlights.feature_cards}}
+    <div class="text-cards">{{#highlights.text_cards}}
+      <article class="card" id="hl-{{id}}"><p class="tag">{{tag}}</p><h3>{{title}}</h3><p class="lead">{{{lead_html}}}</p><ul class="points">{{#points_html}}<li>{{{.}}}</li>{{/points_html}}</ul></article>{{/highlights.text_cards}}
+    </div>
+  </div>
+</section>
+
+<section id="gallery" class="section gallery" aria-labelledby="gallery-title">
+  <div class="wrap">
+    <p class="eyebrow">Gallery</p>
+    <h2 id="gallery-title">{{gallery.title}}</h2>
+    <p class="section-intro">{{{gallery.intro_html}}}</p>
+    {{#gallery.groups}}
+    {{#is_clips}}<div class="g-group" id="g-{{id}}">
+      <h3>{{title}}</h3>
+      <p class="g-intro">{{{intro_html}}}</p>
+      <div class="clips">{{#shown}}
+        <figure class="clip">{{#video}}<div class="clip-frame">{{#poster_pic}}<picture class="clip-poster"><source type="image/avif" srcset="{{avif}}"><img src="{{webp}}" width="{{width}}" height="{{height}}" alt="" loading="{{loading}}" decoding="async"></picture>{{/poster_pic}}<video controls muted loop playsinline preload="none" width="{{width}}" height="{{height}}" aria-label="{{title}}, a muted clip of {{duration}} seconds">
+          <source src="{{webm}}" type="video/webm">
+          <source src="{{mp4}}" type="video/mp4">
+          <a href="{{mp4}}">Download the clip ({{mb}} MB)</a>
+        </video></div>{{/video}}<figcaption><strong>{{title}}</strong> {{{caption_html}}}</figcaption></figure>{{/shown}}
+      </div>
+    </div>{{/is_clips}}
+    {{#is_grid}}<div class="g-group" id="g-{{id}}">
+      <h3>{{title}}</h3>
+      <p class="g-intro">{{{intro_html}}}</p>
+      <ul class="shots">{{#shown}}<li><a class="shot" href="{{picture.full}}" data-lightbox="{{group_id}}" data-caption="{{title}}">{{#picture}}{{> picture}}{{/picture}}<span class="shot-cap">{{title}}</span></a></li>{{/shown}}</ul>
+    </div>{{/is_grid}}
+    {{#is_wall}}<div class="g-group wall" id="g-wall">
+      <div class="wall-head"><h3><span class="big">266</span> games</h3><p class="g-intro">{{{intro_html}}}</p></div>
+      <a class="wall-img" href="{{picture.full}}" data-lightbox="wall" data-caption="{{alt}}">{{#picture}}{{> picture}}{{/picture}}</a>
+    </div>{{/is_wall}}
+    {{/gallery.groups}}
+    <p class="note">{{{site.screens_note_html}}}</p>
+  </div>
+</section>
+
+<section id="story" class="section story" aria-labelledby="story-title">
+  <div class="wrap">
+    <p class="eyebrow">History</p>
+    <h2 id="story-title">{{story.title}}</h2>
+    <p class="section-intro">{{{story.intro_html}}}</p>
+    <ol class="chapters">{{#story.chapters}}
+      <li class="chapter" id="story-{{id}}">
+        <div class="chapter-meta"><span class="chapter-no" aria-hidden="true">{{no}}</span><p class="kicker">{{kicker}}</p></div>
+        <div class="chapter-body">
+          <h3>{{title}}</h3>
+          {{#quote}}<blockquote class="quote"><p>{{{text_html}}}</p><footer>{{by}}</footer></blockquote>{{/quote}}
+          {{#paras_html}}<p>{{{.}}}</p>{{/paras_html}}
+          {{#picture}}<figure class="frame story-pic">{{> picture}}{{#caption_html}}<figcaption>{{{caption_html}}}</figcaption>{{/caption_html}}</figure>{{/picture}}
+          {{#chart_svg}}<figure class="chart-fig">{{{chart_svg}}}<figcaption>{{{chart_source_html}}}</figcaption></figure>{{/chart_svg}}
+          {{#has_pictures}}<figure class="trio-fig"><div class="trio">{{#pictures}}<div class="frame">{{> picture}}</div>{{/pictures}}</div><figcaption>{{{caption_html}}}</figcaption></figure>{{/has_pictures}}
+        </div>
+      </li>{{/story.chapters}}
+    </ol>
+  </div>
+</section>
+
+<section id="timeline" class="section timeline" aria-labelledby="tl-title">
+  <div class="wrap">
+    <p class="eyebrow">Milestones</p>
+    <h2 id="tl-title">{{timeline.title}}</h2>
+    <p class="section-intro">{{{timeline.intro_html}}}</p>
+    <ol class="tl">{{#timeline.items}}
+      <li class="tl-item k-{{kind}}"><time datetime="{{date}}">{{label}}</time><div class="tl-card"><span class="tl-kind">{{kind_label}}</span><h3>{{#href}}<a href="{{href}}">{{/href}}{{title}}{{#href}}</a>{{/href}}</h3><p>{{{detail_html}}}</p></div></li>{{/timeline.items}}
+    </ol>
+    <p class="tl-more"><a class="btn btn-ghost" href="devlog.html"><span>The development log</span><small>All {{facts.merged_count}} merged pull requests, oldest first</small></a></p>
+  </div>
+</section>
+
+<section id="roadmap" class="section roadmap" aria-labelledby="rm-title">
+  <div class="wrap">
+    <p class="eyebrow">What's next</p>
+    <h2 id="rm-title">{{roadmap.title}}</h2>
+    <p class="section-intro">{{{roadmap.intro_html}}}</p>
+    <div class="rm-cols">{{#roadmap.columns}}
+      <div class="rm-col rm-{{id}}"><h3><span class="rm-dot" aria-hidden="true"></span>{{title}}</h3><ul>{{#items}}<li class="rm-item"><span class="pill">{{status}}</span><h4>{{title}}</h4><p>{{{detail_html}}}</p></li>{{/items}}</ul></div>{{/roadmap.columns}}
+    </div>
+  </div>
+</section>
+
+<section id="credits" class="section credits" aria-labelledby="cr-title">
+  <div class="wrap">
+    <p class="eyebrow">Thanks</p>
+    <h2 id="cr-title">{{credits.title}}</h2>
+    <p class="section-intro">{{{credits.intro_html}}}</p>
+    <ul class="credit-list">{{#credits.components}}<li><a href="{{url}}">{{name}}</a><span class="role">{{role}}</span><span class="by">{{by}}</span>{{#licence}}<span class="lic">{{licence}}</span>{{/licence}}</li>{{/credits.components}}</ul>
+    <p class="more-credits">{{{credits.more_html}}}</p>
+    <div class="fine">
+      <div class="fine-card"><h3>Licence</h3><p>{{{credits.licence_html}}}</p></div>
+      <div class="fine-card"><h3>How it's made</h3><p>{{{site.made_html}}}</p></div>
+      <div class="fine-card"><h3>Disclaimer</h3><p>{{{site.disclaimer_html}}}</p></div>
+    </div>
+  </div>
+</section>
+
+</main>
+{{> footer}}
+<dialog class="lightbox" aria-label="Picture viewer" data-lightbox-dialog>
+  <figure><img alt="" data-lb-img><figcaption data-lb-cap></figcaption></figure>
+  <button class="lb-btn lb-prev" type="button" aria-label="Previous picture" data-lb-prev>&#8249;</button>
+  <button class="lb-btn lb-next" type="button" aria-label="Next picture" data-lb-next>&#8250;</button>
+  <button class="lb-close" type="button" aria-label="Close" data-lb-close>&#215;</button>
+</dialog>
+</body>
+</html>
