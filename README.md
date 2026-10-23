@@ -62,7 +62,7 @@ picture loads at once (the real site loads pictures lazily).
 | `MEDIA.md` | The media manifest: what each file shows, the game, frame, build and date |
 | `FACTS.md` | Every claim on the site and its source |
 | `.github/workflows/pages.yml` | Builds and checks the site from the committed data and deploys it to GitHub Pages (see Deploy) |
-| `LICENSE` | The GNU General Public License, version 3: the site's own code is under it (see Licence) |
+| `LICENSE` | The GNU General Public License, version 3: what the Licence section lists is under it |
 
 Text fields ending in `_md` take a little Markdown: `[text](url)`, `**bold**`, `*italics*` and `` `code` ``. A `#123`
 in them becomes a link to pull request 123. `{merged_count}`, `{release_count}`, `{latest_tag}`, `{latest_date}`,
@@ -170,8 +170,19 @@ is one site to keep current.
 
 ## Licence
 
-The site's own code (`build.py`, `tools/`, `templates/`, the CSS and JavaScript in `static/`, and the workflow in
-`.github/`) is free software, as Phobos's own code is: you can redistribute it and/or modify it under the terms of the
-GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your
-option) any later version. The License's text is in `LICENSE`. The game pictures and clips in `static/media/` are
-excluded, as are the trademarks the site names: they belong to their owners.
+The site's code, text, data and logo, and the pictures of the app's own interface, are free, as Phobos's own code is:
+you can redistribute them and/or modify them under the terms of the GNU General Public License as published by the
+Free Software Foundation, either version 3 of the License, or (at your option) any later version. The License's text
+is in `LICENSE`. That is the code (`build.py`, `tools/`, `templates/`, the CSS and JavaScript in `static/`, and the
+workflow in `.github/`), the text (the templates' words, `README.md`, `FACTS.md` and `MEDIA.md`), the data
+(`data/*.json`), the Phobos logo and icons (`static/media/brand/`), and the app's own screenshots and interface clip
+(`rp6-library`, `rp6-n64-ocarina-before` and `clip-rp6-themes` in `static/media/`). The desktop program's two
+pictures, `desktop-library` and `desktop-pause-menu`, aren't under it.
+
+Excluded, and their owners': pictures and clips of games, whole, the app's overlay and controls in them included; game
+art inside the interface pictures (the game behind the desktop pause menu) and the game wall behind the logo in the
+share image (`static/media/brand/og-share.jpg`); Google's Material icons (the app's dock, its back arrow and the theme
+cards' marks), under the Apache License 2.0, in the Library picture and the themes clip; the console art in the
+Library picture, BAXY Square's, under the MIT License; and the trademarks the site names.
+[Phobos's LICENSE](https://github.com/pwnedbygary/phobos/blob/master/LICENSE) carries the Apache License's text, lists
+Material Icons and holds BAXY Square's MIT notice.
