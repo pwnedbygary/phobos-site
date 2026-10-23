@@ -8,14 +8,14 @@
 {{> header}}
 <main id="main" class="devlog">
   <div class="wrap">
-    <p class="eyebrow">Development log</p>
+    <p class="eyebrow">Dev log</p>
     <h1>Every merged pull request, oldest first</h1>
-    <p class="section-intro">{{devlog.count}} pull requests merged into Phobos, from the first on {{devlog.first}} to the latest on {{devlog.last}}. Times are {{site.timezone_label}}; the list was fetched from GitHub on {{devlog.fetched}}.</p>
+    <p class="section-intro">{{devlog.count}} pull requests merged into Phobos, the first on {{devlog.first}} and the latest on {{devlog.last}}. Times are {{site.timezone_label}}, and the list comes from GitHub as of {{devlog.fetched}}. The titles are plain-English rewrites, and each number links to its pull request on GitHub, where the full title is.</p>
     <p class="note">{{{site.devlog_note_html}}}</p>
-    <figure class="chart-fig devlog-chart">{{{devlog.chart}}}<figcaption>Pull requests merged each day ({{site.timezone_label}}).</figcaption></figure>
+    <figure class="chart-fig devlog-chart">{{{devlog.chart}}}<figcaption>Pull requests merged per day, in {{site.timezone_label}} time.</figcaption></figure>
     <div class="filter">
       <label for="devlog-filter">Filter</label>
-      <input id="devlog-filter" type="search" placeholder="A word from a title, or a number" autocomplete="off" data-filter>
+      <input id="devlog-filter" type="search" placeholder="A word or a number" autocomplete="off" data-filter>
       <output class="filter-count" for="devlog-filter" data-filter-count aria-live="polite"></output>
     </div>
     {{#devlog.groups}}<section class="month" aria-labelledby="m-{{_index}}">
@@ -29,7 +29,7 @@
     </section>{{/devlog.groups}}
     <section class="releases" aria-labelledby="rel-title">
       <h2 id="rel-title">Releases</h2>
-      <p>Tagged releases carry the Android app and, from v2.0.0, the desktop program; a nightly pre-release of the Android app follows every push to master, on <a href="{{links.releases}}">the releases page</a>.</p>
+      <p>Tagged releases have the Android app, and the desktop program since v2.0.0. Nightlies of the Android app are on <a href="{{links.releases}}">the releases page</a>.</p>
       <table class="prs rels">
         <thead><tr><th scope="col">Release</th><th scope="col">Published</th></tr></thead>
         <tbody>{{#devlog.releases}}
@@ -37,7 +37,7 @@
         </tbody>
       </table>
     </section>
-    <p class="tl-more"><a class="btn btn-ghost" href="index.html#timeline"><span>Back to the timeline</span><small>The eras, firsts and releases</small></a></p>
+    <p class="tl-more"><a class="btn btn-ghost" href="index.html#timeline"><span>Back to the timeline</span><small>The big moments so far</small></a></p>
   </div>
 </main>
 {{> footer}}

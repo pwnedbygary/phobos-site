@@ -1,19 +1,19 @@
 {
   "title": "Roadmap",
-  "intro_md": "What's being built now and what comes after. No dates: the work ships when its reviews and checks pass.",
+  "intro_md": "What we're working on and what's next. No dates, since things ship when their reviews and checks pass.",
   "columns": [
     {
       "id": "now",
       "title": "In progress",
       "items": [
         {
-          "title": "Dante's Inferno's loop skip",
-          "detail_md": "A skip for the loop in which Dante's Inferno waits, doing nothing, for its next frame. It goes into the PSP core once its reviews and frame-by-frame exactness checks pass.",
+          "title": "A loop skip for Dante's Inferno",
+          "detail_md": "It skips the loop where the game sits waiting for its next frame. It lands once review and frame-by-frame exactness checks pass.",
           "status": "Design"
         },
         {
           "title": "Hotkeys on Android and the desktop",
-          "detail_md": "The owner's pull request [#294](https://github.com/pwnedbygary/phobos/pull/294): combos of any length, three bindings per action, per-console and per-game levels, slow motion and frame advance.",
+          "detail_md": "My pull request [#294](https://github.com/pwnedbygary/phobos/pull/294), with combos of any length, three bindings per action, slow motion and frame advance.",
           "status": "Open pull request"
         }
       ]
@@ -23,8 +23,8 @@
       "title": "Next",
       "items": [
         {
-          "title": "The GE thread's automatic handover",
-          "detail_md": "An Auto mode for the GE thread, handing over both ways, that keeps a game synchronous where the two threads would only take turns. Then the app's \"PSP Graphics Overlap\" switch, once On beats Off on the Retroid Pocket 6.",
+          "title": "Automatic handover for the GE thread",
+          "detail_md": "An Auto mode that hands over both ways, keeping a game synchronous where the two threads would only take turns.",
           "status": "Planned"
         }
       ]
@@ -35,12 +35,12 @@
       "items": [
         {
           "title": "Live switching for the PSP",
-          "detail_md": "Changing the PSP's resolution and renderer mid-game, without a restart. It waited for the GE thread and timing work, which has now merged.",
+          "detail_md": "Changing the PSP's resolution and renderer mid-game, with no restart. The GE work it was waiting on has merged now.",
           "status": "Planned"
         },
         {
           "title": "Vulkan (accurate), faster",
-          "detail_md": "Bringing the accurate Vulkan renderer's speed closer to the fast one's on the handheld.",
+          "detail_md": "Getting the accurate Vulkan renderer closer to the fast one's speed on the handheld.",
           "status": "Planned"
         }
       ]

@@ -93,7 +93,7 @@
       <h3>{{title}}</h3>
       <p class="g-intro">{{{intro_html}}}</p>
       <div class="clips">{{#shown}}
-        <figure class="clip">{{#video}}<div class="clip-frame">{{#poster_pic}}<picture class="clip-poster"><source type="image/avif" srcset="{{avif}}"><img src="{{webp}}" width="{{width}}" height="{{height}}" alt="" loading="{{loading}}" decoding="async"></picture>{{/poster_pic}}<video controls muted loop playsinline preload="none" width="{{width}}" height="{{height}}" aria-label="{{title}}, a muted clip of {{duration}} seconds">
+        <figure class="clip">{{#video}}<div class="clip-frame">{{#poster_pic}}<picture class="clip-poster"><source type="image/avif" srcset="{{avif}}"><img src="{{webp}}" width="{{width}}" height="{{height}}" alt="" loading="{{loading}}" decoding="async"></picture>{{/poster_pic}}<video controls muted loop playsinline preload="none" width="{{width}}" height="{{height}}" aria-label="{{title}}, {{duration}} seconds, no sound">
           <source src="{{webm}}" type="video/webm">
           <source src="{{mp4}}" type="video/mp4">
           <a href="{{mp4}}">Download the clip ({{mb}} MB)</a>
@@ -143,7 +143,7 @@
     <ol class="tl">{{#timeline.items}}
       <li class="tl-item k-{{kind}}"><time datetime="{{date}}">{{label}}</time><div class="tl-card"><span class="tl-kind">{{kind_label}}</span><h3>{{#href}}<a href="{{href}}">{{/href}}{{title}}{{#href}}</a>{{/href}}</h3><p>{{{detail_html}}}</p></div></li>{{/timeline.items}}
     </ol>
-    <p class="tl-more"><a class="btn btn-ghost" href="devlog.html"><span>The development log</span><small>All {{facts.merged_count}} merged pull requests, oldest first</small></a></p>
+    <p class="tl-more"><a class="btn btn-ghost" href="devlog.html"><span>The dev log</span><small>All {{facts.merged_count}} merged pull requests, oldest first</small></a></p>
   </div>
 </section>
 

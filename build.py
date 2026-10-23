@@ -12,7 +12,8 @@ Each build also writes dist/.nojekyll, so GitHub Pages serves the files as they 
 
 Data:  data/site.json, stats.json, highlights.json, systems.json, gallery.json, story.json, timeline.json,
        roadmap.json, credits.json, charts.json; data/media.json (written by tools/media.py);
-       data/devlog.json and data/releases.json (written by tools/fetch.py from GitHub).
+       data/devlog.json and data/releases.json (written by tools/fetch.py from GitHub); data/devlog-titles.json
+       (the dev log's titles in plain English, by pull request number; GitHub's title where there's none).
 Text fields ending in _md take a little Markdown: [text](url), **bold**, *italics*, `code`. "#123" becomes a link to
 pull request 123, and {merged_count}, {latest_tag} and the other facts in facts() are filled in.
 
@@ -487,8 +488,8 @@ def merges_chart(pulls, tz):
     plot_h = height - pad_b - pad_t
     total = sum(days.values())
     busiest = max(days, key=days.get)
-    desc = (f"Pull requests merged each day from {day_label(start)} to {day_label(end)}: {total} in all, "
-            f"at most {peak} on one day ({day_label(busiest)}).")
+    desc = (f"Pull requests merged per day between {day_label(start)} and {day_label(end)}, {total} in all. "
+            f"The most on one day was {peak}, on {day_label(busiest)}.")
     parts = [f'<svg class="chart chart-days" viewBox="0 0 {width} {height}" role="img" '
              f'aria-labelledby="merges-t merges-d" xmlns="http://www.w3.org/2000/svg">',
              f'<title id="merges-t">Pull requests merged per day</title><desc id="merges-d">{esc(desc)}</desc>']
@@ -503,7 +504,7 @@ def merges_chart(pulls, tz):
         if n:
             h = plot_h * n / peak
             parts.append(f'<rect x="{x + 1:.1f}" y="{pad_t + plot_h - h:.1f}" width="{max(1, bw - 2):.1f}" '
-                         f'height="{h:.1f}" rx="2" class="chart-bar"><title>{day_label(d)}: {n}</title></rect>')
+                         f'height="{h:.1f}" rx="2" class="chart-bar"><title>{n} merged on {day_label(d)}</title></rect>')
         if d.day == 1 or k == 0 or d.weekday() == 0 and span <= 60:
             parts.append(f'<text x="{x + bw / 2:.1f}" y="{height - 8}" text-anchor="middle" class="chart-axis">'
                          f'{d.day} {MONTHS[d.month - 1]}</text>')
@@ -519,6 +520,23 @@ def asset_version(path):
         return hashlib.sha256(f.read()).hexdigest()[:10]
 
 
+def devlog_titles(data, merged):
+    """The dev log's own titles, by pull request number. A key that isn't a merged pull request (when the devlog is
+    there to say), an empty title or one with a line break is a problem that fails the build."""
+    titles = {}
+    for key, title in data.get("titles", {}).items():
+        where = f"data/devlog-titles.json: #{key}"
+        if not key.isdigit() or (merged is not None and int(key) not in merged):
+            problem(f"{where} isn't a merged pull request in data/devlog.json")
+        elif not isinstance(title, str) or not title.strip():
+            problem(f"{where}'s title is empty")
+        elif title.splitlines() != [title]:
+            problem(f"{where}'s title has a line break")
+        else:
+            titles[int(key)] = title
+    return titles
+
+
 def build(dist, eager=False, base_url=None):
     site = load("site.json")
     repo = site["repo"]
@@ -527,6 +545,7 @@ def build(dist, eager=False, base_url=None):
     releases = load("releases.json", {"releases": []})
     pulls = devlog.get("pulls", [])
     merged = {p["number"] for p in pulls}
+    titles = devlog_titles(load("devlog-titles.json"), merged if pulls else None)
     rels = [r for r in releases.get("releases", []) if not r.get("isDraft")]
     tagged = [r for r in rels if not r.get("isPrerelease")]
     nightlies = [r for r in rels if r.get("isPrerelease")]
@@ -666,7 +685,7 @@ def build(dist, eager=False, base_url=None):
         if not current or current["key"] != key:
             current = {"key": key, "title": f"{MONTH_NAMES[t.month - 1]} {t.year}", "rows": []}
             groups.append(current)
-        current["rows"].append({"number": p["number"], "title": p["title"], "url": p["url"],
+        current["rows"].append({"number": p["number"], "title": titles.get(p["number"], p["title"]), "url": p["url"],
                                 "iso": t.isoformat(timespec="minutes"),
                                 "when": f"{day_label(t, year=False)}, {t:%H:%M}"})
     for g in groups:
@@ -702,12 +721,12 @@ def build(dist, eager=False, base_url=None):
                            is_home=True, hero=hero, highlights=data["highlights"], systems=data["systems"],
                            gallery=data["gallery"], story=data["story"], timeline=data["timeline"],
                            roadmap=data["roadmap"], credits=data["credits"], what=site["what"]),
-        "devlog.html": dict(common, page_title=f"Development log: every merged pull request, oldest first · Phobos",
+        "devlog.html": dict(common, page_title=f"Dev log: every merged pull request · Phobos",
                             canonical=(base_url + "/devlog.html") if base_url else "", is_devlog=True,
                             devlog={"groups": groups, "count": len(pulls), "first": facts["first_pr_date"],
                                     "last": facts["last_pr_date"], "chart": merges_chart(pulls, tz),
                                     "fetched": long_day_label(fetched), "releases": release_rows}),
-        "404.html": dict(common, page_title="Not found · Phobos", canonical="", is_404=True),
+        "404.html": dict(common, page_title="Nothing here · Phobos", canonical="", is_404=True),
     }
     for name, ctx in pages.items():
         out = render(name, ctx)
@@ -719,7 +738,8 @@ def build(dist, eager=False, base_url=None):
     unused = set(media.table) - media.used
     if unused:
         problem("media made but not used: " + ", ".join(sorted(unused)))
-    return {"pages": list(pages), "slots": slots, "prs_linked": len(text.seen_prs)}
+    return {"pages": list(pages), "slots": slots, "prs_linked": len(text.seen_prs),
+            "untitled": [p["number"] for p in pulls if p["number"] not in titles]}
 
 
 def main():
@@ -740,8 +760,10 @@ def main():
         print("warning:", p, file=sys.stderr)
     where = "checked" if args.check else os.path.relpath(args.out, ROOT)
     print(f"{where}: {', '.join(info['pages'])}; {info['prs_linked']} pull requests linked; "
-          f"gallery slots waiting: {', '.join(info['slots']) or 'none'}")
-    return 1 if any(p.startswith("media '") for p in problems) else 0
+          f"gallery slots waiting: {', '.join(info['slots']) or 'none'}; "
+          f"merged pull requests without a title in data/devlog-titles.json: "
+          f"{', '.join(f'#{n}' for n in info['untitled']) or 'none'}")
+    return 1 if any(p.startswith(("media '", "data/devlog-titles.json")) for p in problems) else 0
 
 
 if __name__ == "__main__":

@@ -2,7 +2,7 @@
   "legend": [
     {"status": "verified", "label": "Verified with games on a device"},
     {"status": "experimental", "label": "Experimental (new in 2.0)"},
-    {"status": "untried", "label": "In, not yet tried with a game on a device"}
+    {"status": "untried", "label": "Not tried with a game on a device yet"}
   ],
   "groups": [
     {"maker": "Nintendo", "systems": [
@@ -25,7 +25,7 @@
     ]},
     {"maker": "Sony", "systems": [
       {"name": "PlayStation", "status": "verified"},
-      {"name": "PlayStation Portable", "status": "experimental", "note": "Phobos's own core"}
+      {"name": "PlayStation Portable", "status": "experimental", "note": "core built from scratch"}
     ]},
     {"maker": "NEC", "systems": [
       {"name": "PC Engine", "status": "verified"},

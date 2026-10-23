@@ -12,6 +12,7 @@ Python 3's standard library is all `build.py` needs:
 
 ```sh
 python3 tools/fetch.py   # data/devlog.json and data/releases.json from GitHub (needs the gh CLI)
+                         # then write a title in data/devlog-titles.json for each new pull request
 python3 build.py         # renders templates/ and data/*.json, copies static/, into a fresh dist/
 python3 tools/check.py   # markup, links, outside requests and privacy; exits 1 on a problem
 ```
@@ -25,7 +26,9 @@ It looks for local paths and session ids too; add your own words to watch for wi
 
 `build.py` starts from an empty `dist/` every time, so a rerun rebuilds everything. `python3 build.py --check` builds
 into a temporary folder and only reports. Warnings name what to fix: a picture missing from `data/media.json`, a
-pull request number that never merged, a timeline release that isn't on GitHub.
+pull request number that never merged, a timeline release that isn't on GitHub. Its last line lists the merged pull
+requests with no title in `data/devlog-titles.json` (they show GitHub's until one is written); a title there for a
+pull request that isn't merged, or an empty one, or one with a line break, fails the build.
 
 ## Preview
 
@@ -57,6 +60,7 @@ picture loads at once (the real site loads pictures lazily).
 | `data/charts.json` | The charts' numbers; `build.py` draws them as inline SVG, a wide and a narrow version |
 | `data/media.json` | Written by `tools/media.py`: each picture's widths and sizes, each clip's size |
 | `data/devlog.json`, `data/releases.json` | Written by `tools/fetch.py` |
+| `data/devlog-titles.json` | The development log's titles in plain English, by pull request number; `devlog.json` keeps GitHub's |
 | `templates/` | The pages and their partials (a small Mustache subset, explained at the top of `build.py`) |
 | `static/` | CSS, JavaScript and `media/` (pictures, clips, logo, icons, share image), copied as they are |
 | `MEDIA.md` | The media manifest: what each file shows, the game, frame, build and date |
@@ -75,6 +79,8 @@ in them becomes a link to pull request 123. `{merged_count}`, `{release_count}`,
   `"tag": "v2.5.0"` links to its GitHub release). Then `python3 tools/fetch.py && python3 build.py`.
 - **A release:** fetch, and the hero's Download button, the story's "Today" and the development log follow by
   themselves; add a timeline entry for it.
+- **A merged pull request:** fetch, then write its title in `data/devlog-titles.json` (`"303": "..."`): the same
+  thing GitHub's title says, or less, in plain English. `build.py` lists those without one.
 - **A roadmap item:** add it to a column in `data/roadmap.json`; move it as its status changes, and take it out once
   it's merged, since the development log lists finished work.
 - **A highlight:** add a card to `data/highlights.json`; give it `media` (a picture's name), `chart` (a key of
@@ -129,7 +135,8 @@ Actions tab (`workflow_dispatch`): it checks out the repository, runs `python3 b
 the data as committed, uploads `dist/` with `actions/upload-pages-artifact` and deploys it with `actions/deploy-pages`
 to the `github-pages` environment. The runner's own Python 3 is enough, since both scripts use only the standard
 library. The workflow never runs `tools/fetch.py`, so what deploys is what was committed and reviewed: to bring the
-development log up to date, run `fetch.py` here, check the result and commit it. The site lives at
+development log up to date, run `fetch.py` here, write the new pull requests' titles in `data/devlog-titles.json`,
+check the result and commit it. The site lives at
 `https://pwnedbygary.github.io/phobos-site/` (Pages redirects the address without its last slash there, which the
 relative paths need), and nothing in the main repository changes. Then point the main repository's Website field at
 that address. The other ways, for the record:
@@ -150,8 +157,9 @@ that address. The other ways, for the record:
 button's label are fixed when the site is built, so they go stale at the next merge or release until someone fetches,
 commits and pushes. `pages.yml` could instead rebuild on a schedule, for example once a day, fetching first: the
 GitHub CLI is on GitHub's Ubuntu runners, and the default `GITHUB_TOKEN` can read the public main repository, which is
-all `tools/fetch.py` asks of `gh`. Those deploys would carry data nobody has looked at, which is why the workflow
-doesn't fetch today; whether to schedule it is the owner's call. An untested sketch of the two changes to
+all `tools/fetch.py` asks of `gh`. Those deploys would carry data nobody has looked at, and new pull requests would
+show GitHub's titles until someone writes theirs, which is why the workflow doesn't fetch today; whether to schedule
+it is the owner's call. An untested sketch of the two changes to
 `pages.yml`:
 
 ```yaml

@@ -1,102 +1,95 @@
 {
-  "title": "What makes it fast, exact and good to hold",
-  "intro_md": "The headline work, as the repository and its docs record it.",
+  "title": "What makes it fast and accurate",
+  "intro_md": "The big stuff so far.",
   "cards": [
     {
       "id": "psp",
       "tag": "Experimental, new in 2.0",
-      "title": "A PlayStation Portable core of its own",
-      "lead_md": "Written for Phobos in ares's style, from the PSP's documentation, tests and measurements taken on a real PSP. No code comes from other PSP emulators: PPSSPP was read only to learn how the PSP behaves.",
+      "title": "A PSP core built from scratch",
+      "lead_md": "It's written in ares's style from PSP docs, tests and real PSP measurements, with no code from other PSP emulators. PPSSPP was only a reference.",
       "points_md": [
-        "No firmware needed: the PSP's system is emulated at a high level, from threads, files and timers to saves, sound, music, movies and the system's own dialogs.",
-        "The Allegrex CPU runs through a recompiler built on sljit, for ARM64 and x86-64, with an interpreter behind it.",
-        "Three renderers: an exact software renderer, Vulkan (accurate) and Vulkan (fast), at up to 10x the PSP's 480x272.",
-        "ISO, CSO, ZSO, DAX, JSO and CHD discs, read in place; save states that keep loading across builds."
+        "No firmware needed, since Phobos emulates the PSP's system software.",
+        "The CPU runs through a recompiler on ARM64 and x86-64, with an interpreter behind it.",
+        "Three renderers, with Vulkan going up to 10x the PSP's 480x272.",
+        "ISO, CSO, ZSO, DAX, JSO and CHD discs open as they are, and save states keep loading across builds."
       ],
       "stats": "psp",
       "media": "psp-ghost-of-sparta",
-      "alt": "God of War: Ghost of Sparta's main menu, drawn by Phobos at four times the PSP's resolution",
-      "link": {"href": "https://github.com/pwnedbygary/phobos/blob/master/docs/psp-core.md", "label": "The core's design, part by part"}
+      "alt": "God of War: Ghost of Sparta's main menu at 4x",
+      "link": {"href": "https://github.com/pwnedbygary/phobos/blob/master/docs/psp-core.md", "label": "How the core works"}
     },
     {
       "id": "timing",
       "tag": "Measured",
       "title": "Timed against a real PSP-1000",
-      "lead_md": "Since 19 October the PSP's graphics chip, the GE, takes about as long as the owner's PSP-1000 took over the same work (#269). Sony's peak rates, \"Fast\", stay as the opt-in.",
+      "lead_md": "Since 19 October, the PSP's graphics chip (the GE) takes about as long as my PSP-1000 did on the same work (#269). \"Fast\" still gives you Sony's peak rates.",
       "points_md": [
-        "Its costs are fitted to 3,373 display lists that PSP ran in four measurement rounds, with a median miss of 5.0% (#269); later rounds measured how the PSP's CPU slows the GE beside it (#279, #291).",
-        "It is checked against captures of real games' display lists from the same PSP. Since 21 October all eight judged game scenes are within 15% by their whole frame (#291).",
-        "Each change to the timing is run against all 266 games of the test library before it merges."
+        "Later rounds measured how the PSP's CPU slows the GE (#279, #291).",
+        "Real games captured on the same PSP check the result (#291).",
+        "Any timing change runs against all 266 test games before it merges."
       ],
       "stats": "timing",
       "chart": "ge-gate",
-      "link": {"href": "https://github.com/pwnedbygary/phobos/blob/master/docs/psp-core.md", "label": "Parts 103 to 115 of the PSP core's notes"}
+      "link": {"href": "https://github.com/pwnedbygary/phobos/blob/master/docs/psp-core.md", "label": "PSP core notes, parts 103 to 115"}
     },
     {
       "id": "thread",
       "tag": "In the core",
-      "title": "The GE on a thread of its own",
-      "lead_md": "The PSP's graphics front end can run on a thread of its own, beside the emulated CPU, with exactly the results it gives inline.",
+      "title": "The GE on a separate thread",
+      "lead_md": "The GE's front end can run on a separate thread beside the emulated CPU, with identical results.",
       "points_md": [
-        "In the core since 18 and 20 October (#272, #277). With it on, the frame is shown from the GE thread and the emulation thread's work is cut: Killzone from 149 to 74 million host instructions a frame.",
-        "Off by default. The app's \"PSP Graphics Overlap\" switch is built, and will be offered once On beats Off on the Retroid Pocket 6.",
-        "Next: an automatic handover between the two (see the roadmap)."
+        "With it on, Killzone's emulation thread drops from 149 to 74 million host instructions a frame (#272, #277).",
+        "It's off by default. The app's \"PSP Graphics Overlap\" switch is built, and shows up once On beats Off on my RP6."
       ]
     },
     {
       "id": "n64",
       "tag": "N64",
-      "title": "Nintendo 64, fast, on the stock driver too",
-      "lead_md": "ares's N64 core on parallel-RDP and Vulkan, with its recompilers tuned for ARM64.",
+      "title": "A fast N64, even on the stock driver",
+      "lead_md": "It's ares's N64 core on parallel-RDP and Vulkan, with the recompilers tuned for ARM64.",
       "points_md": [
-        "CPU blocks link straight to each other and loops stay inside them: trips to the dispatcher fell from 10.1 to 0.6 million a second (#10).",
-        "The RSP's multiply-accumulates compile to inline NEON (#15, #16), and up to 256 parallel-RDP render contexts in flight took Mario Tennis's showcase from 82 late frames to 5 (#17).",
-        "Upscaling from 1x to 4x, the 64DD, Rumble and Controller Paks, and Turnip drivers from the app's GPU Driver Manager.",
-        "Since 21 October N64 games also draw on the Retroid Pocket 6's stock Qualcomm driver, which used to give a black picture (#292)."
+        "It has 1x to 4x upscaling, the 64DD, Rumble and Controller Paks, and Turnip drivers from the app's GPU Driver Manager.",
+        "Since 21 October, N64 games also run on the RP6's stock Qualcomm driver, at a median 59.9 fps in the four games checked (#292)."
       ],
       "compare": {"before": "rp6-n64-ocarina-before", "after": "rp6-n64-ocarina",
-                  "before_label": "Before #292: a black picture under the app's driver warning",
-                  "after_label": "After #292: Ocarina of Time on the same stock driver",
-                  "alt_before": "Retroid Pocket 6 running Ocarina of Time on the stock driver before the fix: a black screen and a GPU Driver Issue Detected dialog",
-                  "alt_after": "Retroid Pocket 6 running Ocarina of Time on the stock driver after the fix: the title screen with Link on horseback, the HUD reading 59.9 fps"}
+                  "before_label": "Without #292, a black screen",
+                  "after_label": "With #292, on the same driver",
+                  "alt_before": "Ocarina of Time before the fix, black under a driver warning",
+                  "alt_after": "Ocarina of Time after the fix, at 59.9 fps"}
     },
     {
       "id": "speed",
       "tag": "Retroid Pocket 6",
       "title": "Full speed on a handheld",
-      "lead_md": "Measured on a Retroid Pocket 6, a Snapdragon 8 Gen 2 handheld, as the work goes.",
+      "lead_md": "Measured along the way on my Retroid Pocket 6, a Snapdragon 8 Gen 2 handheld.",
       "points_md": [
-        "18 of the 22 PSP games found slow averaged full speed at 1x in 150-second scripted runs with the 15 October nightly; v2.3.0 managed 7.",
-        "232 of the 266 PSP games averaged 59 fps or more at 5x internal resolution (2400x1360), in two-minute runs from launch that are mostly logos, intros and menus.",
-        "On 6 October the exact software renderer, drawing on several threads, took Peace Walker's title screen from 10.6 to 60 fps.",
-        "N64 games ran at a median 59.9 fps on the stock driver in all four games checked for #292."
+        "The 5x runs are two minutes from launch, so they're mostly logos, intros and menus.",
+        "On 6 October, drawing on several threads took the software renderer from 10.6 to 60 fps on Peace Walker's title screen."
       ],
       "stats": "speed",
       "media": "rp6-n64-f-zero-x",
-      "alt": "F-Zero X racing on a Retroid Pocket 6 with Phobos's performance overlay reading 59.9 fps and its touch controls on screen"
+      "alt": "F-Zero X at 59.9 fps on a Retroid Pocket 6"
     },
     {
       "id": "ui",
       "tag": "The app",
-      "title": "Controller-first, and yours to theme",
-      "lead_md": "Made for handhelds: the D-pad and stick move a visible focus through every menu and the shoulder buttons switch tabs (#51). Touch controls are there too, with a layout for each system.",
+      "title": "Made for controllers, with lots of themes",
+      "lead_md": "The D-pad and stick move a visible focus, and the shoulder buttons switch tabs (#51). Touch controls get a layout per system.",
       "points_md": [
-        "37 themes, from Material You and Phobos's gold on deep space to One Dark, Dracula, Nord, Catppuccin, Gruvbox, Rosé Pine and Synthwave '84, with glass, retrowave neon and an XMB-style backdrop.",
-        "A performance overlay, and controls remapped for one game, one console or all of them.",
-        "A screenshot pops into a film-strip card, hops into a folder, and says where it went (#273)."
+        "37 themes, like Dracula, Nord, Catppuccin and Synthwave '84, plus glass, retrowave neon and an XMB-style backdrop.",
+        "A performance overlay, and control remapping per game, per console or for everything.",
+        "Screenshots pop out as a film-strip card and hop into a folder (#273)."
       ],
       "media": "rp6-library",
-      "alt": "The Phobos Library on a Retroid Pocket 6: 34 systems as neon console tiles over a retrowave sun and grid, with a glass dock for Library, Console and Settings"
+      "alt": "The Phobos Library on a Retroid Pocket 6, with neon console tiles over a retrowave sun"
     },
     {
       "id": "updates",
       "tag": "Builds",
-      "title": "Always up to date",
-      "lead_md": "Settings → About updates the app straight from GitHub, from the tagged releases or from the nightly channel.",
+      "title": "It updates itself",
+      "lead_md": "Settings → About updates the app from GitHub, from tagged releases or nightlies.",
       "points_md": [
-        "Every push to master publishes a nightly pre-release, in Modern and Legacy builds.",
-        "Tagged releases carry the desktop program as well: a Linux AppImage, a universal macOS app and a Windows Phobos.exe.",
-        "Every build is numbered from git history, the same on a laptop as on CI."
+        "Build numbers come from git history, locally and on CI."
       ]
     }
   ]

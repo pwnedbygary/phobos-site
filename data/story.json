@@ -1,49 +1,49 @@
 {
   "title": "The story so far",
-  "intro_md": "From an accuracy-first desktop emulator to a handheld app with a PSP core of its own, and back to the desktop. Oldest first; dates are US Eastern.",
+  "intro_md": "How Phobos got here. Dates are US Eastern.",
   "chapters": [
     {
       "id": "roots",
       "kicker": "2004 to 2026",
-      "title": "Roots: ares, and before it higan and bsnes",
+      "title": "Roots in ares, higan and bsnes",
       "paras_md": [
-        "Phobos starts from [ares](https://github.com/ares-emulator/ares), a multi-system emulator whose line began on 14 October 2004: [bsnes](https://github.com/bsnes-emu/bsnes), then [higan](https://github.com/higan-emu/higan), then ares. ares puts accuracy and preservation first, and it deliberately trades some speed for clear code: state machines and bitmasks are avoided where possible.",
-        "Phobos keeps that philosophy for the cores and builds faster paths around them, so the clarity stays while the hot paths run fast. All of it stands on the work of Near and the ares team, and of the projects credited at the end of this page."
+        "Phobos started from [ares](https://github.com/ares-emulator/ares), which goes back through [higan](https://github.com/higan-emu/higan) to [bsnes](https://github.com/bsnes-emu/bsnes) in 2004. ares puts accuracy first and trades some speed for clear code.",
+        "Phobos keeps the cores that way and adds faster paths around them. None of it would exist without Near, the ares team and everyone credited below."
       ]
     },
     {
       "id": "android",
       "kicker": "July and August 2026",
-      "title": "From the desktop to Android",
-      "quote": {"text_md": "It started off as a desktop to Android port of ares", "by": "Gary, who makes Phobos"},
+      "title": "Taking it to Android",
+      "quote": {"text_md": "It started off as a desktop to Android port of ares", "by": "Gary"},
       "paras_md": [
-        "ares is a desktop program. Phobos forked it at ares's commit of 25 July 2026 and took it to Android: on 27 July the 64-bit native Android app came up, with the N64 core drawing on native Vulkan the same day. In Phobos, ares's own desktop front end, desktop-ui and the hiro and ruby libraries beneath it, gave way to an Android app written in Kotlin with Jetpack Compose, talking to the cores through a JNI bridge.",
-        "The Android engineering went into the cores as well as the app: ARM64 work on ares's N64 recompilers and its Vulkan renderer, and custom GPU drivers loaded through libadrenotools. v1.0.0 shipped on 20 August 2026 with the Neo Geo core, a GPU Driver Manager that installs Mesa's Turnip driver, stable release signing, and the PC Engine and SuperGrafx working."
+        "ares is a desktop program. Phobos forked it in July 2026 and took it to Android, swapping ares's desktop front end for a Kotlin and Jetpack Compose app.",
+        "The N64 recompilers and Vulkan renderer got ARM64 work, and v1.0.0 came out on 20 August 2026 with the Neo Geo core and a GPU Driver Manager for Mesa's Turnip driver."
       ]
     },
     {
       "id": "september",
       "kicker": "September 2026",
-      "title": "A fast N64, a themed app, and a way of working",
+      "title": "A faster N64 and a new look",
       "paras_md": [
-        "On 15 September the project wrote down how it works: a claim about speed needs a measurement, and a change needs an independent review of its exact snapshot before it merges. The first pull request merged on 24 September, Neo Geo CD's garbled menu text traced to a DMA's byte order (#1).",
-        "Four days on the N64 followed, each change measured on a Retroid Pocket 6. JIT blocks were linked and loops kept inside them, so trips to the dispatcher fell from 10.1 to 0.6 million a second (#10). The RSP's multiply-accumulates became inline NEON (#15, #16). Up to 256 parallel-RDP render contexts in flight took Mario Tennis's showcase from 82 late frames to 5 (#17), and waiting in WFE instead of spinning cut the power drawn from 4.76 to 4.15 W (#18).",
-        "The app got its look at the same time: 37 themes drawn from code editors' colour schemes with optional Retrowave effects (#9), a MangoHud-style performance overlay (#5), and glass panels over soft glows with a floating dock (#20). v1.1.0 shipped on 28 September with pull requests #1 to #25, frontends such as ES-DE and Daijisho among them (#25), and that night the app learned to update itself from GitHub's releases (#26).",
-        "On 29 September a new goal went on the plan: a PSP core to rival PPSSPP in compatibility and speed. The next day the hardware buttons took over the menus, the D-pad and stick moving a visible focus and L1 and R1 switching tabs (#51), and into early October came breadth: Neo Geo CD's sound and loading speed, multi-disc games with a disc chooser, PS1 memory cards per game, ZX Spectrum and MSX keyboards and tapes, the PC Engine CD, the LaserActive and the Pocket Challenge V2."
+        "On 15 September we set the ground rules. Speed claims need a measurement, and changes need an independent review before they merge.",
+        "Then came four days on the N64, all measured on my Retroid Pocket 6. Dispatcher trips fell from 10.1 to 0.6 million a second (#10), and a Mario Tennis scene went from 82 late frames to 5 (#17).",
+        "The app got its look at the same time, with 37 themes (#9), a performance overlay (#5) and a glass dock (#20). v1.1.0 came out on 28 September.",
+        "On 29 September we put a PSP core on the plan, one to rival PPSSPP in compatibility and speed."
       ],
       "media": "rp6-n64-mario-tennis",
-      "alt": "Mario Tennis on a Retroid Pocket 6, the performance overlay reading 59.9 fps",
-      "caption_md": "Mario Tennis on the Retroid Pocket 6, with the performance overlay from #5."
+      "alt": "Mario Tennis at 59.9 fps on a Retroid Pocket 6",
+      "caption_md": "Mario Tennis on my Retroid Pocket 6, with the performance overlay from #5."
     },
     {
       "id": "psp",
       "kicker": "3 to 19 October 2026",
-      "title": "A PSP core from a clean room",
+      "title": "A clean-room PSP core",
       "paras_md": [
-        "PPSSPP couldn't be adopted: it is under the GPL, and the console firmware ares compiles in can't be. So on 3 October Phobos began a PSP core of its own, in ares's style, with PPSSPP and its test programs read only to learn how the PSP behaves: nothing copied, translated or reworded. The PSP's system would be emulated at a high level, so no firmware is needed, and there would be a recompiler from the start, with the interpreter as its reference.",
-        "The first day brought the Allegrex CPU as an interpreter and a recompiler, the VFPU, and the first measurement on a real PSP, a homebrew program checking the VFPU's results; pspdev's hello world ran from start to end. On 5 October the PSP SDK's samples ran inside the app on the Retroid Pocket 6 at 60 frames a second, and the first retail games, Lumines and Street Fighter III 3rd Strike, reached their title screens. On 6 October the first 3D games were in play, the first ran at full speed on the device, and a headless runner put all 266 games of the test library through a minute each (#154).",
-        "A hardware renderer on Vulkan came on 7 October. The library runs went round again and again until one game of 266 stayed black, and on 11 October v2.0.0 shipped the core, marked Experimental: in its final run 194 of the 266 reached a menu or gameplay. Four more releases followed in five days, v2.1.0 to v2.4.0, with the fixes playing it on the Retroid Pocket 6 turned up, the slow games brought to full speed, and a test plan's CI lanes.",
-        "On 16 October the owner's PSP-1000 timed real games' display lists with a GE profiler under custom firmware. They took 4 to 12 times what Phobos's model charged, which is why Phobos's games drew 2.7 to 14 frames for each screen refresh where a PSP draws 0.5 to 1.8. Measuring rounds on the real PSP followed, and on 19 October the measured timing became the default (#269)."
+        "Phobos couldn't adopt PPSSPP. It's under the GPL, and the console firmware ares compiles in can't be. So on 3 October Phobos started a PSP core from scratch, using PPSSPP only to learn how the PSP behaves, with nothing copied, translated or reworded.",
+        "By 6 October, the first 3D games reached gameplay and a headless runner had put all 266 test games through a minute each (#154). A Vulkan renderer followed on 7 October.",
+        "Library runs went round and round until only one game of 266 stayed black. v2.0.0 shipped the core on 11 October as Experimental, with 194 of the 266 reaching a menu or gameplay in its final run.",
+        "On 16 October I timed real games' display lists on my PSP-1000. They took a hell of a lot longer than Phobos's model charged, 4 to 12 times as long. After more rounds, the measured timing became the default on 19 October (#269)."
       ],
       "chart": "ge-list-time"
     },
@@ -51,27 +51,27 @@
       "id": "desktop",
       "kicker": "3 October 2026 onward",
       "title": "Back to the desktop",
-      "quote": {"text_md": "Has since merged back to desktop in an attempt to port it back to allow for easier controller navigation/use, as well as a sleek, modern UI.", "by": "Gary, who makes Phobos"},
+      "quote": {"text_md": "Has since merged back to desktop in an attempt to port it back to allow for easier controller navigation/use, as well as a sleek, modern UI.", "by": "Gary"},
       "paras_md": [
-        "On 3 October the cores came back to the desktop (#97): a Linux AppImage, a universal macOS app and a Windows Phobos.exe, on SDL 3, built by CI for every pull request. The PSP joined the desktop program on 6 October, and from v2.0.0 every tagged release has carried the desktop builds beside the Android ones.",
-        "The desktop program is plain for now: a library, a pause menu, save states and the system keyboards, drawn in SDL's debug font. The aim, in the owner's words above, is to bring what the Android app does well to the desktop: easy navigation with a controller, and a sleek, modern interface.",
-        "The road so far: the library and the menus already answer a gamepad. On 20 October the N64 recompiler was fixed on x86-64, where, built without ares's own compiler flags, two of the RSP helpers it calls came out wrong, and Mario Tennis, Super Mario 64, Mario Kart 64, Ocarina of Time and Mario Golf showed corrupt (#290). And the owner's own pull request, #294, still open, brings the hotkey engine to the desktop with a Hotkeys page in the pause menu, bindable to keys, pad buttons, triggers and sticks."
+        "On 3 October the cores came back to the desktop on Linux, macOS and Windows, with CI building them for every pull request (#97). The PSP joined on 6 October.",
+        "The desktop program is pretty plain for now, drawn in SDL's debug font. Like I said above, the goal is to bring the Android app's easy controller navigation and sleek, modern UI to the desktop.",
+        "The library and menus already work with a gamepad, and #294, still open, brings hotkeys to the desktop with a Hotkeys page in the pause menu."
       ],
       "gallery": ["desktop-locoroco", "desktop-pause-menu", "desktop-library"],
       "gallery_alt": {
-        "desktop-locoroco": "LocoRoco's title screen in the Phobos desktop program on Linux",
-        "desktop-pause-menu": "The desktop program's pause menu over LocoRoco: save and load state, screenshot, fast forward, the PSP renderer and resolution",
-        "desktop-library": "The desktop program's library: PSP games listed by the titles on their discs, and Nintendo 64 games"
+        "desktop-locoroco": "LocoRoco's title screen in the desktop program",
+        "desktop-pause-menu": "The desktop pause menu over LocoRoco",
+        "desktop-library": "The desktop library with PSP and N64 games"
       },
-      "caption_md": "The desktop program today (v2.4.0 on Linux): a PSP game at 3x in Vulkan (fast), its pause menu, and its library."
+      "caption_md": "The desktop program today, v2.4.0 on Linux."
     },
     {
       "id": "today",
       "kicker": "{today_label}",
       "title": "Today",
       "paras_md": [
-        "Since its first pull request on 24 September, Phobos has merged {merged_count}, published {release_count} releases, and builds a nightly for every push to master. The PSP's GE keeps close to a real PSP's time, with all eight judged game scenes within 15% (#291), and it can run on a thread of its own (#272, #277). N64 games draw on the Retroid Pocket 6's stock driver (#292).",
-        "The latest release is {latest_tag}, from {latest_date}. What comes next is on the roadmap below, and every merged pull request is in the [development log](devlog.html)."
+        "Phobos has merged a shitload of pull requests since 24 September, {merged_count} so far, and put out {release_count} releases in all. The PSP's GE now runs close to real PSP timing (#291), and N64 games draw on the RP6's stock driver (#292).",
+        "The latest release is {latest_tag}, from {latest_date}. What's next is on the roadmap below."
       ]
     }
   ]
