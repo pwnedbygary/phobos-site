@@ -1,7 +1,7 @@
 {
  "source": "gh pr list --repo pwnedbygary/phobos --state merged --limit 1000 --json number,title,mergedAt,url",
- "fetched": "2026-10-22T04:26:24Z",
- "count": 185,
+ "fetched": "2026-10-23T04:10:36Z",
+ "count": 188,
  "pulls": [
   {
    "mergedAt": "2026-09-24T19:19:12Z",
@@ -1112,6 +1112,24 @@
    "number": 296,
    "title": "LICENSE: the notices of the third-party code the builds ship that it lacked",
    "url": "https://github.com/pwnedbygary/phobos/pull/296"
+  },
+  {
+   "mergedAt": "2026-10-23T02:51:01Z",
+   "number": 297,
+   "title": "PSP kernel: the polling skip widened to the EA games' and Midnight Club's loops (part 116)",
+   "url": "https://github.com/pwnedbygary/phobos/pull/297"
+  },
+  {
+   "mergedAt": "2026-10-23T02:51:42Z",
+   "number": 299,
+   "title": "LICENSE: LLVM's other runtime libraries under libc++'s notice, and #296's review nits",
+   "url": "https://github.com/pwnedbygary/phobos/pull/299"
+  },
+  {
+   "mergedAt": "2026-10-23T03:51:35Z",
+   "number": 298,
+   "title": "PSP Vulkan: Burnout Legends at 4x shown from the GPU, after a finish and past a texture's move (part 117)",
+   "url": "https://github.com/pwnedbygary/phobos/pull/298"
   }
  ]
 }

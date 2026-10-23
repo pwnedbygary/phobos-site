@@ -1,15 +1,17 @@
 # Fact sheet
 
 Every claim the site makes, and where it comes from. Sources are the repository at master `062dd53e2` (22 Oct 2026),
-cited as `file:line`; its pull requests (`#n`) and releases as GitHub lists them (`gh pr view`, `gh release view`); git
+cited as `file:line`, except where a citation names master `7986aef5b` (22 Oct, 23:51 EDT), as those this refresh
+changed do; its pull requests (`#n`) and releases as GitHub lists them (`gh pr view`, `gh release view`); git
 itself; and, marked **(notes)**, the project's coordination notes (the owner's decisions and other private notes),
 which aren't public. Dates are US Eastern, as the repository's own docs give them. "Derived" means computed from the
 named sources. The development log and the releases come from `gh` when `tools/fetch.py` runs, and are committed;
 every build, the Pages workflow's included, uses them as committed, so they're correct as of `data/devlog.json`'s
 `fetched` time.
 
-Data refetched at 00:26:24 EDT on 22 Oct 2026 (2026-10-22T04:26:24Z): 185 merged pull requests (#1 on 24 Sep to #296
-on 22 Oct), 10 releases, 7 of them tagged, v2.4.0 the latest; #294 and #297 open drafts. The owner's choices of
+Data refetched at 00:10:36 EDT on 23 Oct 2026 (2026-10-23T04:10:36Z), once nightly-216052, built from master
+`7986aef5b`, was published (00:10:18 EDT): 188 merged pull requests (#1 on 24 Sep to #298 at 23:51 EDT on 22 Oct), 10
+releases, 7 of them tagged, v2.4.0 the latest; #294 an open draft. The owner's choices of
 21 Oct ~17:21-17:52 and ~18:27 **(notes)**: the host is a new repository, pwnedbygary/phobos-site, on GitHub Pages at
 https://pwnedbygary.github.io/phobos-site/; his two quotes may appear lightly tidied (capitals and spelling only),
 still signed by him; LICENSE gains the missing notices in a pull request of its own (#296, merged on 22 Oct at 00:10
@@ -29,7 +31,7 @@ workflow builds.
 | Nightly builds, one for every push to master | README.md:11-12, 190 |
 | 266 PSP games in the test library | README.md:44; docs/psp-compatibility.md ("Games tested: 266") |
 | 4 platforms | README.md:14 (APKs, AppImage, macOS app, Phobos.exe); release v2.4.0's assets |
-| 185 pull requests merged since 24 Sep 2026 | Derived: the count of data/devlog.json (`gh pr list --state merged`, fetched 00:26 EDT on 22 Oct), first merged 2026-09-24 (#1) |
+| 188 pull requests merged since 24 Sep 2026 | Derived: the count of data/devlog.json (`gh pr list --state merged`, fetched 00:10 EDT on 23 Oct), first merged 2026-09-24 (#1) |
 | New in 2.0: a PSP core of its own | README.md:5 ("new in 2.0"), 11 (v2.0.0 "the first with the PlayStation Portable") |
 
 ## What it is
@@ -45,7 +47,7 @@ workflow builds.
 | Linux AppImage with a zsync file | README.md:192; v2.4.0's assets (`Phobos-2.4.0-x86_64.AppImage`, `.zsync`) |
 | Windows: Phobos.exe in a zip | README.md:14; v2.4.0's asset `Phobos-2.4.0-windows-x64.zip` |
 | macOS: universal app, MoltenVK bundled | README.md:116-117; scripts/package-macos-app.sh:2, 14 |
-| Each tagged release since v2.0.0 carries all of them; nightlies the Android app | `gh release view`: v1.0.0 and v1.1.0 carry only their two APKs; v2.0.0 to v2.4.0 also the AppImage (with zsync), the macOS zip and the Windows zip; `gh release view nightly-216017` (two APKs, ffmpeg tarball, update.json) |
+| Each tagged release since v2.0.0 carries all of them; nightlies the Android app | `gh release view`: v1.0.0 and v1.1.0 carry only their two APKs; v2.0.0 to v2.4.0 also the AppImage (with zsync), the macOS zip and the Windows zip; `gh release view nightly-216052` (two APKs, ffmpeg tarball, update.json) |
 | 27 verified, PSP experimental, 6 not yet tried with a game | README.md:22-48 (the three groups of the systems table) |
 | Each system's group and status | README.md:22-48; names from PhobosJNI.cpp:19-56 |
 
@@ -176,21 +178,22 @@ Each entry restates a claim above; the extra ones:
 
 | Claim | Source |
 |---|---|
-| Every merged pull request with its number, title, merge time and link | data/devlog.json (`gh pr list --state merged --limit 1000 --json number,title,mergedAt,url`), oldest first, fetched 00:26 EDT on 22 Oct |
+| Every merged pull request with its number, title, merge time and link | data/devlog.json (`gh pr list --state merged --limit 1000 --json number,title,mergedAt,url`), oldest first, fetched 00:10 EDT on 23 Oct |
 | Work went straight to master before 24 Sep | git: first-parent commits from 13 Sep 2026; #1 merged 24 Sep |
 | The PSP core's stack, about 100 pull requests numbered between #100 and #207, reached master together through #208; GitHub lists most as closed | docs/progress.md:118 and the recount, as for the timeline's 11 Oct entry above (96 in the chain, plus #154, #158, #165 and #179; #208's body says 95); 96 of the 100 are closed, and `gh pr list --state merged` holds only 7 of #100-#209 |
 | Five merged into other branches first and show with those dates: #154, #158, #165 and #179 into the PSP stack, #275 reaching master through #281 | `gh pr list --state merged --json number,baseRefName,mergedAt`: #154 `cursor/psp-test-data-2b67`, #158 `cursor/psp-ge-features-2b67`, #165 `cursor/psp-ge-curves-2b67`, #179 `cursor/psp-gpu-hw4-2b67`, #275 `pgd-comment-base`; #281's title ("... (#275, into master)") |
-| Releases table: the tagged releases; nightlies on the releases page | data/releases.json (`gh release list`), its tagged releases only; nightlies are replaced by each push to master (only the 3 newest were listed at 00:26 on 22 Oct: nightly-216017, nightly-216022 and nightly-216039), so the page links to the releases page for them |
+| Releases table: the tagged releases; nightlies on the releases page | data/releases.json (`gh release list`), its tagged releases only; nightlies are replaced by each push to master (only the 3 newest were listed at 00:10 on 23 Oct: nightly-216039, nightly-216049 and nightly-216052), so the page links to the releases page for them |
 
 ## Roadmap
 
-The roadmap's items and their wording are the owner's choice of 21 Oct ~19:07 **(notes)**.
+The roadmap's items and their wording are the owner's choice of 21 Oct ~19:07 **(notes)**. Its first item, the polling
+skip's widening, merged on 22 Oct at 22:51 EDT (#297, "PSP kernel: the polling skip widened to the EA games' and
+Midnight Club's loops (part 116)"; `gh pr view 297`: 2026-10-23T02:51:01Z) and left it, as finished work does: the
+roadmap is "What's being built now and what comes after" (data/roadmap.json `intro_md`), and the development log
+lists #297.
 
 | Claim | Source |
 |---|---|
-| Polling-skip widening: skipping the loops in which Burnout Dominator, Need for Speed: Shift and Burnout Legends wait on the PSP, with exactly the results of running them | docs/handoff.md:267-272 (#291's RP6 run with the PSP's timing: the three games 6.9-8.6% slower than master; then "the polling skip's widening comes next"), :861-864 (#279's second review: the spin skip exact for every case the code allows; none of Burnout Dominator's turns skipped); docs/psp-core.md:19362-19373 (the polling games' host instructions with the PSP's timing), :20024 ("The polling skip's widening, the owner's order of 19 Oct: the games much slower with the PSP's timing"); **(notes)** for the three games as its targets |
-| A first step, tests of the skip as it is now, merged on 21 October (#295) | `gh pr view 295` (merged 2026-10-22T01:38:42Z, 21:38 EDT on 21 Oct; its body opens "The polling skip's widening, phase 2's first step: ... for today's code" and says "Tests only, no emulation code") |
-| The widening's status: code in progress | `gh pr view 297` (an open draft since 2026-10-22T03:46:50Z, the widening's code); not merged, so the page says only that it's in progress |
 | Dante's Inferno's loop skip: a skip for the loop in which the game waits, doing nothing, for its next frame; it goes into the PSP core once its reviews and frame-by-frame exactness checks pass | **(notes)** the owner's decisions of 21 Oct |
 | Hotkeys, #294 (open): combos of any length, three bindings, per-console and per-game, slow motion, frame advance | `gh pr view 294` |
 | GE thread's Auto with handover both ways; keeps a game synchronous where the threads would take turns; the app's switch once On beats Off | docs/handoff.md:758, 1211, 657-658 |
@@ -223,8 +226,8 @@ The roadmap's items and their wording are the owner's choice of 21 Oct ~19:07 **
 | Inside MoltenVK: cereal | LICENSE:3727-3756: "cereal (in libMoltenVK.dylib, in the macOS app's Contents/Frameworks)", "its binary archives" (:3730-3731); Randolph Voorhies's and Shane Grant's (:3733), under the BSD 3-clause text that follows (:3736-3756) |
 | AppImage runtime (MIT), by probonopd: type2-runtime, the start of the Linux AppImage, which mounts or extracts the image after it | LICENSE:2778-3104: "AppImage runtime (type2-runtime, the start of the Linux AppImage, with the libraries linked into it)"; "The Linux AppImage begins with the AppImage runtime, the program that mounts or extracts the image after it: type2-runtime's continuous build" (:2781-2782); type2-runtime's LICENSE, "MIT License", "Copyright (c) 2004-23 probonopd" (:2812-2834) |
 | Linked into the AppImage runtime: musl, libfuse, squashfuse, zstd, zlib and mimalloc | LICENSE:2785-2810: the runtime is "statically linked with musl, libfuse 3.15.0 (patched by type2-runtime), squashfuse 0.5.2, zstd, zlib and mimalloc", then each part's licence and source: musl under the MIT license, Rich Felker et al. (:2792; its COPYRIGHT, :2851-3046); libfuse under the GNU LGPL 2.1, Miklos Szeredi (:2795-2799); squashfuse under its BSD-style licence, Dave Vasilevsky and Phillip Lougher (:2800-2801; :3048-3080); zstd under Zstandard's BSD licence (:2802-2804); zlib under zlib's, Jean-loup Gailly and Mark Adler (:2805-2808); mimalloc under the MIT license, Microsoft Corporation and Daan Leijen (:2809-2810; :3082-3104) |
-| libc++ (Apache 2.0 with LLVM Exceptions; MIT), by LLVM contributors: the Android NDK's C++ library, linked into the app's native libraries | LICENSE:1837-1891: "libc++ (the Android NDK's, linked statically into the APKs' native libraries)"; three of the APKs' native libraries carry it (:1840-1845); libcxx/LICENSE.TXT "puts LLVM's code under the Apache License 2.0, whose text appears above, with the LLVM Exceptions", and its code under LLVM's legacy license "is used here under the MIT license" (:1845-1850); "Copyright (c) 2009-2014 by the contributors listed in CREDITS.TXT" (:1873) |
-| "Every component's licence, in full, is in LICENSE" | LICENSE at master 062dd53e2: #296 ("LICENSE: the notices of the third-party code the builds ship that it lacked") merged on 22 Oct at 00:10 EDT (2026-10-22T04:10:26Z), adding 19 notices, 38 to 57 (its body; docs/handoff.md:44-48), and the credits are matched to it. #296's body also leaves a follow-up pull request to name libc++abi, libunwind and compiler-rt, "LLVM runtime libraries the APKs and, for compiler-rt, the macOS app also carry under libc++'s licence, not yet named"; that licence's text is libc++'s, which LICENSE carries (LICENSE:1837-1891, with the Apache License 2.0's text at LICENSE:181-386), so the sentence holds. The site names them once LICENSE does |
+| libc++, libc++abi, libunwind and compiler-rt (Apache 2.0 with LLVM Exceptions; MIT), by LLVM contributors: LLVM's runtime libraries, the Android NDK's, in the app; compiler-rt also in the macOS app | LICENSE at master 7986aef5b, :1837-1902: "libc++ and LLVM's other runtime libraries (the Android NDK's, in the APKs; compiler-rt's also in the macOS app)" (:1838); three of the APKs' native libraries carry libc++ (:1841-1846); "LLVM's libc++abi and libunwind are linked with libc++ into libphobos_android.so and libhook_impl.so, and compiler-rt's builtins are in those, in libdatastore_shared_counter.so, in FFmpeg's libavcodec.so and libavutil.so ... and, from Apple's toolchain, in the macOS app's Phobos and libMoltenVK.dylib" (:1846-1850); libcxx/LICENSE.TXT "puts LLVM's code under the Apache License 2.0, whose text appears above, with the LLVM Exceptions", and its code under LLVM's legacy license "is used here under the MIT license" (:1850-1855); the other three's LICENSE.TXT are libc++'s text, "and their legacy code is used here the same way" (:1856-1859); "Copyright (c) 2009-2014 by the contributors listed in CREDITS.TXT" and compiler-rt's "Copyright (c) 2009-2015" line (:1882-1883) |
+| "Every component's licence, in full, is in LICENSE" | LICENSE at master 7986aef5b. #296 ("LICENSE: the notices of the third-party code the builds ship that it lacked") merged on 22 Oct at 00:10 EDT (2026-10-22T04:10:26Z), adding 19 notices, 38 to 57 (its body; docs/handoff.md:44-48 at 062dd53e2). #299 ("LICENSE: LLVM's other runtime libraries under libc++'s notice, and #296's review nits") merged on 22 Oct at 22:51 EDT (2026-10-23T02:51:42Z) and named libc++abi, libunwind and compiler-rt in libc++'s notice (LICENSE:1838, 1846-1859), with "the Open-source licenses screen still shows 58 notices (57 in LICENSE, plus COPYING's)" (its body). The credits are matched to it |
 | Phobos's licence text; components keep theirs; firmware not covered by the GPL | README.md:271-274; LICENSE:1-22 |
 | How it's made: AI coding agents under the owner's direction; independent review since September; measured on an RP6 and a PSP-1000 | docs/development-process.md:3-48 ("agent-authored"; independent review of the exact snapshot); docs/progress.md:60, 257; the commits' authors (Cursor Agent, Replit Agent) in git. The statement is kept as written, the owner's choice of 21 Oct ~19:07 **(notes)** |
 | Disclaimer: no games provided; systems that need a BIOS beyond the firmware ares ships take one from your own hardware | LICENSE:18-22 ("The console firmware that ares ships, compiled into the native library and in the APK's System folder, is not covered by the GPL ... Phobos includes it as upstream ares does"); README.md:173 (Settings → Firmware's Scan Folder identifies each BIOS by content); the wording is the owner's choice of 21 Oct ~19:07 **(notes)** |
@@ -242,9 +245,6 @@ The roadmap's items and their wording are the owner's choice of 21 Oct ~19:07 **
   accept Phobos's entry, so the site names ES-DE and Daijisho only.
 - Vulkan Memory Allocator and librashader: vendored in thirdparty/ but in no build (nothing outside thirdparty/
   includes `vk_mem_alloc.h` or librashader's headers; #296's handoff entry, docs/handoff.md:110-113, says the same).
-- libc++abi, libunwind and compiler-rt: LLVM runtime libraries the APKs and, for compiler-rt, the macOS app carry under
-  libc++'s licence. LICENSE doesn't name them yet (#296's body leaves that to a follow-up pull request), so the credits
-  don't either.
 - The current desktop interface as "sleek" or "controller-first": not claimed; the site says it's plain today and
   quotes the owner's aim.
 - Which round of review a roadmap design is in, and who reviewed what: not stated.

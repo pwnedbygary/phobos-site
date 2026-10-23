@@ -7,11 +7,6 @@
       "title": "In progress",
       "items": [
         {
-          "title": "Polling-skip widening",
-          "detail_md": "Skipping the loops in which Burnout Dominator, Need for Speed: Shift and Burnout Legends wait on the PSP, with exactly the results of running them. A first step, tests of the skip as it is now, merged on 21 October ([#295](https://github.com/pwnedbygary/phobos/pull/295)).",
-          "status": "Code in progress"
-        },
-        {
           "title": "Dante's Inferno's loop skip",
           "detail_md": "A skip for the loop in which Dante's Inferno waits, doing nothing, for its next frame. It goes into the PSP core once its reviews and frame-by-frame exactness checks pass.",
           "status": "Design"

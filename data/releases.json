@@ -1,6 +1,6 @@
 {
  "source": "gh release list --repo pwnedbygary/phobos --limit 200 --json tagName,name,isPrerelease,isLatest,isDraft,publishedAt",
- "fetched": "2026-10-22T04:26:24Z",
+ "fetched": "2026-10-23T04:10:36Z",
  "count": 10,
  "releases": [
   {
@@ -63,25 +63,25 @@
    "isDraft": false,
    "isLatest": false,
    "isPrerelease": true,
-   "name": "Nightly 2.4.0-306-g8d85eda9",
-   "publishedAt": "2026-10-21T19:26:51Z",
-   "tagName": "nightly-216017"
-  },
-  {
-   "isDraft": false,
-   "isLatest": false,
-   "isPrerelease": true,
-   "name": "Nightly 2.4.0-311-g8c2b1dde",
-   "publishedAt": "2026-10-22T01:51:11Z",
-   "tagName": "nightly-216022"
-  },
-  {
-   "isDraft": false,
-   "isLatest": false,
-   "isPrerelease": true,
    "name": "Nightly 2.4.0-328-g062dd53e",
    "publishedAt": "2026-10-22T04:25:34Z",
    "tagName": "nightly-216039"
+  },
+  {
+   "isDraft": false,
+   "isLatest": false,
+   "isPrerelease": true,
+   "name": "Nightly 2.4.0-338-gf373b9e7",
+   "publishedAt": "2026-10-23T03:10:11Z",
+   "tagName": "nightly-216049"
+  },
+  {
+   "isDraft": false,
+   "isLatest": false,
+   "isPrerelease": true,
+   "name": "Nightly 2.4.0-341-g7986aef5",
+   "publishedAt": "2026-10-23T04:10:18Z",
+   "tagName": "nightly-216052"
   }
  ]
 }
