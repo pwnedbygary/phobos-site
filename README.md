@@ -75,7 +75,8 @@ in them becomes a link to pull request 123. `{merged_count}`, `{release_count}`,
   `"tag": "v2.5.0"` links to its GitHub release). Then `python3 tools/fetch.py && python3 build.py`.
 - **A release:** fetch, and the hero's Download button, the story's "Today" and the development log follow by
   themselves; add a timeline entry for it.
-- **A roadmap item:** add it to a column in `data/roadmap.json`; move it as its status changes.
+- **A roadmap item:** add it to a column in `data/roadmap.json`; move it as its status changes, and take it out once
+  it's merged, since the development log lists finished work.
 - **A highlight:** add a card to `data/highlights.json`; give it `media` (a picture's name), `chart` (a key of
   `data/charts.json`) or `compare` to make it a feature with a visual.
 - **A picture or a clip:** run `tools/media.py` with a spec naming the source and what it shows (below), then refer to
@@ -180,8 +181,8 @@ workflow in `.github/`), the text (the templates' words, `README.md`, `FACTS.md`
 pictures, `desktop-library` and `desktop-pause-menu`, aren't under it.
 
 Excluded, and their owners': pictures and clips of games, whole, the app's overlay and controls in them included; game
-art inside the interface pictures (the game behind the desktop pause menu) and the game wall behind the logo in the
-share image (`static/media/brand/og-share.jpg`); Google's Material icons (the app's dock, its back arrow and the theme
+art inside the interface pictures and the game wall behind the logo in the share image
+(`static/media/brand/og-share.jpg`); Google's Material icons (the app's dock, its back arrow and the theme
 cards' marks), under the Apache License 2.0, in the Library picture and the themes clip; the console art in the
 Library picture, BAXY Square's, under the MIT License; and the trademarks the site names.
 [Phobos's LICENSE](https://github.com/pwnedbygary/phobos/blob/master/LICENSE) carries the Apache License's text, lists

@@ -1,7 +1,7 @@
 {
  "source": "gh pr list --repo pwnedbygary/phobos --state merged --limit 1000 --json number,title,mergedAt,url",
- "fetched": "2026-10-23T04:10:36Z",
- "count": 188,
+ "fetched": "2026-10-23T08:17:23Z",
+ "count": 190,
  "pulls": [
   {
    "mergedAt": "2026-09-24T19:19:12Z",
@@ -1130,6 +1130,18 @@
    "number": 298,
    "title": "PSP Vulkan: Burnout Legends at 4x shown from the GPU, after a finish and past a texture's move (part 117)",
    "url": "https://github.com/pwnedbygary/phobos/pull/298"
+  },
+  {
+   "mergedAt": "2026-10-23T07:52:49Z",
+   "number": 301,
+   "title": "AppImage: the runtime pinned and checked in CI, libfuse's source beside each build, linuxdeploy and appimagetool pinned",
+   "url": "https://github.com/pwnedbygary/phobos/pull/301"
+  },
+  {
+   "mergedAt": "2026-10-23T08:15:58Z",
+   "number": 302,
+   "title": "docs: private local paths out of the public docs, README's Shaders line corrected",
+   "url": "https://github.com/pwnedbygary/phobos/pull/302"
   }
  ]
 }
