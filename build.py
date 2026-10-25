@@ -614,12 +614,15 @@ def build(dist, eager=False, base_url=None):
 
     # Systems
     counts = {}
+    systems = set()
     status_labels = {item["status"]: item["label"] for item in data["systems"]["legend"]}
     for g in data["systems"]["groups"]:
         for s in g["systems"]:
             counts[s["status"]] = counts.get(s["status"], 0) + 1
             s["status_label"] = status_labels.get(s["status"], s["status"]).lower()
-    total_systems = sum(counts.values())
+            # Rows with the same "system" are one system's parts (Arcade's two boards).
+            systems.add(s.get("system", s["name"]))
+    total_systems = len(systems)
     if total_systems != 34:
         problem(f"systems.json lists {total_systems} systems; the app's Library shows 34")
     for item in data["systems"]["legend"]:
@@ -642,6 +645,7 @@ def build(dist, eager=False, base_url=None):
                 continue
             if item["type"] == "video":
                 item["video"] = media.video(item["media"])
+                item["poster_alt"] = item.get("alt", "")
                 item["alt"] = item.get("alt", item["title"])
             else:
                 item["picture"] = media.picture(item["media"], item["alt"], grid_sizes)

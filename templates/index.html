@@ -93,7 +93,7 @@
       <h3>{{title}}</h3>
       <p class="g-intro">{{{intro_html}}}</p>
       <div class="clips">{{#shown}}
-        <figure class="clip">{{#video}}<div class="clip-frame">{{#poster_pic}}<picture class="clip-poster"><source type="image/avif" srcset="{{avif}}"><img src="{{webp}}" width="{{width}}" height="{{height}}" alt="" loading="{{loading}}" decoding="async"></picture>{{/poster_pic}}<video controls muted loop playsinline preload="none" width="{{width}}" height="{{height}}" aria-label="{{title}}, {{duration}} seconds, no sound">
+        <figure class="clip">{{#video}}<div class="clip-frame">{{#poster_pic}}<picture class="clip-poster"><source type="image/avif" srcset="{{avif}}"><img src="{{webp}}" width="{{width}}" height="{{height}}" alt="{{poster_alt}}" loading="{{loading}}" decoding="async"></picture>{{/poster_pic}}<video controls muted loop playsinline preload="none" width="{{width}}" height="{{height}}" aria-label="{{title}}, {{duration}} seconds, no sound">
           <source src="{{webm}}" type="video/webm">
           <source src="{{mp4}}" type="video/mp4">
           <a href="{{mp4}}">Download the clip ({{mb}} MB)</a>

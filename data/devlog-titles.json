@@ -183,12 +183,18 @@
     "291": "PSP timing gets Super Monkey Ball within 15%",
     "292": "N64 draws on Qualcomm's stock driver, no more black screens on the RP6",
     "293": "Docs and CI wording from three reviews",
+    "294": "Hotkeys on Android and desktop: combos of any length, per-game bindings, slow motion and frame advance",
     "295": "More PSP tests for the loop skip and the GPU thread",
     "296": "LICENSE gets the missing third-party notices",
     "297": "PSP loop skip now covers NFS Shift, two Burnouts and Midnight Club",
     "298": "Burnout Legends shows at 4x on PSP Vulkan",
     "299": "LICENSE covers LLVM's other runtime libraries too",
+    "300": "A pixel-art intro on Android and desktop: Mars, and a moon that becomes the logo",
     "301": "AppImage build tools pinned and checked, libfuse source shipped",
-    "302": "Docs: local paths removed, and a README fix"
+    "302": "Docs: local paths removed, and a README fix",
+    "303": "PSP tests build cleanly on GCC 16",
+    "304": "Fixed a memory bug when quitting after a Game Boy game",
+    "305": "PSP Vulkan above 1x: 2D sprite edges fixed, like the dark line on Burnout's banner",
+    "306": "PSP loop skip now covers Dante's Inferno's frame pacing"
   }
 }

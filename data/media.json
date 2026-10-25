@@ -64,6 +64,248 @@
    "webm": 1061564
   }
  },
+ "clip-rp6-famicom": {
+  "kind": "video",
+  "width": 878,
+  "height": 720,
+  "duration": 12.0,
+  "poster": true,
+  "bytes": {
+   "mp4": 546900,
+   "webm": 643968
+  }
+ },
+ "clip-rp6-super-famicom": {
+  "kind": "video",
+  "width": 938,
+  "height": 720,
+  "duration": 12.0,
+  "poster": true,
+  "bytes": {
+   "mp4": 909955,
+   "webm": 1277236
+  }
+ },
+ "clip-rp6-game-boy": {
+  "kind": "video",
+  "width": 800,
+  "height": 720,
+  "duration": 12.0,
+  "poster": true,
+  "bytes": {
+   "mp4": 1561231,
+   "webm": 1827534
+  }
+ },
+ "clip-rp6-sg-1000": {
+  "kind": "video",
+  "width": 1098,
+  "height": 720,
+  "duration": 12.0,
+  "poster": true,
+  "bytes": {
+   "mp4": 514056,
+   "webm": 412706
+  }
+ },
+ "clip-rp6-master-system": {
+  "kind": "video",
+  "width": 1096,
+  "height": 720,
+  "duration": 12.0,
+  "poster": true,
+  "bytes": {
+   "mp4": 2146269,
+   "webm": 2078829
+  }
+ },
+ "clip-rp6-game-gear": {
+  "kind": "video",
+  "width": 960,
+  "height": 720,
+  "duration": 12.0,
+  "poster": true,
+  "bytes": {
+   "mp4": 712037,
+   "webm": 1011501
+  }
+ },
+ "clip-rp6-mega-drive": {
+  "kind": "video",
+  "width": 938,
+  "height": 720,
+  "duration": 12.0,
+  "poster": true,
+  "bytes": {
+   "mp4": 3377562,
+   "webm": 2793022
+  }
+ },
+ "clip-rp6-mega-32x": {
+  "kind": "video",
+  "width": 1092,
+  "height": 720,
+  "duration": 12.02,
+  "poster": true,
+  "bytes": {
+   "mp4": 1619293,
+   "webm": 2158652
+  }
+ },
+ "clip-rp6-pc-engine": {
+  "kind": "video",
+  "width": 976,
+  "height": 720,
+  "duration": 12.0,
+  "poster": true,
+  "bytes": {
+   "mp4": 1262141,
+   "webm": 1250959
+  }
+ },
+ "clip-rp6-supergrafx": {
+  "kind": "video",
+  "width": 976,
+  "height": 720,
+  "duration": 12.0,
+  "poster": true,
+  "bytes": {
+   "mp4": 2076680,
+   "webm": 2543736
+  }
+ },
+ "clip-rp6-wonderswan": {
+  "kind": "video",
+  "width": 1026,
+  "height": 720,
+  "duration": 12.0,
+  "poster": true,
+  "bytes": {
+   "mp4": 832081,
+   "webm": 1813789
+  }
+ },
+ "clip-rp6-wonderswan-color": {
+  "kind": "video",
+  "width": 462,
+  "height": 720,
+  "duration": 12.0,
+  "poster": true,
+  "bytes": {
+   "mp4": 1023750,
+   "webm": 1523077
+  }
+ },
+ "clip-rp6-msx2": {
+  "kind": "video",
+  "width": 992,
+  "height": 720,
+  "duration": 7.82,
+  "poster": true,
+  "bytes": {
+   "mp4": 306629,
+   "webm": 510308
+  }
+ },
+ "clip-rp6-nintendo-64": {
+  "kind": "video",
+  "width": 988,
+  "height": 720,
+  "duration": 12.0,
+  "poster": true,
+  "bytes": {
+   "mp4": 2789563,
+   "webm": 2363668
+  }
+ },
+ "clip-rp6-arcade-aleck64": {
+  "kind": "video",
+  "width": 942,
+  "height": 720,
+  "duration": 12.0,
+  "poster": true,
+  "bytes": {
+   "mp4": 2009617,
+   "webm": 2327820
+  }
+ },
+ "clip-rp6-game-boy-advance": {
+  "kind": "video",
+  "width": 1080,
+  "height": 720,
+  "duration": 12.02,
+  "poster": true,
+  "bytes": {
+   "mp4": 1156809,
+   "webm": 1350807
+  }
+ },
+ "clip-rp6-neo-geo-pocket-color": {
+  "kind": "video",
+  "width": 758,
+  "height": 720,
+  "duration": 12.0,
+  "poster": true,
+  "bytes": {
+   "mp4": 354548,
+   "webm": 616321
+  }
+ },
+ "clip-rp6-colecovision": {
+  "kind": "video",
+  "width": 1096,
+  "height": 720,
+  "duration": 12.02,
+  "poster": true,
+  "bytes": {
+   "mp4": 211853,
+   "webm": 405345
+  }
+ },
+ "clip-rp6-mega-cd": {
+  "kind": "video",
+  "width": 942,
+  "height": 720,
+  "duration": 12.02,
+  "poster": true,
+  "bytes": {
+   "mp4": 1111987,
+   "webm": 1608115
+  }
+ },
+ "clip-rp6-playstation": {
+  "kind": "video",
+  "width": 960,
+  "height": 720,
+  "duration": 12.02,
+  "poster": true,
+  "bytes": {
+   "mp4": 1546344,
+   "webm": 1941913
+  }
+ },
+ "clip-rp6-pc-engine-cd": {
+  "kind": "video",
+  "width": 976,
+  "height": 720,
+  "duration": 12.02,
+  "poster": true,
+  "bytes": {
+   "mp4": 404743,
+   "webm": 504282
+  }
+ },
+ "clip-rp6-neo-geo-cd": {
+  "kind": "video",
+  "width": 1026,
+  "height": 720,
+  "duration": 12.02,
+  "poster": true,
+  "bytes": {
+   "mp4": 312563,
+   "webm": 566352
+  }
+ },
  "psp-wipeout": {
   "kind": "image",
   "widths": [

@@ -12,7 +12,7 @@ It also writes data/media.json (every item's files and pixel sizes, which build.
 and height) and MEDIA.md, the media manifest: what each file shows, the game, the frame, the build and the date, as
 the spec's "manifest" fields give them. Keep those fields free of private paths: MEDIA.md is meant to be public.
 
-Needs ffmpeg (libx264, libvpx-vp9, libwebp) and avifenc on PATH; Python 3's standard library only.
+Needs ffmpeg (libx264, libvpx-vp9, libwebp), ffprobe and avifenc on PATH; Python 3's standard library only.
 
     python3 tools/media.py SPEC.json [--only NAME,NAME...]
 
@@ -65,6 +65,14 @@ def ffmpeg(*args):
          *capped, "-threads", "4", out])
 
 
+def video_seconds(path):
+    """A video's length as its file gives it. trim keeps its duration counted from the first frame it keeps, so a clip
+    can hold one frame more than the spec's duration."""
+    out = subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", path],
+                         stdin=subprocess.DEVNULL, capture_output=True, text=True, check=True).stdout
+    return float(out)
+
+
 def still(src, out_png, vf, at=None):
     seek = ["-ss", f"{at:.3f}"] if at is not None else []
     ffmpeg(*seek, "-i", src, "-frames:v", "1", "-vf", vf, out_png)
@@ -107,11 +115,12 @@ def do_image(item, tmp):
 def do_video(item, tmp):
     width = item.get("width", 1280)
     fps = item.get("fps", 60)
+    crop = f"crop={item['crop']}," if item.get("crop") else ""
     inputs, chains = [], []
     for i, part in enumerate(item["parts"]):
         inputs += ["-i", part["src"]]
         chains.append(f"[{i}:v]trim=start={part['start']}:duration={part['duration']},setpts=PTS-STARTPTS,"
-                      f"scale={width}:-2:flags=lanczos,fps={fps},format=yuv420p[v{i}]")
+                      f"{crop}scale={width}:-2:flags=lanczos,fps={fps},format=yuv420p[v{i}]")
     n = len(item["parts"])
     graph = ";".join(chains) + ";" + "".join(f"[v{i}]" for i in range(n)) + f"concat=n={n}:v=1:a=0[out]"
     base = os.path.join(MEDIA, "video", item["name"])
@@ -125,7 +134,7 @@ def do_video(item, tmp):
            "-deadline", "good", "-cpu-used", "2", "-pix_fmt", "yuv420p", base + ".webm")
     first = item["parts"][0]
     png = os.path.join(tmp, item["name"] + "-poster.png")
-    still(first["src"], png, f"scale={width}:-2:flags=lanczos", at=first["start"] + item.get("poster_at", 0.0))
+    still(first["src"], png, f"{crop}scale={width}:-2:flags=lanczos", at=first["start"] + item.get("poster_at", 0.0))
     w, h = png_size(png)
     if item.get("poster", True):
         encode_still(png, base + "-poster", {"avif": 60, "webp": 78}, "420")
@@ -133,8 +142,7 @@ def do_video(item, tmp):
         for ext in (".avif", ".webp"):
             if os.path.exists(base + "-poster" + ext):
                 os.remove(base + "-poster" + ext)
-    duration = sum(p["duration"] for p in item["parts"])
-    return {"kind": "video", "width": w, "height": h, "duration": round(duration, 2),
+    return {"kind": "video", "width": w, "height": h, "duration": round(video_seconds(base + ".mp4"), 2),
             "poster": item.get("poster", True),
             "bytes": {"mp4": os.path.getsize(base + ".mp4"), "webm": os.path.getsize(base + ".webm")}}
 

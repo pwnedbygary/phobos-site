@@ -48,7 +48,7 @@
     "platforms_note_md": "Tagged releases since v2.0.0 have all four. Nightly builds are Android only."
   },
   "systems_title": "The library",
-  "systems_intro_md": "Here's where each of the app's 34 systems stands.",
+  "systems_intro_md": "Here's where each of the app's 34 systems stands. Arcade has two rows, one for each board.",
   "made_md": "I build Phobos with AI coding agents and steer what they work on. Since September, an independent reviewer checks every change before it merges, and speed and accuracy claims come from measurements on my Retroid Pocket 6 and PSP-1000.",
   "disclaimer_md": "Phobos comes with no games. Use dumps of games you own. Systems that need a BIOS beyond the firmware ares ships (see [LICENSE](https://github.com/pwnedbygary/phobos/blob/master/LICENSE)) take one dumped from your own hardware. Phobos isn't affiliated with, endorsed by or sponsored by Sony, Nintendo, any other console maker or any game publisher. All product names, game titles and trademarks belong to their owners and appear here only to say what Phobos emulates and what each picture shows.",
   "footer_fine_md": "Phobos comes with no games and isn't affiliated with Sony, Nintendo or any other console maker or game publisher. This site's code, text, data and logo, plus the screenshots and clip of the app's interface, are free under [GPL-3.0-or-later](https://github.com/pwnedbygary/phobos-site/blob/main/LICENSE). Pictures and clips of games, other people's art in the interface pictures, and trademarks aren't covered and belong to their owners.",

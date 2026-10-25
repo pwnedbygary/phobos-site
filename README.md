@@ -51,7 +51,7 @@ picture loads at once (the real site loads pictures lazily).
 | `data/site.json` | Name, pitch, links, navigation, the "What it is" section, footer text, how it's made, disclaimer |
 | `data/stats.json` | The hero's numbers and the highlight cards' numbers (`{merged_count}` is filled in) |
 | `data/highlights.json` | The highlight cards: text, numbers, a picture, a chart or a before-and-after |
-| `data/systems.json` | The 34 systems, grouped by maker, with each one's status |
+| `data/systems.json` | The 34 systems, grouped by maker, with each one's status (Arcade in two rows, one for each board) |
 | `data/gallery.json` | Clips, stills and the 266-game wall |
 | `data/story.json` | The story's chapters, oldest first |
 | `data/timeline.json` | Eras, firsts, releases and milestones (sorted oldest first by `date`) |

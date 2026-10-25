@@ -53,7 +53,8 @@
       {"name": "MSX", "status": "verified"},
       {"name": "MSX2", "status": "verified"},
       {"name": "ZX Spectrum", "status": "verified", "note": "48K and 128K"},
-      {"name": "Arcade", "status": "untried", "note": "Aleck64, SG-1000A"}
+      {"name": "Arcade (Aleck64)", "status": "verified", "system": "Arcade"},
+      {"name": "Arcade (SG-1000A)", "status": "untried", "system": "Arcade"}
     ]}
   ]
 }
