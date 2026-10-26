@@ -93,8 +93,8 @@
   "duration": 12.0,
   "poster": true,
   "bytes": {
-   "mp4": 1561231,
-   "webm": 1827534
+   "mp4": 389226,
+   "webm": 581272
   }
  },
  "clip-rp6-sg-1000": {
@@ -145,11 +145,11 @@
   "kind": "video",
   "width": 1092,
   "height": 720,
-  "duration": 12.02,
+  "duration": 2.52,
   "poster": true,
   "bytes": {
-   "mp4": 1619293,
-   "webm": 2158652
+   "mp4": 230382,
+   "webm": 311642
   }
  },
  "clip-rp6-pc-engine": {
@@ -244,11 +244,11 @@
   "kind": "video",
   "width": 758,
   "height": 720,
-  "duration": 12.0,
+  "duration": 10.4,
   "poster": true,
   "bytes": {
-   "mp4": 354548,
-   "webm": 616321
+   "mp4": 131163,
+   "webm": 245510
   }
  },
  "clip-rp6-colecovision": {
@@ -304,6 +304,72 @@
   "bytes": {
    "mp4": 312563,
    "webm": 566352
+  }
+ },
+ "clip-rp6-zx-spectrum": {
+  "kind": "video",
+  "width": 858,
+  "height": 720,
+  "duration": 12.02,
+  "poster": true,
+  "bytes": {
+   "mp4": 630709,
+   "webm": 739165
+  }
+ },
+ "clip-rp6-super-game-boy": {
+  "kind": "video",
+  "width": 942,
+  "height": 720,
+  "duration": 12.0,
+  "poster": true,
+  "bytes": {
+   "mp4": 372016,
+   "webm": 521042
+  }
+ },
+ "clip-rp6-game-boy-color": {
+  "kind": "video",
+  "width": 800,
+  "height": 720,
+  "duration": 12.02,
+  "poster": true,
+  "bytes": {
+   "mp4": 418767,
+   "webm": 439140
+  }
+ },
+ "clip-rp6-neo-geo": {
+  "kind": "video",
+  "width": 1030,
+  "height": 720,
+  "duration": 11.98,
+  "poster": true,
+  "bytes": {
+   "mp4": 3236571,
+   "webm": 2957389
+  }
+ },
+ "clip-rp6-neo-geo-pocket": {
+  "kind": "video",
+  "width": 760,
+  "height": 720,
+  "duration": 12.02,
+  "poster": true,
+  "bytes": {
+   "mp4": 445285,
+   "webm": 546023
+  }
+ },
+ "clip-rp6-atari-2600": {
+  "kind": "video",
+  "width": 912,
+  "height": 720,
+  "duration": 12.02,
+  "poster": true,
+  "bytes": {
+   "mp4": 257154,
+   "webm": 328195
   }
  },
  "psp-wipeout": {

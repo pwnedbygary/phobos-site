@@ -1,7 +1,7 @@
 {
  "source": "gh pr list --repo pwnedbygary/phobos --state merged --limit 1000 --json number,title,mergedAt,url",
- "fetched": "2026-10-24T03:19:06Z",
- "count": 196,
+ "fetched": "2026-10-26T05:24:18Z",
+ "count": 201,
  "pulls": [
   {
    "mergedAt": "2026-09-24T19:19:12Z",
@@ -1178,6 +1178,36 @@
    "number": 306,
    "title": "PSP kernel: Dante's Inferno's frame pacing skipped, its turns worked out from the clock's ticks (part 118)",
    "url": "https://github.com/pwnedbygary/phobos/pull/306"
+  },
+  {
+   "mergedAt": "2026-10-24T07:12:56Z",
+   "number": 309,
+   "title": "Game Boy Color: the boot ROM read at upstream's offset, so games start; full dumps read too",
+   "url": "https://github.com/pwnedbygary/phobos/pull/309"
+  },
+  {
+   "mergedAt": "2026-10-24T11:05:55Z",
+   "number": 310,
+   "title": "ci: the workflows' actions off Node 20, setup-gradle aside",
+   "url": "https://github.com/pwnedbygary/phobos/pull/310"
+  },
+  {
+   "mergedAt": "2026-10-24T13:54:20Z",
+   "number": 311,
+   "title": "PSP Vulkan: above 1x, 3D draws' texture rows from their vertices, textures from fresh targets (part 120)",
+   "url": "https://github.com/pwnedbygary/phobos/pull/311"
+  },
+  {
+   "mergedAt": "2026-10-24T17:38:02Z",
+   "number": 312,
+   "title": "Super Game Boy: the Game Boy on a scheduler of its own, which the ICD runs inside the Super Famicom's",
+   "url": "https://github.com/pwnedbygary/phobos/pull/312"
+  },
+  {
+   "mergedAt": "2026-10-25T01:33:13Z",
+   "number": 313,
+   "title": "ci: setup-gradle on v6, with its open-source basic cache",
+   "url": "https://github.com/pwnedbygary/phobos/pull/313"
   }
  ]
 }

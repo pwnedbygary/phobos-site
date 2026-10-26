@@ -55,7 +55,7 @@
       "paras_md": [
         "On 3 October the cores came back to the desktop on Linux, macOS and Windows, with CI building them for every pull request (#97). The PSP joined on 6 October.",
         "The desktop program is pretty plain for now, drawn in SDL's debug font. Like I said above, the goal is to bring the Android app's easy controller navigation and sleek, modern UI to the desktop.",
-        "The library and menus already work with a gamepad, and #294, still open, brings hotkeys to the desktop with a Hotkeys page in the pause menu."
+        "The library and menus already work with a gamepad, and #294 brought hotkeys to the desktop on 23 October, with a Hotkeys page in the pause menu."
       ],
       "gallery": ["desktop-locoroco", "desktop-pause-menu", "desktop-library"],
       "gallery_alt": {

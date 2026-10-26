@@ -7,14 +7,9 @@
       "title": "In progress",
       "items": [
         {
-          "title": "A loop skip for Dante's Inferno",
-          "detail_md": "It skips the loop where the game sits waiting for its next frame. It lands once review and frame-by-frame exactness checks pass.",
-          "status": "Design"
-        },
-        {
-          "title": "Hotkeys on Android and the desktop",
-          "detail_md": "My pull request [#294](https://github.com/pwnedbygary/phobos/pull/294), with combos of any length, three bindings per action, slow motion and frame advance.",
-          "status": "Open pull request"
+          "title": "A screensaver preview",
+          "detail_md": "My pull request [#308](https://github.com/pwnedbygary/phobos/pull/308): a Preview row in the app's Settings and a Show Screensaver hotkey, Back + Start by default, to see the screensaver without waiting for its delay.",
+          "status": "Draft pull request"
         }
       ]
     },

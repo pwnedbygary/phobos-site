@@ -11,7 +11,7 @@
       {"name": "Game Boy", "status": "verified"},
       {"name": "Game Boy Color", "status": "verified"},
       {"name": "Game Boy Advance", "status": "verified"},
-      {"name": "Super Game Boy", "status": "untried"},
+      {"name": "Super Game Boy", "status": "verified"},
       {"name": "Nintendo 64", "status": "verified", "note": "with 64DD"}
     ]},
     {"maker": "Sega", "systems": [
