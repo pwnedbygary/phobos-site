@@ -5,13 +5,7 @@
     {
       "id": "now",
       "title": "In progress",
-      "items": [
-        {
-          "title": "A screensaver preview",
-          "detail_md": "My pull request [#308](https://github.com/pwnedbygary/phobos/pull/308): a Preview row in the app's Settings and a Show Screensaver hotkey, Back + Start by default, to see the screensaver without waiting for its delay.",
-          "status": "Draft pull request"
-        }
-      ]
+      "items": []
     },
     {
       "id": "next",
@@ -21,6 +15,296 @@
           "title": "Automatic handover for the GE thread",
           "detail_md": "An Auto mode that hands over both ways, keeping a game synchronous where the two threads would only take turns.",
           "status": "Planned"
+        },
+        {
+          "title": "The screensavers redone",
+          "detail_md": "The next part of my redesign of the app's look: its screensavers, with the CRT and XMB ones in the theme's colours.",
+          "status": "Planned"
+        },
+        {
+          "title": "The Android app's interface on the desktop",
+          "detail_md": "The desktop program's interface is a placeholder for now; I want it on a par with the Android app's.",
+          "status": "Planned"
+        },
+        {
+          "title": "A matched N64 comparison with Mupen64Plus-AE",
+          "detail_md": "Mario Tennis on Phobos and on the Mupen64Plus-AE build I supplied, with the same device, scene and settings, and each APK tied to its source.",
+          "status": "Planned"
+        },
+        {
+          "title": "Tracing where the time goes, at low cost",
+          "detail_md": "System traces first; only if they can't tell, an opt-in recorder whose own cost is measured, with the emulated timing left as it is.",
+          "status": "Planned"
+        },
+        {
+          "title": "Measuring a frame's copies on its way to the screen",
+          "detail_md": "Each step from the N64's video output to the window timed on its own, waits included; what it would gain is unknown.",
+          "status": "Planned"
+        },
+        {
+          "title": "Counting the N64's waits for its graphics",
+          "detail_md": "How often and how long it waits, timed against the GPU, with every wait kept in place.",
+          "status": "Planned"
+        },
+        {
+          "title": "A clearer view of frame pacing",
+          "detail_md": "Each frame's time split into sleeping, waiting, running and presenting, since frames per second alone isn't enough.",
+          "status": "Planned"
+        },
+        {
+          "title": "Measuring what the sound path costs",
+          "detail_md": "Its allocations, lock time and dropouts measured before any change to its buffers, as an experiment that runs only if I approve it.",
+          "status": "Proposed"
+        },
+        {
+          "title": "More of the N64's RSP vector code in NEON",
+          "detail_md": "Two parts have merged; next, checking the code as built and the RSP's share of the CPU, then the other frequent vector instructions.",
+          "status": "Started"
+        },
+        {
+          "title": "Measuring the N64's video modes and fallbacks",
+          "detail_md": "Counting mode changes, fallback frames and each mode's cost, with Mario Tennis and Rogue Squadron kept as regression checks.",
+          "status": "Planned"
+        },
+        {
+          "title": "Measuring the N64's recompiler and data cache",
+          "detail_md": "Sampling block exits, invalidations, cache activity and CPU share, with the sampling's own cost measured.",
+          "status": "Planned"
+        },
+        {
+          "title": "Profiling the other systems",
+          "detail_md": "The PlayStation, Super Famicom, Game Boy Advance, Mega Drive and others, profiled before any new recompiler or renderer.",
+          "status": "Planned"
+        },
+        {
+          "title": "Several controllers at once",
+          "detail_md": "Each controller on a port of its own, with its own input and rumble.",
+          "status": "Deferred"
+        },
+        {
+          "title": "The N64's true frame rate in the performance monitor",
+          "detail_md": "The frames a game draws, told apart from the rate the video signal scans out.",
+          "status": "Planned"
+        },
+        {
+          "title": "ZX Spectrum: tape swapping and a picker for ZIPs",
+          "detail_md": "Swapping between a game's tapes, and choosing the file to load from a ZIP that holds several.",
+          "status": "Deferred"
+        },
+        {
+          "title": "Dynamic speed compensation",
+          "detail_md": "Scaling the emulated clock and sound to smooth games that run slow: a question of accuracy, not a speed-up.",
+          "status": "Deferred"
+        },
+        {
+          "title": "Run-ahead, on systems other than the N64",
+          "detail_md": "It needs each frame saved, run unseen and restored, which isn't practical on the N64; its switch stays hidden till then.",
+          "status": "Deferred"
+        },
+        {
+          "title": "A libretro host, for established emulators",
+          "detail_md": "Parked: the emulators it would host are under the GPL, and the firmware ares ships, which I'm keeping, can't be.",
+          "status": "Parked"
+        },
+        {
+          "title": "Dreamcast, NAOMI and Atomiswave",
+          "detail_md": "Planned through Flycast, a GPL emulator, so it's parked while I keep the firmware ares ships.",
+          "status": "Parked"
+        },
+        {
+          "title": "The Saturn, eventually",
+          "detail_md": "The recommended route is Mednafen's emulator, the most accurate open one, under the GPL; a core of Phobos's own would take years.",
+          "status": "Future"
+        },
+        {
+          "title": "Nintendo DS",
+          "detail_md": "Suggested rather than asked for: melonDS, under the GPL, with two-screen layouts and touch on the lower screen.",
+          "status": "Suggested"
+        },
+        {
+          "title": "Arcade boards beyond the Neo Geo",
+          "detail_md": "CPS-1 and CPS-2 first, then Sega's System 16 and 18 and CPS-3, ported from MAME's drivers in ares's style.",
+          "status": "Proposed"
+        },
+        {
+          "title": "Smaller consoles and handhelds",
+          "detail_md": "The Atari 7800, Lynx, 5200 and Jaguar, Virtual Boy, Intellivision, Vectrex, Sega Pico, 3DO, PC-FX, Odyssey², Pokémon Mini and Game & Watch, one task each.",
+          "status": "Proposed"
+        },
+        {
+          "title": "Retro computers",
+          "detail_md": "The Commodore 64, Amiga, Amstrad CPC, Atari ST, DOS, MSX2+ and turbo R, with on-screen and physical keyboards; lower priority.",
+          "status": "Proposed"
+        },
+        {
+          "title": "Automatic PSP speed comparisons",
+          "detail_md": "Comparing the PSP core's speed by script, built on the reproducible PSP runs that have merged.",
+          "status": "Planned"
+        },
+        {
+          "title": "Tests for the PSP's pictures above 1x on Vulkan",
+          "detail_md": "Guarding high-resolution Vulkan output; two of the core's parts already test some frames above 1x.",
+          "status": "Planned"
+        },
+        {
+          "title": "No more timing-sensitive thread tests",
+          "detail_md": "Taking out the thread tests whose result depends on timing.",
+          "status": "Planned"
+        },
+        {
+          "title": "Tests that old PSP save states still load",
+          "detail_md": "Checking save states from earlier versions, once their layout settles.",
+          "status": "Planned"
+        },
+        {
+          "title": "Measuring the real Android graphics driver",
+          "detail_md": "On my RP6, after the automatic speed comparisons and the high-resolution tests.",
+          "status": "Planned"
+        },
+        {
+          "title": "More replayable tests of the PSP's recompiler",
+          "detail_md": "More tests that replay code through the recompiler and check it against a reference.",
+          "status": "Planned"
+        },
+        {
+          "title": "Keeping the tests of the PSP's dialogs",
+          "detail_md": "Tests of answering the PSP's system dialogs, its messages, keyboard and saves, kept in the suite.",
+          "status": "Planned"
+        },
+        {
+          "title": "Tests that settings and controls are kept",
+          "detail_md": "Making sure a change can't lose the settings and controls you've chosen.",
+          "status": "Planned"
+        },
+        {
+          "title": "Tests of the Android app's launch and storage",
+          "detail_md": "Covering how the app starts and how it uses storage.",
+          "status": "Planned"
+        },
+        {
+          "title": "Tests that saves fail safely",
+          "detail_md": "A shared helper for writing saves first, then tests of what happens when a write fails.",
+          "status": "Planned"
+        },
+        {
+          "title": "Fuzzing the PSP core's inputs",
+          "detail_md": "Random and edge-case input fed to the PSP core at its boundaries, to find what breaks it.",
+          "status": "Planned"
+        },
+        {
+          "title": "Tests of the files each APK update relies on",
+          "detail_md": "Checking that each build's update files are what the app's updater expects.",
+          "status": "Planned"
+        },
+        {
+          "title": "Smoke tests of the packaged desktop builds",
+          "detail_md": "Checking that the AppImage, the Windows build and the macOS app start, as they ship.",
+          "status": "Planned"
+        },
+        {
+          "title": "Tests guarding the N64's Vulkan lifecycle",
+          "detail_md": "Not now: there's no way to test it short of a redesign.",
+          "status": "Deferred"
+        },
+        {
+          "title": "The old CPU test harnesses restored",
+          "detail_md": "Not now: they test cores nobody is changing.",
+          "status": "Deferred"
+        },
+        {
+          "title": "Measuring test coverage honestly",
+          "detail_md": "How much of the code the tests reach, counted without inflating it.",
+          "status": "Planned"
+        },
+        {
+          "title": "Automating the evidence each change needs",
+          "detail_md": "Collecting the evidence for each change's review automatically.",
+          "status": "Planned"
+        },
+        {
+          "title": "A fresh Neo Geo compatibility pass",
+          "detail_md": "A bounded pass over the games, since the fixes so far don't prove that every set works.",
+          "status": "Open"
+        },
+        {
+          "title": "Shaders and a responsive layout",
+          "detail_md": "Kept for later: shaders that apply in a game (the Shaders screen saves a preset but doesn't apply it yet), the polish around them, and a layout that adapts to the screen.",
+          "status": "Deferred"
+        },
+        {
+          "title": "A proper bypass of the N64's data cache",
+          "detail_md": "Parked as high-risk: a first, direct version broke the console's memory transfers, so it needs a sound design.",
+          "status": "Parked"
+        },
+        {
+          "title": "Per-game timing and cache overrides",
+          "detail_md": "Parked until a measured need shows up, and then only with a review of the timing.",
+          "status": "Parked"
+        },
+        {
+          "title": "A recompiler for the PlayStation's CPU",
+          "detail_md": "Wanted eventually, after profiling, with the interpreter kept as a fallback.",
+          "status": "Deferred"
+        },
+        {
+          "title": "PlayStation graphics off the CPU",
+          "detail_md": "Wanted eventually, in two parts: the simpler pixel copying, measured, then the riskier renderer.",
+          "status": "Deferred"
+        },
+        {
+          "title": "A recompiler for the Super Famicom's CPU",
+          "detail_md": "Profiling comes first.",
+          "status": "Deferred"
+        },
+        {
+          "title": "A recompiler for the Game Boy Advance's CPU",
+          "detail_md": "Profiling comes first.",
+          "status": "Deferred"
+        },
+        {
+          "title": "A faster, optional take on the Mega Drive's video chip",
+          "detail_md": "Wanted eventually, behind a setting of its own, after a review of its compatibility.",
+          "status": "Deferred"
+        },
+        {
+          "title": "Accuracy or speed by default, on four systems",
+          "detail_md": "Measuring what the accurate modes cost on my RP6, then choosing the defaults for the Super Famicom, PC Engine, Game Boy Advance and WonderSwan.",
+          "status": "Undecided"
+        },
+        {
+          "title": "More opt-in speed options for the N64",
+          "detail_md": "Each measured on my RP6 first: skipping idle loops at normal speed, automatic frame skip and keeping the GPU's clock up, among others.",
+          "status": "Planned"
+        },
+        {
+          "title": "A recompiler for the ZX Spectrum's CPU",
+          "detail_md": "Probably not needed, and profiling comes first.",
+          "status": "Deferred"
+        },
+        {
+          "title": "MSX tapes: the load command typed for you",
+          "detail_md": "Not done yet: for now you type the command that loads a tape yourself.",
+          "status": "Open"
+        },
+        {
+          "title": "A Super Mario 64 hack that stops at boot",
+          "detail_md": "B3313's v1.0.2 Hotfix 3 stays on a black screen; the first suspect is the N64 CPU's timer, which Phobos does differently from ares.",
+          "status": "Open"
+        },
+        {
+          "title": "F-Zero ZX Overdrive's black picture",
+          "detail_md": "It runs at full speed with steady sound, but its picture stays black, apart from a few dots.",
+          "status": "Open"
+        },
+        {
+          "title": "A README that shows what Phobos does",
+          "detail_md": "The GitHub page rewritten with current screenshots, and what's outdated there replaced; not a priority yet.",
+          "status": "Planned"
+        },
+        {
+          "title": "Box art and game details in the Library",
+          "detail_md": "An optional grid of box art, with each game's title, year, publisher and description, from a source whose terms allow it.",
+          "status": "Proposed"
         }
       ]
     },
@@ -36,6 +320,11 @@
         {
           "title": "Vulkan (accurate), faster",
           "detail_md": "Getting the accurate Vulkan renderer closer to the fast one's speed on the handheld.",
+          "status": "Planned"
+        },
+        {
+          "title": "Custom colour schemes",
+          "detail_md": "Colour schemes of your own, beside the 13 themes.",
           "status": "Planned"
         }
       ]

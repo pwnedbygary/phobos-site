@@ -20,7 +20,7 @@
       "items": [
         {"type": "video", "media": "clip-rp6-colin-mcrae", "title": "Colin McRae Rally 2005 Plus", "caption_md": "8 seconds of a rally stage, drawn at native resolution by the Software (exact) renderer."},
         {"type": "video", "media": "clip-rp6-mario-tennis", "title": "Mario Tennis", "caption_md": "12 seconds of a match on the Turnip driver, with a replay between points."},
-        {"type": "video", "media": "clip-rp6-themes", "title": "The app's themes", "caption_md": "10 seconds of picking themes with the controller, each one repainting the whole app."}
+        {"type": "video", "media": "clip-rp6-themes", "title": "The app's themes", "caption_md": "10 seconds of picking themes with the controller, each one repainting the whole app. Recorded on 22 Oct, before the app kept 13 of them (#314)."}
       ]
     },
     {

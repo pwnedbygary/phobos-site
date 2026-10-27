@@ -1,7 +1,7 @@
 {
  "source": "gh pr list --repo pwnedbygary/phobos --state merged --limit 1000 --json number,title,mergedAt,url",
- "fetched": "2026-10-26T05:24:18Z",
- "count": 201,
+ "fetched": "2026-10-27T03:31:19Z",
+ "count": 205,
  "pulls": [
   {
    "mergedAt": "2026-09-24T19:19:12Z",
@@ -1208,6 +1208,30 @@
    "number": 313,
    "title": "ci: setup-gradle on v6, with its open-source basic cache",
    "url": "https://github.com/pwnedbygary/phobos/pull/313"
+  },
+  {
+   "mergedAt": "2026-10-26T15:00:57Z",
+   "number": 307,
+   "title": "The CRT terminal style's Library: the blinking cursor on the focused platform alone, every cursor on one clock",
+   "url": "https://github.com/pwnedbygary/phobos/pull/307"
+  },
+  {
+   "mergedAt": "2026-10-26T19:51:13Z",
+   "number": 315,
+   "title": "ZX keyboard: keys let go however a press ends, and LOAD \"\" lets go first",
+   "url": "https://github.com/pwnedbygary/phobos/pull/315"
+  },
+  {
+   "mergedAt": "2026-10-26T23:20:13Z",
+   "number": 308,
+   "title": "A screensaver preview: a Preview row in Settings and a Show Screensaver hotkey on the pages",
+   "url": "https://github.com/pwnedbygary/phobos/pull/308"
+  },
+  {
+   "mergedAt": "2026-10-26T23:41:49Z",
+   "number": 314,
+   "title": "Thirteen themes kept: Phobos, the default, in the website's colors, and System and Light / Dark / Auto gone",
+   "url": "https://github.com/pwnedbygary/phobos/pull/314"
   }
  ]
 }

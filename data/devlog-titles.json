@@ -196,10 +196,14 @@
     "304": "Fixed a memory bug when quitting after a Game Boy game",
     "305": "PSP Vulkan above 1x: 2D sprite edges fixed, like the dark line on Burnout's banner",
     "306": "PSP loop skip now covers Dante's Inferno's frame pacing",
+    "307": "CRT terminal: only the focused platform's cursor blinks",
+    "308": "A screensaver preview, from a row in Settings or a hotkey",
     "309": "Fixed Game Boy Color games stuck on a white screen, and full boot ROM dumps still work",
     "310": "The rest of CI's actions moved off Node 20, all but the Gradle setup",
     "311": "PSP Vulkan above 1x: real 4x in Armored Core: Formula Front, more detail in Sonic Rivals and Death Jr. II",
     "312": "Fixed Super Game Boy games frozen on a black screen inside their border",
-    "313": "CI's Gradle setup moved to v6 with its open-source cache, the last action off Node 20"
+    "313": "CI's Gradle setup moved to v6 with its open-source cache, the last action off Node 20",
+    "314": "Themes cut to 13, Phobos the default in this site's colours",
+    "315": "ZX Spectrum keyboard: a key held as it closes lets go"
   }
 }
